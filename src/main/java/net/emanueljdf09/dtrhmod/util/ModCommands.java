@@ -1,16 +1,49 @@
 package net.emanueljdf09.dtrhmod.util;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
+import com.mojang.brigadier.arguments.StringArgumentType;
+import net.emanueljdf09.dtrhmod.entity.custom.MadHatterEntity;
 import net.emanueljdf09.dtrhmod.util.components.ProgressionComponent;
 import net.emanueljdf09.dtrhmod.util.config.ModConfigData;
+import net.emanueljdf09.dtrhmod.util.entity.MadHatterTrivia;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 
+import java.util.UUID;
+
 public class ModCommands {
     public static void register() {
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+            dispatcher.register(CommandManager.literal("madhatter_answer")
+                    .then(CommandManager.argument("entityUuid", StringArgumentType.string())
+                            .then(CommandManager.argument("choiceIndex", IntegerArgumentType.integer())
+                                    .executes(context -> {
+                                        var player = context.getSource().getPlayerOrThrow();
+                                        String uuidStr = StringArgumentType.getString(context, "entityUuid");
+                                        int choiceIndex = IntegerArgumentType.getInteger(context, "choiceIndex");
+
+                                        UUID hatterUuid = UUID.fromString(uuidStr);
+                                        var entity = player.getWorld().getEntitiesByClass(
+                                                MadHatterEntity.class,
+                                                player.getBoundingBox().expand(15.0D),
+                                                hatter -> hatter.getUuid().equals(hatterUuid)
+                                        ).stream().findFirst().orElse(null);
+
+                                        if (entity != null) {
+                                            MadHatterTrivia.handleAnswerSelection(player, entity, choiceIndex);
+                                        } else {
+                                            player.sendMessage(net.minecraft.text.Text.literal("The Mad Hatter is too far away!").formatted(net.minecraft.util.Formatting.RED), false);
+                                        }
+                                        return 1;
+                                    })
+                            )
+                    )
+            );
+        });
+
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             dispatcher.register(CommandManager.literal("dtrh")
                     .requires(source -> source.hasPermissionLevel(0))

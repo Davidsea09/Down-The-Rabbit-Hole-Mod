@@ -43,6 +43,8 @@ public class ModItemGroups {
                         entries.add(ModItems.EAT_ME);
                         entries.add(ModItems.WHITE_RABBIT_SPAWN_EGG);
                         entries.add(ModItems.WEEPING_PLAYERS_SPAWN_EGG);
+                        entries.add(ModItems.MAD_HATTER_SPAWN_EGG);
+                        entries.add(ModBlocks.MAD_HATTER_SPAWNER_BLOCK.asItem());
 
                         entries.add(ModItems.MAD_HAT_ITEM);
                         entries.add(ModItems.RED_RIDING_HOOD_STORYBOOK.getDefaultStack());
@@ -141,6 +143,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WONDER_GRASS.asItem());
                         entries.add(ModBlocks.RABBIT_HOLE.asItem());
                         entries.add(ModItems.MIRROR);
+
+                        entries.add(ModItems.MAD_HATTER_HEAD_ITEM);
 
                         MinecraftClient client = MinecraftClient.getInstance();
                         if (client.world != null) {

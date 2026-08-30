@@ -55,7 +55,6 @@ public class TeapotBlock extends BlockWithEntity implements BlockEntityProvider 
     private static Map<Direction, VoxelShape> createDirectionalShapes() {
         Map<Direction, VoxelShape> map = new EnumMap<>(Direction.class);
 
-        // --- NORTH Shape ---
         VoxelShape northShape = VoxelShapes.empty();
         northShape = VoxelShapes.combine(northShape, VoxelShapes.cuboid(0.1875, 0.0625, 0.3125, 0.8125, 0.4375, 0.6875), BooleanBiFunction.OR);
         northShape = VoxelShapes.combine(northShape, VoxelShapes.cuboid(0.25, 0.4375, 0.375, 0.75, 0.5, 0.625), BooleanBiFunction.OR);
@@ -132,7 +131,7 @@ public class TeapotBlock extends BlockWithEntity implements BlockEntityProvider 
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> tooltip, TooltipContext options) {
-        tooltip.add(Text.translatable("block.dtrhmod.teapot.tooltip").formatted(Formatting.BOLD, Formatting.GRAY));
+        tooltip.add(Text.translatable("block.dtrhmod.teapot.tooltip").formatted(Formatting.RED));
     }
 
     @Nullable

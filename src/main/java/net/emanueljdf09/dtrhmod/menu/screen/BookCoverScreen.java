@@ -60,6 +60,8 @@ public class BookCoverScreen extends Screen {
 
             if ("wonderland_intro".equals(triggerKey)) {
                 coverTexture = new Identifier(DownTheRabbitHole.MOD_ID, "textures/gui/storybooks/enter_wonder_cover.png");
+            } else if ("mad_hatter_intro".equals(triggerKey)) {
+                coverTexture = new Identifier(DownTheRabbitHole.MOD_ID, "textures/gui/storybooks/enter_wonder_cover.png");
             } else {
                 coverTexture = COVER_TEXTURE;
             }

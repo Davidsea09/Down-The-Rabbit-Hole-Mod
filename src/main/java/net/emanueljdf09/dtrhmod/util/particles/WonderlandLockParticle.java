@@ -7,21 +7,32 @@ import net.minecraft.particle.DefaultParticleType;
 public class WonderlandLockParticle extends SpriteBillboardParticle {
     protected WonderlandLockParticle(ClientWorld clientWorld, double x, double y, double z, double vx, double vy, double vz, SpriteProvider spriteProvider) {
         super(clientWorld, x, y, z, vx, vy, vz);
-        this.ascending = true;
-        this.velocityMultiplier = 0.86F;
-        this.velocityX *= (double)0.01F;
-        this.velocityY *= (double)0.01F;
-        this.velocityZ *= (double)0.01F;
-        this.velocityY += 0.1;
-        this.scale *= 1.5F;
-        this.maxAge = 16;
+
+        this.velocityX = vx * 0.1D + (Math.random() * 2.0D - 1.0D) * 0.05D;
+        this.velocityY = vy + 0.05D;
+        this.velocityZ = vz * 0.1D + (Math.random() * 2.0D - 1.0D) * 0.05D;
+
+        this.scale *= 1.2F + (random.nextFloat() - 0.5F) * 0.4F;
+        this.maxAge = (int)(20.0D / (Math.random() * 0.8D + 0.2D));
         this.collidesWithWorld = false;
+
         this.setSpriteForAge(spriteProvider);
     }
 
     @Override
     public ParticleTextureSheet getType() {
-        return ParticleTextureSheet.PARTICLE_SHEET_OPAQUE;
+        return ParticleTextureSheet.PARTICLE_SHEET_TRANSLUCENT;
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+
+        if (!this.dead) {
+            this.alpha = (float) (this.maxAge - this.age) / this.maxAge;
+        }
+
+        this.scale += 0.02F;
     }
 
     public static class Factory implements ParticleFactory<DefaultParticleType> {

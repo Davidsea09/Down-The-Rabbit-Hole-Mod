@@ -4,11 +4,14 @@ import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import com.terraformersmc.terraform.boat.impl.item.TerraformBoatItem;
 import net.emanueljdf09.dtrhmod.DownTheRabbitHole;
 import net.emanueljdf09.dtrhmod.block.ModBlocks;
+import net.emanueljdf09.dtrhmod.block.custom.head.ModHeadBlock;
+import net.emanueljdf09.dtrhmod.block.custom.head.ModHeadType;
 import net.emanueljdf09.dtrhmod.entity.ModBoats;
 import net.emanueljdf09.dtrhmod.entity.ModEntities;
 import net.emanueljdf09.dtrhmod.item.block.ExteriorChestItem;
 import net.emanueljdf09.dtrhmod.item.block.ExteriorDoorItem;
 import net.emanueljdf09.dtrhmod.item.block.MadHatItem;
+import net.emanueljdf09.dtrhmod.item.block.ModHeadBlockItem;
 import net.emanueljdf09.dtrhmod.item.custom.DynamicTeaCupItem;
 import net.emanueljdf09.dtrhmod.item.custom.StoryBook;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -81,6 +84,16 @@ public class ModItems {
     public static final Item WEEPING_PLAYERS_SPAWN_EGG = registerItem("weeping_players_spawn_egg",
             new SpawnEggItem(ModEntities.WEEPING_PLAYER, 0x727070, 0x211e1e,
                     new FabricItemSettings()));
+
+    public static final Item MAD_HATTER_SPAWN_EGG = registerItem("mad_hatter_spawn_egg",
+            new SpawnEggItem(ModEntities.MAD_HATTER,0x628239,  0x55456d,
+                    new FabricItemSettings()));
+
+    public static final Item MAD_HATTER_HEAD_ITEM = Registry.register(
+            Registries.ITEM,
+            new Identifier(DownTheRabbitHole.MOD_ID, "mad_hatter_head"),
+            new ModHeadBlockItem(ModHeadType.MAD_HATTER, ModBlocks.MAD_HATTER_HEAD, ModBlocks.MAD_HATTER_WALL_HEAD, new Item.Settings().maxCount(64))
+    );
 
     public static final Item WW_SIGN = registerItem("ww_sign",
             new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.WW_SIGN, ModBlocks.WALL_WW_SIGN));

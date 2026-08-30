@@ -31,5 +31,14 @@ public interface ProgressionComponent extends Component {
     boolean hasMetInOverworld();
     void setMetInOverworld(boolean met);
 
+    boolean hasMetMadHatter();
+    void setMetMadHatter(boolean met);
+
+    boolean hasWonMadHatterTrivia();
+    void setWonMadHatterTrivia(boolean won);
+
+    boolean hasKilledMadHatter();
+    void setKilledMadHatter(boolean killed);
+
     void reset();
 }

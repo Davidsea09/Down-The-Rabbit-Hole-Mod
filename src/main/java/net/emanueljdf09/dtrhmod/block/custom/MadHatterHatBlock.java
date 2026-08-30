@@ -8,8 +8,10 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Equipment;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.state.StateManager;
@@ -26,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class MadHatterHatBlock extends BlockWithEntity implements BlockEntityProvider {
+public class MadHatterHatBlock extends BlockWithEntity implements BlockEntityProvider, Equipment {
     public static final EnumProperty<HatState> STATE = EnumProperty.of("state", HatState.class);
 
     private static final VoxelShape IDLE_SHAPE = Block.createCuboidShape(3.0, 0.0, 3.0, 13.0, 10.0, 13.0);
@@ -130,5 +132,10 @@ public class MadHatterHatBlock extends BlockWithEntity implements BlockEntityPro
         private final String name;
         HatState(String name) { this.name = name; }
         @Override public String asString() { return this.name; }
+    }
+
+    @Override
+    public EquipmentSlot getSlotType() {
+        return EquipmentSlot.HEAD;
     }
 }

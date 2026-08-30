@@ -113,7 +113,7 @@ public class WhiteRabbitEntity extends PathAwareEntity implements GeoEntity {
                         this.getLookControl().lookAt(closestPlayer, 30.0F, 30.0F);
                     }
 
-                    if (greetTicks >= 40) { // 2 seconds
+                    if (greetTicks >= 40) {
                         setGreeting(false);
                         greetTicks = 0;
                         setReturning(true);

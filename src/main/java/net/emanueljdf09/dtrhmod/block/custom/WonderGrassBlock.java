@@ -2,6 +2,11 @@ package net.emanueljdf09.dtrhmod.block.custom;
 
 import net.emanueljdf09.dtrhmod.block.ModBlocks;
 import net.minecraft.block.*;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.item.ItemStack;
+import net.minecraft.loot.context.LootContextParameterSet;
+import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -9,6 +14,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.chunk.light.ChunkLightProvider;
+
+import java.util.List;
 
 
 public class WonderGrassBlock extends GrassBlock {
@@ -51,5 +58,15 @@ public class WonderGrassBlock extends GrassBlock {
         return canSurvive(state, world, pos) && !world.getFluidState(blockPos).isIn(FluidTags.WATER);
     }
 
+    @Override
+    public List<ItemStack> getDroppedStacks(BlockState state, LootContextParameterSet.Builder builder) {
+        ItemStack tool = builder.get(LootContextParameters.TOOL);
+
+        if (tool != null && EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, tool) > 0) {
+            return List.of(new ItemStack(this));
+        }
+
+        return List.of(new ItemStack(ModBlocks.WONDER_DIRT));
+    }
 
 }

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "dtrhmod:block/hh_planks",
-    "side": "dtrhmod:block/hh_planks",
-    "top": "dtrhmod:block/hh_planks"
-  }
-}
