@@ -1,8 +1,10 @@
 package net.emanueljdf09.dtrhmod.entity;
 
 import net.emanueljdf09.dtrhmod.DownTheRabbitHole;
+import net.emanueljdf09.dtrhmod.entity.custom.MadHatterEntity;
 import net.emanueljdf09.dtrhmod.entity.custom.WeepingPlayerEntity;
 import net.emanueljdf09.dtrhmod.entity.custom.WhiteRabbitEntity;
+import net.emanueljdf09.dtrhmod.entity.projectile.TeapotProjectile;
 import net.emanueljdf09.dtrhmod.world.dimension.ModDimensions;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -14,6 +16,12 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.Heightmap;
 
 public class ModEntities {
+
+    public static EntityType<TeapotProjectile> TEAPOT_PROJECTILE = Registry.register(
+            Registries.ENTITY_TYPE, new Identifier(DownTheRabbitHole.MOD_ID, "teapot_projectile"),
+            FabricEntityTypeBuilder.<TeapotProjectile>create(SpawnGroup.MISC, TeapotProjectile::new)
+                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build()
+    );
 
     public static EntityType<WhiteRabbitEntity> WHITE_RABBIT = Registry.register(
             Registries.ENTITY_TYPE, new Identifier(DownTheRabbitHole.MOD_ID, "white_rabbit"),
@@ -27,7 +35,11 @@ public class ModEntities {
                             .dimensions(EntityDimensions.fixed(0.8f, 2.25f)).build()
     );
 
-
+    public static EntityType<MadHatterEntity> MAD_HATTER = Registry.register(
+            Registries.ENTITY_TYPE, new Identifier(DownTheRabbitHole.MOD_ID, "mad_hatter"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, MadHatterEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.8f, 2.25f)).build()
+    );
 
 
 
@@ -35,6 +47,7 @@ public class ModEntities {
         DownTheRabbitHole.LOGGER.info("Registering ModEntities for " + DownTheRabbitHole.MOD_ID);
         FabricDefaultAttributeRegistry.register(ModEntities.WHITE_RABBIT, WhiteRabbitEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.WEEPING_PLAYER, WeepingPlayerEntity.setAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.MAD_HATTER, MadHatterEntity.setAttributes());
     }
 
 }

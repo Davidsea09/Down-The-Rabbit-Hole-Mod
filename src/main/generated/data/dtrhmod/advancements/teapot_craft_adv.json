@@ -1,0 +1,29 @@
+{
+  "parent": "dtrhmod:exterior_complete",
+  "criteria": {
+    "teapot_craft_adv": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.dtrhmod.teapot_craft_adv.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dtrhmod:teapot_block"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dtrhmod.teapot_craft_adv.title"
+    }
+  },
+  "requirements": [
+    [
+      "teapot_craft_adv"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

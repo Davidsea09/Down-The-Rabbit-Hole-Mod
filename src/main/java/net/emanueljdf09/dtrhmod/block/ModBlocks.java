@@ -6,7 +6,11 @@ import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.emanueljdf09.dtrhmod.DownTheRabbitHole;
 import net.emanueljdf09.dtrhmod.block.custom.*;
+import net.emanueljdf09.dtrhmod.block.custom.head.ModHeadBlock;
+import net.emanueljdf09.dtrhmod.block.custom.head.ModHeadType;
+import net.emanueljdf09.dtrhmod.block.custom.head.ModWallHeadBlock;
 import net.emanueljdf09.dtrhmod.block.custom.mirror.MirrorBlock;
+import net.emanueljdf09.dtrhmod.block.custom.spawn.MadHatterSpawnerBlock;
 import net.emanueljdf09.dtrhmod.world.features.ModConfiguredFeatures;
 import net.emanueljdf09.dtrhmod.world.features.tree.sapling.BbSaplingGenerator;
 import net.emanueljdf09.dtrhmod.world.features.tree.sapling.HhSaplingGenerator;
@@ -294,6 +298,15 @@ public class ModBlocks {
 
     public static final Block HH_LEAVES = registerBlockWithItem("hh_leaves",
             new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).strength(0.2f).nonOpaque()));
+
+    public static final Block MAD_HATTER_HEAD = registerBlock("mad_hatter_head",
+            new ModHeadBlock(ModHeadType.MAD_HATTER, FabricBlockSettings.copyOf(Blocks.PLAYER_HEAD)));
+
+    public static final Block MAD_HATTER_WALL_HEAD = registerBlock("mad_hatter_wall_head",
+            new ModWallHeadBlock(ModHeadType.MAD_HATTER, FabricBlockSettings.copyOf(Blocks.PLAYER_WALL_HEAD).dropsLike(MAD_HATTER_HEAD)));
+
+    public static final Block MAD_HATTER_SPAWNER_BLOCK = registerBlockWithItem("mad_hatter_spawner_block",
+            new MadHatterSpawnerBlock(FabricBlockSettings.copyOf(Blocks.BLACK_WOOL)));
 
 
     public static BlockFamily TH_FAMILY = BlockFamilies.register(ModBlocks.TH_PLANKS)

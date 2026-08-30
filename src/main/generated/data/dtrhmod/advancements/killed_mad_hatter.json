@@ -1,0 +1,29 @@
+{
+  "parent": "dtrhmod:boss_root",
+  "criteria": {
+    "killed_mad_hatter": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.dtrhmod.mad_hatter_kill.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "dtrhmod:mad_hatter_head"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dtrhmod.mad_hatter_kill.title"
+    }
+  },
+  "requirements": [
+    [
+      "killed_mad_hatter"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -4,6 +4,20 @@ import net.emanueljdf09.dtrhmod.block.ModBlocks;
 import net.emanueljdf09.dtrhmod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.MatchToolLootCondition;
+import net.minecraft.loot.context.LootContextType;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.predicate.NumberRange;
+import net.minecraft.predicate.item.EnchantmentPredicate;
+import net.minecraft.predicate.item.ItemPredicate;
+import net.minecraft.util.Identifier;
+
+import java.util.function.BiConsumer;
 
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public ModLootTableProvider(FabricDataOutput dataOutput) {
@@ -14,11 +28,12 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
 
         flowerbedDrops(ModBlocks.LAWN_DAISY_PATCH);
-        addDropWithSilkTouch(ModBlocks.WONDER_GRASS, ModBlocks.WONDER_DIRT);
         addDrop(ModBlocks.WONDER_DIRT);
         addDrop(ModBlocks.TEAPOT_BLOCK);
 
-        addDrop(ModBlocks.MIRROR_BLOCK);
+        addDrop(ModBlocks.MAD_HATTER_HEAD);
+
+        addDrop(ModBlocks.MIRROR_BLOCK, doorDrops(ModBlocks.MIRROR_BLOCK));
         addDrop(ModBlocks.BLUE_MUSHROOM);
         mushroomBlockDrops(ModBlocks.BLUE_MUSHROOM_BLOCK, ModBlocks.BLUE_MUSHROOM);
         addDrop(ModBlocks.MAGENTA_MUSHROOM);
@@ -105,3 +120,4 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.HH_LEAVES, leavesDrops(ModBlocks.HH_LEAVES, ModBlocks.HH_SAPLING, 0.0025f));
     }
 }
+

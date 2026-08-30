@@ -298,6 +298,10 @@ public class ModLanguageProvider extends FabricLanguageProvider {
                 Without a second thought, Alice chased after him across the grass, straight toward the base of a massive, ancient oak tree where he tumbled down into the dark earth.
                 """);
 
+        builder.add("storybook.mad_hatter.intro.text",
+                "Welcome to my eternal tea party, traveler!\n\nSit down, have a cup of tea, and let's see if your mind is as sharp as a pocket watch.");
+
+
         // Entities
         builder.add(ModItems.WHITE_RABBIT_SPAWN_EGG, "White Rabbit Spawn Egg (WIP)");
         builder.add(ModEntities.WHITE_RABBIT, "White Rabbit");
@@ -308,6 +312,41 @@ public class ModLanguageProvider extends FabricLanguageProvider {
 
         builder.add(ModItems.WEEPING_PLAYERS_SPAWN_EGG, "Weeping Player Spawn Egg (WIP)");
         builder.add(ModEntities.WEEPING_PLAYER, "Weeping Player");
+
+        builder.add(ModItems.MAD_HATTER_SPAWN_EGG, "Mad Hatter Spawn Egg (WIP)");
+        builder.add(ModEntities.MAD_HATTER, "Mad Hatter");
+        builder.add(ModBlocks.MAD_HATTER_HEAD, "Mad Hatter Head");
+        builder.add(ModBlocks.MAD_HATTER_SPAWNER_BLOCK, "Mad Hatter Spawner Block");
+        builder.add("entity.dtrhmod.mad_hatter.trivia_fail", "You failed my quiz, prepare to die!");
+        builder.add("entity.dtrhmod.mad_hatter.trivia_start", "Mad Hatter: Let us see how your mind works! Answer my riddles...");
+        builder.add("entity.dtrhmod.mad_hatter.trivia_pass", "Mad Hatter: Splendid! You actually passed my tea party test. Off with you!");
+        builder.add("entity.dtrhmod.mad_hatter.not_playing", "Mad Hatter: You aren't playing my game right now!");
+        builder.add("entity.dtrhmod.mad_hatter.feedback_prefix", "Mad Hatter: ");
+        builder.add("entity.dtrhmod.mad_hatter.riddle_header", "Riddle %s/3: %s");
+
+        // Riddle 1: Raven
+        builder.add("riddle.dtrhmod.raven", "Why is a raven like a writing-desk?");
+        builder.add("riddle.dtrhmod.raven.success", "Splendid! Edgar Allan Poe would be proud!");
+        builder.add("riddle.dtrhmod.raven.failure", "Ha! Not even close, the raven keeps its secrets!");
+        builder.add("riddle.dtrhmod.raven.opt1", "Because it can produce a few notes.");
+        builder.add("riddle.dtrhmod.raven.opt2", "Nobody knows!");
+        builder.add("riddle.dtrhmod.raven.opt3", "It has wings.");
+
+        // Riddle 2
+        builder.add("riddle.dtrhmod.tea", "What color is a tea party without tea?");
+        builder.add("riddle.dtrhmod.tea.success", "Brilliant! Colormatch perfection!");
+        builder.add("riddle.dtrhmod.tea.failure", "Oh dear, a colorless disaster of a guess!");
+        builder.add("riddle.dtrhmod.tea.opt1", "Transparent");
+        builder.add("riddle.dtrhmod.tea.opt2", "White");
+        builder.add("riddle.dtrhmod.tea.opt3", "Invisible");
+
+        // Riddle 3
+        builder.add("riddle.dtrhmod.hand", "Which hand is best for stirring tea?");
+        builder.add("riddle.dtrhmod.hand.success", "Correct! You clearly know your cutlery!");
+        builder.add("riddle.dtrhmod.hand.failure", "Utter madness! You'll spill the china!");
+        builder.add("riddle.dtrhmod.hand.opt1", "Your right hand.");
+        builder.add("riddle.dtrhmod.hand.opt2", "Your left hand.");
+        builder.add("riddle.dtrhmod.hand.opt3", "A spoon!");
 
         // Items
         builder.add(ModItems.POCKETWATCH, "Pocketwatch");
@@ -448,11 +487,27 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         builder.add("advancement.dtrhmod.root.title", "Down the Rabbit hole");
         builder.add("advancement.dtrhmod.root.description", "A Very Fairy Tale focused mod!");
 
+        builder.add("advancement.dtrhmod.boss_root.title", "Bosses");
+        builder.add("advancement.dtrhmod.boss_root.description", "All the best people are crazy!");
+
+
+        builder.add("advancement.dtrhmod.secret_root.title", "Secrets");
+        builder.add("advancement.dtrhmod.secret_root.description", "I didn't know this was here...");
+
         builder.add("advancement.dtrhmod.portal.title", "Follow the tunnel...");
         builder.add("advancement.dtrhmod.portal.description", "...into the portal");
 
         builder.add("misc.dtrhmod.biome_locked.title", "This Biome is Locked.");
         builder.add("misc.dtrhmod.biome_locked.description", "Come back later!");
+
+        builder.add("advancement.dtrhmod.mad_hatter_trivia.title", "A Mad Tea Party");
+        builder.add("advancement.dtrhmod.mad_hatter_trivia.description", "Successfully answer the Mad Hatter's riddles.");
+        builder.add( "advancement.dtrhmod.mad_hatter_kill.title", "Off With His Head!");
+        builder.add( "advancement.dtrhmod.mad_hatter_kill.description", "Defeat the Mad Hatter in combat.");
+
+        builder.add( "advancement.dtrhmod.teapot_craft_adv.title", "Anyone want some tea?");
+        builder.add( "advancement.dtrhmod.teapot_craft_adv.description", "Successfully brew tea in a teapot.");
+
 
         // World Gen
 

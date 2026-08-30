@@ -132,7 +132,7 @@ public class MazeLayoutGenerator {
                     continue;
                 }
 
-                String pathName = getPathTemplateName(cell);
+                String pathName = getPathTemplateName(cell, width);
                 if (pathName == null) continue;
 
                 BlockPos cellWorldPos = originPos.add(
@@ -156,7 +156,18 @@ public class MazeLayoutGenerator {
         collector.addPiece(new MazeStructurePiece(templateManager, new Identifier(DownTheRabbitHole.MOD_ID, fullTemplatePath), pos, BlockRotation.NONE));
     }
 
-    private static String getPathTemplateName(MazeCell cell) {
+    private static boolean isFarFromCenter(MazeCell cell, int gridWidth) {
+        int centerX = gridWidth / 2;
+        int centerZ = gridWidth / 2;
+
+        int distX = Math.abs(cell.getGridX() - centerX);
+        int distZ = Math.abs(cell.getGridZ() - centerZ);
+
+        return (distX >= (gridWidth / 3) || distZ >= (gridWidth / 3));
+    }
+
+    private static String getPathTemplateName(MazeCell cell, int gridWidth) {
+        Random random = new Random();
         switch (cell.getType()) {
             case STRAIGHT:
                 if (cell.isNorthOpen() && cell.isSouthOpen()) return "straight_ns";
@@ -178,6 +189,13 @@ public class MazeLayoutGenerator {
                 return "cross_nsew";
 
             case DEAD_END:
+                if (isFarFromCenter(cell, gridWidth) && random.nextFloat() < 0.3f) {
+                    if (cell.isNorthOpen()) return "deadend_treasure_n";
+                    if (cell.isSouthOpen()) return "deadend_treasure_s";
+                    if (cell.isEastOpen()) return "deadend_treasure_e";
+                    return "deadend_treasure_w";
+                }
+
                 if (cell.isNorthOpen()) return "deadend_n";
                 if (cell.isSouthOpen()) return "deadend_s";
                 if (cell.isEastOpen()) return "deadend_e";

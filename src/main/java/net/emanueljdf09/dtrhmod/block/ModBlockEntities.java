@@ -1,13 +1,10 @@
 package net.emanueljdf09.dtrhmod.block;
 
 import net.emanueljdf09.dtrhmod.DownTheRabbitHole;
-import net.emanueljdf09.dtrhmod.block.custom.ExteriorChest;
 import net.emanueljdf09.dtrhmod.block.entity.*;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.emanueljdf09.dtrhmod.block.entity.spawn.MadHatterSpawnerBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.block.entity.HangingSignBlockEntity;
-import net.minecraft.block.entity.SignBlockEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -43,9 +40,20 @@ public class ModBlockEntities {
             Registry.register(
                     Registries.BLOCK_ENTITY_TYPE,
                     new Identifier(DownTheRabbitHole.MOD_ID, "mad_hatter_hat_be"),
-                    FabricBlockEntityTypeBuilder.create(MadHatterHatBlockEntity::new, ModBlocks.MAD_HATTER_HAT).build()
-            );
+                    FabricBlockEntityTypeBuilder.create(MadHatterHatBlockEntity::new, ModBlocks.MAD_HATTER_HAT).build());
 
+    public static final BlockEntityType<ModHeadBlockEntity> MOD_HEAD_BE =
+            Registry.register(
+                    Registries.BLOCK_ENTITY_TYPE,
+                    new Identifier(DownTheRabbitHole.MOD_ID, "mod_head_be"),
+                    FabricBlockEntityTypeBuilder.create(ModHeadBlockEntity::new, ModBlocks.MAD_HATTER_HEAD, ModBlocks.MAD_HATTER_WALL_HEAD).build());
+
+
+    public static final BlockEntityType<MadHatterSpawnerBlockEntity> MAD_HATTER_SPAWNER_BE =
+            Registry.register(
+                    Registries.BLOCK_ENTITY_TYPE,
+                    new Identifier(DownTheRabbitHole.MOD_ID, "mad_hatter_spawner_be"),
+                    FabricBlockEntityTypeBuilder.create(MadHatterSpawnerBlockEntity::new, ModBlocks.MAD_HATTER_SPAWNER_BLOCK).build());
 
 
     public static void registerBlockEnities() {

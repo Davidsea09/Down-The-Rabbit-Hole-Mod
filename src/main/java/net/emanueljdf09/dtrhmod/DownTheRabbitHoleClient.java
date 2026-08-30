@@ -4,12 +4,10 @@ import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import net.emanueljdf09.dtrhmod.block.ModBlockEntities;
 import net.emanueljdf09.dtrhmod.block.ModBlocks;
-import net.emanueljdf09.dtrhmod.block.models.renderers.ExteriorChestRenderer;
-import net.emanueljdf09.dtrhmod.block.models.renderers.ExteriorDoorRenderer;
-import net.emanueljdf09.dtrhmod.block.models.renderers.MadHatterHatBlockEntityRenderer;
-import net.emanueljdf09.dtrhmod.block.models.renderers.MirrorBlockEntityRenderer;
+import net.emanueljdf09.dtrhmod.block.models.renderers.*;
 import net.emanueljdf09.dtrhmod.entity.ModBoats;
 import net.emanueljdf09.dtrhmod.entity.ModEntities;
+import net.emanueljdf09.dtrhmod.entity.client.renderers.MadHatterRenderer;
 import net.emanueljdf09.dtrhmod.entity.client.renderers.WeepingPlayerRenderer;
 import net.emanueljdf09.dtrhmod.entity.client.renderers.WhiteRabbitRenderer;
 import net.emanueljdf09.dtrhmod.item.ModItems;
@@ -37,6 +35,7 @@ import net.minecraft.client.color.world.GrassColors;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
+import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -162,6 +161,9 @@ public class DownTheRabbitHoleClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MAGENTA_MUSHROOM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TEAPOT_BLOCK, RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MAD_HATTER_HEAD, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MAD_HATTER_WALL_HEAD, RenderLayer.getCutout());
+
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MAD_HATTER_HAT, RenderLayer.getCutout());
 
         TerraformBoatClientHelper.registerModelLayers(ModBoats.BB_BOAT_ID, false);
@@ -174,10 +176,15 @@ public class DownTheRabbitHoleClient implements ClientModInitializer {
         BlockEntityRendererRegistry.register(ModBlockEntities.EXTERIOR_DOOR_ENTITY, ExteriorDoorRenderer::new);
         BlockEntityRendererRegistry.register(ModBlockEntities.EXTERIOR_CHEST_ENTITY, ExteriorChestRenderer::new);
 
+        BlockEntityRendererRegistry.register(ModBlockEntities.MOD_HEAD_BE, ModHeadBlockEntityRenderer::new);
+
         BlockEntityRendererRegistry.register(ModBlockEntities.MAD_HATTER_HAT, MadHatterHatBlockEntityRenderer::new);
 
         EntityRendererRegistry.register(ModEntities.WHITE_RABBIT, WhiteRabbitRenderer::new);
         EntityRendererRegistry.register(ModEntities.WEEPING_PLAYER, WeepingPlayerRenderer::new);
+        EntityRendererRegistry.register(ModEntities.MAD_HATTER, MadHatterRenderer::new);
+
+        EntityRendererRegistry.register(ModEntities.TEAPOT_PROJECTILE, FlyingItemEntityRenderer::new);
 
         HandledScreens.register(ModScreenHandlers.TEAPOT_SCREEN_HANDLER, TeapotScreen::new);
 

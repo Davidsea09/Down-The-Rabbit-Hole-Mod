@@ -1,0 +1,29 @@
+{
+  "parent": "dtrhmod:root",
+  "criteria": {
+    "boss_root": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancement.dtrhmod.boss_root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dtrhmod:mad_hatter_spawn_egg"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.dtrhmod.boss_root.title"
+    }
+  },
+  "requirements": [
+    [
+      "boss_root"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

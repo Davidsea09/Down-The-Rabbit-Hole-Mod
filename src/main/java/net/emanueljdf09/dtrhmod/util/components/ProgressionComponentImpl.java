@@ -21,6 +21,10 @@ public class ProgressionComponentImpl implements ProgressionComponent, AutoSynce
     private boolean metWhiteRabbit = false;
     private boolean metInOverworld = false;
 
+    private boolean metMadHatter = false;
+    private boolean wonMadHatterTrivia = false;
+    private boolean killedMadHatter = false;
+
 
     public ProgressionComponentImpl(PlayerEntity player) {
         this.player = player;
@@ -138,6 +142,46 @@ public class ProgressionComponentImpl implements ProgressionComponent, AutoSynce
         return this.wonderlandSpawn;
     }
 
+
+    @Override
+    public boolean hasMetMadHatter() {
+        return this.metMadHatter;
+    }
+
+    @Override
+    public void setMetMadHatter(boolean met) {
+        this.metMadHatter = met;
+        if (player instanceof ServerPlayerEntity serverPlayer) {
+            ModComponents.PROGRESSION_COMPONENT.sync(serverPlayer);
+        }
+    }
+
+    @Override
+    public boolean hasWonMadHatterTrivia() {
+        return this.wonMadHatterTrivia;
+    }
+
+    @Override
+    public void setWonMadHatterTrivia(boolean won) {
+        this.wonMadHatterTrivia = won;
+        if (player instanceof ServerPlayerEntity serverPlayer) {
+            ModComponents.PROGRESSION_COMPONENT.sync(serverPlayer);
+        }
+    }
+
+    @Override
+    public boolean hasKilledMadHatter() {
+        return this.killedMadHatter;
+    }
+
+    @Override
+    public void setKilledMadHatter(boolean killed) {
+        this.killedMadHatter = killed;
+        if (player instanceof ServerPlayerEntity serverPlayer) {
+            ModComponents.PROGRESSION_COMPONENT.sync(serverPlayer);
+        }
+    }
+
     @Override
     public void reset() {
         this.exteriorDone = false;
@@ -149,6 +193,9 @@ public class ProgressionComponentImpl implements ProgressionComponent, AutoSynce
         this.completedStages = 0;
         this.metWhiteRabbit = false;
         this.metInOverworld = false;
+        this.metMadHatter = false;
+        this.wonMadHatterTrivia = false;
+        this.killedMadHatter = false;
 
         if (player instanceof ServerPlayerEntity serverPlayer) {
             ModComponents.PROGRESSION_COMPONENT.sync(serverPlayer);
@@ -165,6 +212,9 @@ public class ProgressionComponentImpl implements ProgressionComponent, AutoSynce
         completedStages = nbtCompound.getInt("CompletedStages");
         this.metWhiteRabbit = nbtCompound.getBoolean("MetWhiteRabbit");
         this.metInOverworld = nbtCompound.getBoolean("MetInOverworld");
+        this.metMadHatter = nbtCompound.getBoolean("MetMadHatter");
+        this.wonMadHatterTrivia = nbtCompound.getBoolean("WonMadHatterTrivia");
+        this.killedMadHatter = nbtCompound.getBoolean("KilledMadHatter");
 
         if (nbtCompound.contains("wonderlandSpawn", 10)) {
             this.wonderlandSpawn = NbtHelper.toBlockPos(nbtCompound.getCompound("wonderlandSpawn"));
@@ -183,11 +233,12 @@ public class ProgressionComponentImpl implements ProgressionComponent, AutoSynce
         nbtCompound.putInt("CompletedStages", this.completedStages);
         nbtCompound.putBoolean("MetWhiteRabbit", this.metWhiteRabbit);
         nbtCompound.putBoolean("MetInOverworld", this.metInOverworld);
+        nbtCompound.putBoolean("MetMadHatter", this.metMadHatter);
+        nbtCompound.putBoolean("WonMadHatterTrivia", this.wonMadHatterTrivia);
+        nbtCompound.putBoolean("KilledMadHatter", this.killedMadHatter);
 
         if (this.wonderlandSpawn != null) {
             nbtCompound.put("wonderlandSpawn", NbtHelper.fromBlockPos(this.wonderlandSpawn));
         }
-
     }
-
 }

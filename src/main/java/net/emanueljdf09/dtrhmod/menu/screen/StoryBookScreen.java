@@ -112,6 +112,12 @@ public class StoryBookScreen extends Screen {
             this.contents = createTranslatableContents(
                     "storybook.wonderland.intro.text"
             );
+        } else if ("mad_hatter_intro".equals(triggerKey)) {
+            bookTexture = new Identifier(DownTheRabbitHole.MOD_ID, "textures/gui/storybooks/enter_wonder_open.png");
+
+            this.contents = createTranslatableContents(
+                    "storybook.mad_hatter.intro.text"
+            );
         } else {
             bookTexture = BOOK_TEXTURE;
             this.contents = EMPTY_PROVIDER;

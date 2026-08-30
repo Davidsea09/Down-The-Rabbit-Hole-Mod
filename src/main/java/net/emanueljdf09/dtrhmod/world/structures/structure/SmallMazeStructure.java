@@ -28,7 +28,7 @@ public class SmallMazeStructure extends Structure {
 
             int surfaceY = context.chunkGenerator().getHeight(centerPos.getX(), centerPos.getZ(), Heightmap.Type.WORLD_SURFACE_WG, context.world(), noiseConfig);
 
-            int dimension = MazeLayoutGenerator.MazeSize.LARGE.getDimension();
+            int dimension = MazeLayoutGenerator.MazeSize.SMALL.getDimension();
             int totalWidthBlocks = dimension * MODULE_SIZE;
 
             BlockPos originPos = new BlockPos(

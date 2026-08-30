@@ -1,9 +1,11 @@
 package net.emanueljdf09.dtrhmod.block.entity;
 
+import net.emanueljdf09.dtrhmod.DownTheRabbitHole;
 import net.emanueljdf09.dtrhmod.block.ModBlockEntities;
 import net.emanueljdf09.dtrhmod.item.ModItems;
 import net.emanueljdf09.dtrhmod.menu.handler.TeapotScreenHandler;
 import net.emanueljdf09.dtrhmod.recipe.TeapotRecipe;
+import net.emanueljdf09.dtrhmod.util.AdvancementUtil;
 import net.emanueljdf09.dtrhmod.util.ImplementedInventory;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
@@ -25,12 +27,16 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Optional;
 
 public class TeapotBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
@@ -167,6 +173,16 @@ public class TeapotBlockEntity extends BlockEntity implements ExtendedScreenHand
             this.setStack(BUCKET_SLOT, new ItemStack(bucketStack.getItem().getRecipeRemainder()));
         } else {
             bucketStack.decrement(1);
+        }
+
+        if (!this.getWorld().isClient()) {
+            ServerWorld serverWorld = (ServerWorld) this.getWorld();
+            Box box = new Box(pos).expand(5.0);
+            List<ServerPlayerEntity> nearbyPlayers = serverWorld.getEntitiesByClass(ServerPlayerEntity.class, box, player -> true);
+
+            for (ServerPlayerEntity player : nearbyPlayers) {
+                AdvancementUtil.grant(player, new Identifier(DownTheRabbitHole.MOD_ID, "teapot_craft_adv"));
+            }
         }
     }
 

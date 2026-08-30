@@ -91,7 +91,7 @@ public class TeleportUtil {
 
         player.getWorld().playSound(null, hatPos, SoundEvents.BLOCK_PORTAL_TRAVEL, SoundCategory.BLOCKS, 0.4f, 0.5f);
 
-        ACTIVE_HAT_TRANCES.put(uuid, new HatTranceData(hatPos, targetDim, isInstance, structureId, originDim, ownerUuid, 30)); // 30 ticks = 1.5 seconds
+        ACTIVE_HAT_TRANCES.put(uuid, new HatTranceData(hatPos, targetDim, isInstance, structureId, originDim, ownerUuid, 30));
     }
 
     public static void tickHatTrances(MinecraftServer server) {
@@ -312,7 +312,7 @@ public class TeleportUtil {
 
         destWorld.getChunk(chunkPos.x, chunkPos.z);
 
-        BlockPos surfacePos = findCustomSurface(destWorld, targetPos.getX(), targetPos.getZ(), 120);
+        BlockPos surfacePos = findCustomSurface(destWorld, finalTargetPos.getX(), finalTargetPos.getZ(), 120);
 
         teleport(player, targetDim, surfacePos.getX() + 0.5, surfacePos.getY() + 1.0, surfacePos.getZ() + 0.5);
         player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 600, 0));

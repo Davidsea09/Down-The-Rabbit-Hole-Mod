@@ -21,6 +21,8 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerFlowerbed(ModBlocks.LAWN_DAISY_PATCH);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MAD_HATTER_SPAWNER_BLOCK);
+
         blockStateModelGenerator.registerMushroomBlock(ModBlocks.BLUE_MUSHROOM_BLOCK);
         blockStateModelGenerator.registerTintableCross(ModBlocks.BLUE_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerMushroomBlock(ModBlocks.YELLOW_MUSHROOM_BLOCK);
@@ -65,7 +67,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerParentedItemModel(ModItems.WHITE_RABBIT_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
         blockStateModelGenerator.registerParentedItemModel(ModItems.WEEPING_PLAYERS_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
-
+        blockStateModelGenerator.registerParentedItemModel(ModItems.MAD_HATTER_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
 
 
 
