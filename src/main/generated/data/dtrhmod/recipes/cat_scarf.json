@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "dtrhmod:cat_fur"
+    },
+    "W": {
+      "item": "minecraft:black_wool"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "CWC",
+    "C W"
+  ],
+  "result": {
+    "item": "dtrhmod:cat_scarf"
+  },
+  "show_notification": true
+}

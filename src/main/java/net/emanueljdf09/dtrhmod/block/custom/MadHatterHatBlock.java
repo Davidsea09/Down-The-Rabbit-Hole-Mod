@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class MadHatterHatBlock extends BlockWithEntity implements BlockEntityProvider, Equipment {
+public class MadHatterHatBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final EnumProperty<HatState> STATE = EnumProperty.of("state", HatState.class);
 
     private static final VoxelShape IDLE_SHAPE = Block.createCuboidShape(3.0, 0.0, 3.0, 13.0, 10.0, 13.0);
@@ -132,10 +132,5 @@ public class MadHatterHatBlock extends BlockWithEntity implements BlockEntityPro
         private final String name;
         HatState(String name) { this.name = name; }
         @Override public String asString() { return this.name; }
-    }
-
-    @Override
-    public EquipmentSlot getSlotType() {
-        return EquipmentSlot.HEAD;
     }
 }

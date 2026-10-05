@@ -4,6 +4,7 @@ import net.emanueljdf09.dtrhmod.DownTheRabbitHole;
 import net.emanueljdf09.dtrhmod.block.ModBlocks;
 import net.emanueljdf09.dtrhmod.entity.ai.goals.mad_hatter.MadHatterBossBehaviorGoal;
 import net.emanueljdf09.dtrhmod.item.ModItems;
+import net.emanueljdf09.dtrhmod.util.AdvancementUtil;
 import net.emanueljdf09.dtrhmod.util.ModComponents;
 import net.emanueljdf09.dtrhmod.util.ModPackets;
 import net.emanueljdf09.dtrhmod.util.WonderlandProgressionUtil;
@@ -305,12 +306,7 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
                 if (!progression.hasKilledMadHatter()) {
                     progression.setKilledMadHatter(true);
 
-                    Advancement advancement = serverPlayer.getServer().getAdvancementLoader()
-                            .get(new Identifier(DownTheRabbitHole.MOD_ID, "killed_mad_hatter"));
-                    if (advancement != null) {
-                        serverPlayer.getAdvancementTracker().grantCriterion(advancement, "killed_mad_hatter");
-                    }
-
+                    AdvancementUtil.grant(serverPlayer, new Identifier(DownTheRabbitHole.MOD_ID, "killed_mad_hatter"));
                     dropBossLoot();
 
                     WonderlandProgressionUtil.triggerMilestone(serverPlayer, 3, null);

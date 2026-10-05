@@ -10,7 +10,9 @@ import net.emanueljdf09.dtrhmod.block.custom.head.ModHeadBlock;
 import net.emanueljdf09.dtrhmod.block.custom.head.ModHeadType;
 import net.emanueljdf09.dtrhmod.block.custom.head.ModWallHeadBlock;
 import net.emanueljdf09.dtrhmod.block.custom.mirror.MirrorBlock;
+import net.emanueljdf09.dtrhmod.block.custom.spawn.CheshireCatSpawnerBlock;
 import net.emanueljdf09.dtrhmod.block.custom.spawn.MadHatterSpawnerBlock;
+import net.emanueljdf09.dtrhmod.block.custom.spawn.SingingFlowersSpawnerBlock;
 import net.emanueljdf09.dtrhmod.world.features.ModConfiguredFeatures;
 import net.emanueljdf09.dtrhmod.world.features.tree.sapling.BbSaplingGenerator;
 import net.emanueljdf09.dtrhmod.world.features.tree.sapling.HhSaplingGenerator;
@@ -65,6 +67,9 @@ public class ModBlocks {
     public static final Block EXTERIOR_PORTAL = registerBlockWithItem("exterior_portal",
             new ExteriorPortal(FabricBlockSettings.copyOf(Blocks.MOSS_BLOCK).noCollision()));
 
+    public static final Block FLOWER_PORTAL = registerBlockWithItem("flower_portal",
+            new FlowerPortal(FabricBlockSettings.copyOf(Blocks.MOSS_BLOCK).noCollision()));
+
     public static final Block EXTERIOR_CHEST = registerBlock("exterior_chest",
             new ExteriorChest(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(-1.0f, 3600000.0f)));
 
@@ -85,7 +90,8 @@ public class ModBlocks {
             new WonderGrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).solid()));
     public static final Block WONDER_DIRT = registerBlockWithItem("wonder_dirt",
             new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
-
+    public static final Block WONDER_DIRT_PATH = registerBlockWithItem("wonder_dirt_path",
+            new WonderDirtPathBlock(FabricBlockSettings.copyOf(Blocks.DIRT_PATH)));
 
     public static final Block TH_SAPLING = registerBlockWithItem("th_sapling",
             new SaplingBlock(new ThSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
@@ -307,6 +313,12 @@ public class ModBlocks {
 
     public static final Block MAD_HATTER_SPAWNER_BLOCK = registerBlockWithItem("mad_hatter_spawner_block",
             new MadHatterSpawnerBlock(FabricBlockSettings.copyOf(Blocks.BLACK_WOOL)));
+
+    public static final Block CHESHIRE_CAT_SPAWNER_BLOCK = registerBlockWithItem("cheshire_cat_spawner_block",
+            new CheshireCatSpawnerBlock(FabricBlockSettings.copyOf(Blocks.BLACK_WOOL).noCollision().dropsNothing()));
+
+    public static final Block SINGING_FLOWERS_SPAWNER_BLOCK = registerBlockWithItem("singing_flowers_spawner_block",
+            new SingingFlowersSpawnerBlock(FabricBlockSettings.copyOf(Blocks.BLACK_WOOL).noCollision().dropsNothing()));
 
 
     public static BlockFamily TH_FAMILY = BlockFamilies.register(ModBlocks.TH_PLANKS)

@@ -44,6 +44,7 @@ public class ModBiomes {
         context.register(TULGEY_WOOD, tulgeyForest(context));
         context.register(THE_EXTERIOR, theExterior(context));
         context.register(ENCHANTED_FOREST, enchantedForest(context));
+        context.register(LAND_OF_FLOWERS, enchantedForest(context));
         context.register(VALE_OF_TEARS, valeOfTears(context));
         context.register(CHESSBOARD_FIELDS, chessBoardFields(context));
     }

@@ -24,6 +24,7 @@ public class ProgressionComponentImpl implements ProgressionComponent, AutoSynce
     private boolean metMadHatter = false;
     private boolean wonMadHatterTrivia = false;
     private boolean killedMadHatter = false;
+    private boolean killedSingingFlowers = false;
 
 
     public ProgressionComponentImpl(PlayerEntity player) {
@@ -180,6 +181,20 @@ public class ProgressionComponentImpl implements ProgressionComponent, AutoSynce
         if (player instanceof ServerPlayerEntity serverPlayer) {
             ModComponents.PROGRESSION_COMPONENT.sync(serverPlayer);
         }
+    }
+
+    @Override
+    public boolean hasKilledSingingFlowers() {
+        return killedSingingFlowers;
+    }
+
+    @Override
+    public void setKilledSingingFlowers(boolean killed) {
+        this.killedSingingFlowers = killed;
+        if (player instanceof  ServerPlayerEntity serverPlayer) {
+            ModComponents.PROGRESSION_COMPONENT.sync(serverPlayer);
+        }
+
     }
 
     @Override

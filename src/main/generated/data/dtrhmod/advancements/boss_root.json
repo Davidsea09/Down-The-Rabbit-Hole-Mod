@@ -1,5 +1,5 @@
 {
-  "parent": "dtrhmod:root",
+  "parent": "dtrhmod:exterior_complete",
   "criteria": {
     "boss_root": {
       "trigger": "minecraft:impossible"

@@ -1,9 +1,8 @@
 package net.emanueljdf09.dtrhmod.entity;
 
 import net.emanueljdf09.dtrhmod.DownTheRabbitHole;
-import net.emanueljdf09.dtrhmod.entity.custom.MadHatterEntity;
-import net.emanueljdf09.dtrhmod.entity.custom.WeepingPlayerEntity;
-import net.emanueljdf09.dtrhmod.entity.custom.WhiteRabbitEntity;
+import net.emanueljdf09.dtrhmod.entity.custom.*;
+import net.emanueljdf09.dtrhmod.entity.projectile.SkySeedProjectile;
 import net.emanueljdf09.dtrhmod.entity.projectile.TeapotProjectile;
 import net.emanueljdf09.dtrhmod.world.dimension.ModDimensions;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -29,6 +28,12 @@ public class ModEntities {
                     .dimensions(EntityDimensions.fixed(1f, 1.25f)).build()
     );
 
+    public static EntityType<CheshireCatEntity> CHESHIRE_CAT = Registry.register(
+            Registries.ENTITY_TYPE, new Identifier(DownTheRabbitHole.MOD_ID, "cheshire_cat"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CheshireCatEntity::new)
+                    .dimensions(EntityDimensions.fixed(1f, 1f)).build()
+    );
+
     public static EntityType<WeepingPlayerEntity> WEEPING_PLAYER = Registry.register(
             Registries.ENTITY_TYPE, new Identifier(DownTheRabbitHole.MOD_ID, "weeping_player"),
                     FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, WeepingPlayerEntity::new)
@@ -41,6 +46,25 @@ public class ModEntities {
                     .dimensions(EntityDimensions.fixed(0.8f, 2.25f)).build()
     );
 
+    public static EntityType<SingingFlowerEntity> SINGING_FLOWER = Registry.register(
+            Registries.ENTITY_TYPE, new Identifier(DownTheRabbitHole.MOD_ID, "singing_flower"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, SingingFlowerEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.8f, 2.25f)).build()
+    );
+
+    public static EntityType<VineAnchorEntity> VINE_ANCHOR = Registry.register(
+            Registries.ENTITY_TYPE, new Identifier(DownTheRabbitHole.MOD_ID, "vine_anchor"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MISC, VineAnchorEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.9f, 1.2f))
+                    .trackRangeBlocks(64).trackedUpdateRate(2).build());
+
+    public static EntityType<SkySeedProjectile> SKY_SEED = Registry.register(
+            Registries.ENTITY_TYPE, new Identifier(DownTheRabbitHole.MOD_ID, "sky_seed"),
+            FabricEntityTypeBuilder.<SkySeedProjectile>create(SpawnGroup.MISC, SkySeedProjectile::new)
+                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f))
+                    .trackRangeBlocks(64).trackedUpdateRate(10)
+                    .forceTrackedVelocityUpdates(true).build());
+
 
 
     public static void registerModEntities() {
@@ -48,6 +72,8 @@ public class ModEntities {
         FabricDefaultAttributeRegistry.register(ModEntities.WHITE_RABBIT, WhiteRabbitEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.WEEPING_PLAYER, WeepingPlayerEntity.setAttributes());
         FabricDefaultAttributeRegistry.register(ModEntities.MAD_HATTER, MadHatterEntity.setAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.CHESHIRE_CAT, CheshireCatEntity.setAttributes());
+        FabricDefaultAttributeRegistry.register(ModEntities.SINGING_FLOWER, SingingFlowerEntity.setAttributes());
     }
 
 }

@@ -120,7 +120,7 @@ public class MazeLayoutGenerator {
 
         BlockPos entranceWorldPos = originPos.add(
                 entranceX * MODULE_SIZE,
-                0,
+                -1,
                 entranceZ * MODULE_SIZE
         );
         collector.addPiece(new MazeStructurePiece(templateManager, new Identifier(DownTheRabbitHole.MOD_ID, "maze/entrance_nwe"), entranceWorldPos, BlockRotation.NONE));
@@ -137,7 +137,7 @@ public class MazeLayoutGenerator {
 
                 BlockPos cellWorldPos = originPos.add(
                         x * MODULE_SIZE,
-                        0,
+                        -1,
                         z * MODULE_SIZE
                 );
 
@@ -150,7 +150,7 @@ public class MazeLayoutGenerator {
     private static void placeCenterPiece(StructurePiecesCollector collector, StructureTemplateManager templateManager, BlockPos originPos, int absX, int absZ, String fullTemplatePath) {
         BlockPos pos = originPos.add(
                 absX * MODULE_SIZE,
-                0,
+                -1,
                 absZ * MODULE_SIZE
         );
         collector.addPiece(new MazeStructurePiece(templateManager, new Identifier(DownTheRabbitHole.MOD_ID, fullTemplatePath), pos, BlockRotation.NONE));

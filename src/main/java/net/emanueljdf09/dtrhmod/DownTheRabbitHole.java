@@ -13,6 +13,7 @@ import net.emanueljdf09.dtrhmod.recipe.ModRecipes;
 import net.emanueljdf09.dtrhmod.util.*;
 import net.emanueljdf09.dtrhmod.util.components.ProgressionComponent;
 import net.emanueljdf09.dtrhmod.world.dimension.ModDimensions;
+import net.emanueljdf09.dtrhmod.world.features.ModFeatures;
 import net.emanueljdf09.dtrhmod.world.features.tree.deco.ModTreeDeco;
 import net.emanueljdf09.dtrhmod.world.structures.ModStructurePieces;
 import net.emanueljdf09.dtrhmod.world.structures.ModStructureProcessors;
@@ -22,10 +23,17 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.minecraft.block.BlockState;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.structure.StructurePlacementData;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import org.slf4j.Logger;
@@ -51,6 +59,7 @@ public class DownTheRabbitHole implements ModInitializer {
 		ModBoats.registerBoats();
 		ModParticles.registerParticles();
 		ModEntities.registerModEntities();
+		ModFeatures.register();
 		//ModSpawners.registerModSpawners();
 		ModEffects.registerModEffects();
 		ModEffects.registerBrewingRecipes();
@@ -104,11 +113,35 @@ public class DownTheRabbitHole implements ModInitializer {
 		ServerTickEvents.START_SERVER_TICK.register(TeleportUtil::tickHatTrances);
 		ServerTickEvents.START_SERVER_TICK.register(TeleportUtil::tickBlockTrances);
 
+		UseBlockCallback.EVENT.register(
+				(player, world, hand, hitResult) -> {
+					BlockPos pos = hitResult.getBlockPos();
+					BlockState state = world.getBlockState(pos);
+
+					if (player.getStackInHand(hand).isIn(ItemTags.SHOVELS) && state.isOf(ModBlocks.WONDER_GRASS)) {
+						if (!world.isClient()) {
+							world.setBlockState(pos, ModBlocks.WONDER_DIRT_PATH.getDefaultState());
+							world.playSound(null, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0f, 1.0f);
+							player.getStackInHand(hand).damage(1, player, p -> p.sendToolBreakStatus(hand));
+						}
+						return ActionResult.SUCCESS;
+					}
+					return ActionResult.PASS;
+				});
+
 		ServerTickEvents.END_WORLD_TICK.register(world -> {
 			if (world.getRegistryKey().equals(ModDimensions.STORYBOOK_LEVEL_KEY)) {
 
 				for (ServerPlayerEntity player : new ArrayList<>(world.getPlayers())) {
 					TeleportUtil.checkAndHandleVoidReturn(player);
+				}
+			}
+
+			if (world.getRegistryKey().equals(ModDimensions.LAND_OF_FLOWERS_LEVEL_KEY)) {
+
+				for (ServerPlayerEntity player : new ArrayList<>(world.getPlayers())) {
+					TeleportUtil.checkAndHandleFlowerVoidReturn(player);
+					TeleportUtil.checkGrowthPotionExit(player);
 				}
 			}
 

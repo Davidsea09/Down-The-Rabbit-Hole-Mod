@@ -36,34 +36,6 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                         ChangedDimensionCriterion.Conditions.to(ModDimensions.EXTERIOR_LEVEL_KEY))
                 .build(consumer, DownTheRabbitHole.MOD_ID + ":root");
 
-
-        Advancement boss_root = Advancement.Builder.create()
-                .parent(root)
-                .display(
-                        ModItems.MAD_HATTER_SPAWN_EGG,
-                        Text.translatable("advancement.dtrhmod.boss_root.title"),
-                        Text.translatable("advancement.dtrhmod.boss_root.description"),
-                        null,
-                        AdvancementFrame.TASK,
-                        false, false, false
-                )
-                .criterion("boss_root", new ImpossibleCriterion.Conditions())
-                .build(consumer, DownTheRabbitHole.MOD_ID + ":boss_root");
-
-        Advancement secret_root = Advancement.Builder.create()
-                .parent(root)
-                .display(
-                        ModItems.POCKETWATCH,
-                        Text.translatable("advancement.dtrhmod.secret_root.title"),
-                        Text.translatable("advancement.dtrhmod.secret_root.description"),
-                        null,
-                        AdvancementFrame.GOAL,
-                        false, false, false
-                )
-                .criterion("secret_root", new ImpossibleCriterion.Conditions())
-                .build(consumer, DownTheRabbitHole.MOD_ID + ":secret_root");
-
-
         Advancement portal = Advancement.Builder.create()
                 .parent(root)
                 .display(
@@ -77,6 +49,33 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 .criterion("entered_exterior",
                         ChangedDimensionCriterion.Conditions.to(ModDimensions.EXTERIOR_LEVEL_KEY))
                 .build(consumer, DownTheRabbitHole.MOD_ID + ":exterior_complete");
+
+        Advancement boss_root = Advancement.Builder.create()
+                .parent(portal)
+                .display(
+                        ModItems.MAD_HATTER_SPAWN_EGG,
+                        Text.translatable("advancement.dtrhmod.boss_root.title"),
+                        Text.translatable("advancement.dtrhmod.boss_root.description"),
+                        null,
+                        AdvancementFrame.TASK,
+                        false, false, false
+                )
+                .criterion("boss_root", new ImpossibleCriterion.Conditions())
+                .build(consumer, DownTheRabbitHole.MOD_ID + ":boss_root");
+
+        Advancement secret_root = Advancement.Builder.create()
+                .parent(portal)
+                .display(
+                        ModItems.POCKETWATCH,
+                        Text.translatable("advancement.dtrhmod.secret_root.title"),
+                        Text.translatable("advancement.dtrhmod.secret_root.description"),
+                        null,
+                        AdvancementFrame.TASK,
+                        false, false, false
+                )
+                .criterion("secret_root", new ImpossibleCriterion.Conditions())
+                .build(consumer, DownTheRabbitHole.MOD_ID + ":secret_root");
+
 
         Advancement madHatterTrivia = Advancement.Builder.create()
                 .parent(portal)
@@ -103,6 +102,19 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 )
                 .criterion("killed_mad_hatter", new ImpossibleCriterion.Conditions())
                 .build(consumer, DownTheRabbitHole.MOD_ID + ":killed_mad_hatter");
+
+        Advancement cheshireCatSnitch = Advancement.Builder.create()
+                .parent(portal)
+                .display(
+                        ModItems.CAT_FUR.asItem(),
+                        Text.translatable("advancement.dtrhmod.cheshire_cat_snitch.title"),
+                        Text.translatable("advancement.dtrhmod.cheshire_cat_snitch.description"),
+                        null,
+                        AdvancementFrame.TASK,
+                        true, true, false
+                )
+                .criterion("cheshire_cat_snitch", new ImpossibleCriterion.Conditions())
+                .build(consumer, DownTheRabbitHole.MOD_ID + ":cheshire_cat_snitch");
 
         Advancement teapotCraftAdv = Advancement.Builder.create()
                 .parent(portal)

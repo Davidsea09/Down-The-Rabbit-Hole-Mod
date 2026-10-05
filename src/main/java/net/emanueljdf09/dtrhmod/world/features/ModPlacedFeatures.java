@@ -40,12 +40,13 @@ public class ModPlacedFeatures {
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
+
         register(context, FOREST_ROCKS_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FOREST_ROCKS),
                 List.of(
                         RarityFilterPlacementModifier.of(6),
                         SquarePlacementModifier.of(),
-                        PlacedFeatures.OCEAN_FLOOR_WG_HEIGHTMAP, // Finds the actual floor instead of water surface
-                        SurfaceWaterDepthFilterPlacementModifier.of(0), // Rejects placement if water is present above
+                        PlacedFeatures.OCEAN_FLOOR_WG_HEIGHTMAP,
+                        SurfaceWaterDepthFilterPlacementModifier.of(0),
                         BiomePlacementModifier.of()
                 )
         );

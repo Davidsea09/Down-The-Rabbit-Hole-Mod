@@ -1,5 +1,6 @@
 package net.emanueljdf09.dtrhmod.mixin;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.emanueljdf09.dtrhmod.DownTheRabbitHole;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.BackgroundRenderer;
@@ -58,7 +59,7 @@ public class BackgroundRendererMixin {
         currentFogStart += (targetStart - currentFogStart) * transitionSpeed;
         currentFogEnd += (targetEnd - currentFogEnd) * transitionSpeed;
 
-        com.mojang.blaze3d.systems.RenderSystem.setShaderFogStart(currentFogStart);
-        com.mojang.blaze3d.systems.RenderSystem.setShaderFogEnd(currentFogEnd);
+        RenderSystem.setShaderFogStart(currentFogStart);
+        RenderSystem.setShaderFogEnd(currentFogEnd);
     }
 }

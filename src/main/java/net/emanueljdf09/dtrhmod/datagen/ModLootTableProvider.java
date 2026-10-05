@@ -29,6 +29,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         flowerbedDrops(ModBlocks.LAWN_DAISY_PATCH);
         addDrop(ModBlocks.WONDER_DIRT);
+        addDrop(ModBlocks.WONDER_DIRT_PATH, ModBlocks.WONDER_DIRT);
         addDrop(ModBlocks.TEAPOT_BLOCK);
 
         addDrop(ModBlocks.MAD_HATTER_HEAD);

@@ -348,6 +348,21 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         builder.add("riddle.dtrhmod.hand.opt2", "Your left hand.");
         builder.add("riddle.dtrhmod.hand.opt3", "A spoon!");
 
+        // Cheshire Cat
+        builder.add(ModItems.CHESHIRE_CAT_SPAWN_EGG, "Cheshire Cat Spawn Egg (WIP)");
+        builder.add(ModEntities.CHESHIRE_CAT, "Cheshire Cat");
+        builder.add(ModItems.CAT_SCARF_ITEM, "Cat Scarf");
+        builder.add(ModItems.CAT_FUR, "Cat Fur");
+        builder.add(ModBlocks.CHESHIRE_CAT_SPAWNER_BLOCK, "Cheshire Cat Spawner Block");
+        builder.add("entity.dtrhmod.cheshire_cat.confused1", "Oh, you can't help that, We're all mad here.");
+        builder.add("entity.dtrhmod.cheshire_cat.confused2", "If you don't know where you want to go, then it doesn't matter which path you take.");
+        builder.add("entity.dtrhmod.cheshire_cat.confused3", "What is sought is most often found, if it is truly sought.");
+        builder.add("entity.dtrhmod.cheshire_cat.confused4", "Goodbye, sweet hat.");
+        builder.add("entity.dtrhmod.cheshire_cat.confused5", "That depends a good deal on where you want to get to");
+
+
+        builder.add("entity.dtrhmod.cheshire_cat.tea_party_clue", "Oh, by the way, if you'd really like to know, The mad hatter is roughly %1$d blocks to the %2$s... Or maybe not. Who Knows?'");
+
         // Items
         builder.add(ModItems.POCKETWATCH, "Pocketwatch");
         builder.add(ModItems.EXTERIOR_KEY, "Door Key");
@@ -478,6 +493,7 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         // Foliage
         builder.add(ModBlocks.WONDER_DIRT, "Under Dirt");
         builder.add(ModBlocks.WONDER_GRASS, "Under Grass");
+        builder.add(ModBlocks.WONDER_DIRT_PATH, "Under Dirt Path");
         builder.add(ModBlocks.LAWN_DAISY_PATCH, "Lawn Daisy Patch");
 
         // Extras
@@ -490,6 +506,8 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         builder.add("advancement.dtrhmod.boss_root.title", "Bosses");
         builder.add("advancement.dtrhmod.boss_root.description", "All the best people are crazy!");
 
+        builder.add("advancement.dtrhmod.cheshire_cat_snitch.title", "I think we're all MAD");
+        builder.add("advancement.dtrhmod.cheshire_cat_snitch.description", "Make the Cheshire Cat snitch.");
 
         builder.add("advancement.dtrhmod.secret_root.title", "Secrets");
         builder.add("advancement.dtrhmod.secret_root.description", "I didn't know this was here...");

@@ -12,6 +12,7 @@ import net.emanueljdf09.dtrhmod.item.block.ExteriorChestItem;
 import net.emanueljdf09.dtrhmod.item.block.ExteriorDoorItem;
 import net.emanueljdf09.dtrhmod.item.block.MadHatItem;
 import net.emanueljdf09.dtrhmod.item.block.ModHeadBlockItem;
+import net.emanueljdf09.dtrhmod.item.custom.CatScarfItem;
 import net.emanueljdf09.dtrhmod.item.custom.DynamicTeaCupItem;
 import net.emanueljdf09.dtrhmod.item.custom.StoryBook;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -30,7 +31,7 @@ public class ModItems {
             BlockItem(ModBlocks.MIRROR_BLOCK, new FabricItemSettings()));
 
     public static final Item MAD_HAT_ITEM = registerItem("mad_hat",
-            new MadHatItem(ModBlocks.MAD_HATTER_HAT, new FabricItemSettings()));
+            new MadHatItem(ModBlocks.MAD_HATTER_HAT, new FabricItemSettings().maxCount(1)));
 
     public static final Item EXTERIOR_DOOR_ITEM = registerItem("exterior_door",
             new ExteriorDoorItem(ModBlocks.EXTERIOR_DOOR, new FabricItemSettings()));
@@ -80,6 +81,21 @@ public class ModItems {
     public static final Item WHITE_RABBIT_SPAWN_EGG = registerItem("white_rabbit_spawn_egg",
             new SpawnEggItem(ModEntities.WHITE_RABBIT, 0xc23232, 0xe8e3e3,
                     new FabricItemSettings()));
+
+    public static final Item CHESHIRE_CAT_SPAWN_EGG = registerItem("cheshire_cat_spawn_egg",
+            new SpawnEggItem(ModEntities.CHESHIRE_CAT, 0x857b97, 0x375c76,
+                    new FabricItemSettings()));
+
+    public static final Item SINGING_FLOWER_SPAWN_EGG = registerItem("singing_flower_spawn_egg",
+            new SpawnEggItem(ModEntities.SINGING_FLOWER, 0x857b97, 0x375c76,
+                    new FabricItemSettings()));
+
+    public static final Item CAT_SCARF_ITEM = registerItem("cat_scarf",
+            new CatScarfItem(new FabricItemSettings().maxCount(1)));
+
+    public static final Item CAT_FUR = registerItem("cat_fur",
+            new Item(new FabricItemSettings().maxCount(16)));
+
 
     public static final Item WEEPING_PLAYERS_SPAWN_EGG = registerItem("weeping_players_spawn_egg",
             new SpawnEggItem(ModEntities.WEEPING_PLAYER, 0x727070, 0x211e1e,

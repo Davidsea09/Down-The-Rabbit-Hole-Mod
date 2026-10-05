@@ -2,7 +2,9 @@ package net.emanueljdf09.dtrhmod.block;
 
 import net.emanueljdf09.dtrhmod.DownTheRabbitHole;
 import net.emanueljdf09.dtrhmod.block.entity.*;
+import net.emanueljdf09.dtrhmod.block.entity.spawn.CheshireCatSpawnerBlockEntity;
 import net.emanueljdf09.dtrhmod.block.entity.spawn.MadHatterSpawnerBlockEntity;
+import net.emanueljdf09.dtrhmod.block.entity.spawn.SingingFlowersSpawnerBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
@@ -55,6 +57,16 @@ public class ModBlockEntities {
                     new Identifier(DownTheRabbitHole.MOD_ID, "mad_hatter_spawner_be"),
                     FabricBlockEntityTypeBuilder.create(MadHatterSpawnerBlockEntity::new, ModBlocks.MAD_HATTER_SPAWNER_BLOCK).build());
 
+    public static final BlockEntityType<CheshireCatSpawnerBlockEntity> CHESHIRE_CAT_SPAWNER_BE =
+            Registry.register(
+                    Registries.BLOCK_ENTITY_TYPE,
+                    new Identifier(DownTheRabbitHole.MOD_ID, "cheshire_cat_spawner_be"),
+                    FabricBlockEntityTypeBuilder.create(CheshireCatSpawnerBlockEntity::new, ModBlocks.CHESHIRE_CAT_SPAWNER_BLOCK).build());
+
+    public static final BlockEntityType<SingingFlowersSpawnerBlockEntity> SINGING_FLOWERS_SPAWNER_BE =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE,
+                    new Identifier(DownTheRabbitHole.MOD_ID, "singing_flowers_spawner_be"),
+                    FabricBlockEntityTypeBuilder.create(SingingFlowersSpawnerBlockEntity::new, ModBlocks.SINGING_FLOWERS_SPAWNER_BLOCK).build());
 
     public static void registerBlockEnities() {
         DownTheRabbitHole.LOGGER.info("Registering Block Entities for" + DownTheRabbitHole.MOD_ID);

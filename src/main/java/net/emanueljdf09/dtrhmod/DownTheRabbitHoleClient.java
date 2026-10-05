@@ -2,15 +2,16 @@ package net.emanueljdf09.dtrhmod;
 
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
+import dev.emi.trinkets.api.client.TrinketRendererRegistry;
 import net.emanueljdf09.dtrhmod.block.ModBlockEntities;
 import net.emanueljdf09.dtrhmod.block.ModBlocks;
 import net.emanueljdf09.dtrhmod.block.models.renderers.*;
 import net.emanueljdf09.dtrhmod.entity.ModBoats;
 import net.emanueljdf09.dtrhmod.entity.ModEntities;
-import net.emanueljdf09.dtrhmod.entity.client.renderers.MadHatterRenderer;
-import net.emanueljdf09.dtrhmod.entity.client.renderers.WeepingPlayerRenderer;
-import net.emanueljdf09.dtrhmod.entity.client.renderers.WhiteRabbitRenderer;
+import net.emanueljdf09.dtrhmod.entity.client.renderers.*;
 import net.emanueljdf09.dtrhmod.item.ModItems;
+import net.emanueljdf09.dtrhmod.item.client.renderer.CatScarfTrinketRenderer;
+import net.emanueljdf09.dtrhmod.item.client.renderer.MadHatterHatTrinketRenderer;
 import net.emanueljdf09.dtrhmod.item.custom.DynamicTeaCupItem;
 import net.emanueljdf09.dtrhmod.menu.ModScreenHandlers;
 import net.emanueljdf09.dtrhmod.menu.screen.BookCoverScreen;
@@ -179,10 +180,17 @@ public class DownTheRabbitHoleClient implements ClientModInitializer {
         BlockEntityRendererRegistry.register(ModBlockEntities.MOD_HEAD_BE, ModHeadBlockEntityRenderer::new);
 
         BlockEntityRendererRegistry.register(ModBlockEntities.MAD_HATTER_HAT, MadHatterHatBlockEntityRenderer::new);
+        TrinketRendererRegistry.registerRenderer(ModItems.MAD_HAT_ITEM, new MadHatterHatTrinketRenderer());
+        TrinketRendererRegistry.registerRenderer(ModItems.CAT_SCARF_ITEM, new CatScarfTrinketRenderer());
+
 
         EntityRendererRegistry.register(ModEntities.WHITE_RABBIT, WhiteRabbitRenderer::new);
         EntityRendererRegistry.register(ModEntities.WEEPING_PLAYER, WeepingPlayerRenderer::new);
         EntityRendererRegistry.register(ModEntities.MAD_HATTER, MadHatterRenderer::new);
+        EntityRendererRegistry.register(ModEntities.CHESHIRE_CAT, CheshireCatRenderer::new);
+        EntityRendererRegistry.register(ModEntities.SINGING_FLOWER, SingingFlowerRenderer::new);
+        EntityRendererRegistry.register(ModEntities.VINE_ANCHOR, VineAnchorRenderer::new);
+        EntityRendererRegistry.register(ModEntities.SKY_SEED, FlyingItemEntityRenderer::new);
 
         EntityRendererRegistry.register(ModEntities.TEAPOT_PROJECTILE, FlyingItemEntityRenderer::new);
 

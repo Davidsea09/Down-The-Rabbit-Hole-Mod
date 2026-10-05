@@ -215,6 +215,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.GLASS), conditionsFromItem(Items.GLASS))
                 .offerTo(consumer, new Identifier(getRecipeName(ModItems.EMPTY_CUP)));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.CAT_SCARF_ITEM, 1)
+                        .pattern("CCC")
+                        .pattern("CWC")
+                        .pattern("C W")
+                        .input('C', ModItems.CAT_FUR)
+                        .input('W', Items.BLACK_WOOL)
+                        .criterion(hasItem(ModItems.CAT_FUR), conditionsFromItem(ModItems.CAT_FUR))
+                        .offerTo(consumer, new Identifier(getRecipeName(ModItems.CAT_SCARF_ITEM)));
+
         offerWoodRecipe(consumer, ModBlocks.TH_WOOD, ModBlocks.TH_LOG);
         offerWoodRecipe(consumer, ModBlocks.STRIPPED_TH_WOOD, ModBlocks.STRIPPED_TH_LOG);
         offerPlanksRecipe(consumer, ModBlocks.TH_PLANKS, ModTags.Items.TH_LOGS, 4);

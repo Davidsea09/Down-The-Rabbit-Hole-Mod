@@ -47,6 +47,7 @@ public class TeleportUtil {
     private static final Map<UUID, BlockTranceData> ACTIVE_BLOCK_TRANCES = new HashMap<>();
 
     private static final Set<UUID> TELEPORTING_PLAYERS = new HashSet<>();
+    private static final Map<UUID, Integer> GROWTH_TIMER_MAP = new HashMap<>();
 
     private static final Map<UUID, Long> TELEPORT_COOLDOWNS = new HashMap<>();
     private static final long COOLDOWN_MS = 5000;
@@ -282,6 +283,128 @@ public class TeleportUtil {
                 }, 1000);
             });
         });
+    }
+
+    public static void teleportToFlowerInstance(ServerPlayerEntity player, BlockPos flowerPos, ServerWorld originWorld) {
+        if (TELEPORTING_PLAYERS.contains(player.getUuid())) return;
+        TELEPORTING_PLAYERS.add(player.getUuid());
+
+        MinecraftServer server = player.getServer();
+        if (server == null) {
+            TELEPORTING_PLAYERS.remove(player.getUuid());
+            return;
+        }
+
+        ServerWorld targetWorld = server.getWorld(ModDimensions.LAND_OF_FLOWERS_LEVEL_KEY);
+        if (targetWorld == null) {
+            TELEPORTING_PLAYERS.remove(player.getUuid());
+            return;
+        }
+        FlowerInstanceManager manager = FlowerInstanceManager.getServerState(server);
+
+        BlockPos instancePos = manager.getOrCreateFlowerInstance(
+                server,
+                flowerPos,
+                ModDimensions.LAND_OF_FLOWERS_LEVEL_KEY,
+                new Identifier(DownTheRabbitHole.MOD_ID, "portal/mirror_room_complete"),
+                originWorld.getRegistryKey(),
+                flowerPos,
+                player.getUuid()
+        );
+
+        ChunkPos chunkPos = new ChunkPos(instancePos);
+        targetWorld.getChunkManager().addTicket(
+                ChunkTicketType.START,
+                chunkPos,
+                2,
+                Unit.INSTANCE
+        );
+
+        player.teleport(
+                targetWorld,
+                instancePos.getX() + 0.5,
+                instancePos.getY() + 1.0,
+                instancePos.getZ() + 0.5,
+                player.getYaw(),
+                player.getPitch()
+        );
+        player.setVelocity(Vec3d.ZERO);
+        player.fallDistance = 0.0f;
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 200, 0, false, false, false));
+
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                TELEPORTING_PLAYERS.remove(player.getUuid());
+            }
+        }, 1000);
+    }
+
+    public static void checkAndHandleFlowerVoidReturn(ServerPlayerEntity player) {
+        if (player.getWorld().getRegistryKey().equals(ModDimensions.LAND_OF_FLOWERS_LEVEL_KEY) && player.getY() < -5) {
+            returnPlayerToOrigin(player);
+        }
+    }
+
+    public static void checkGrowthPotionExit(ServerPlayerEntity player) {
+        UUID uuid = player.getUuid();
+
+        if (!player.getWorld().getRegistryKey().equals(ModDimensions.LAND_OF_FLOWERS_LEVEL_KEY)) {
+            GROWTH_TIMER_MAP.remove(uuid);
+            return;
+        }
+
+        if (player.hasStatusEffect(ModEffects.GROW)) {
+            int currentTicks = GROWTH_TIMER_MAP.getOrDefault(uuid, 0) + 1;
+            GROWTH_TIMER_MAP.put(uuid, currentTicks);
+
+            if (currentTicks >= 60) {
+                GROWTH_TIMER_MAP.remove(uuid);
+                returnPlayerToOrigin(player);
+            }
+        } else {
+            GROWTH_TIMER_MAP.remove(uuid);
+        }
+    }
+
+    public static void returnPlayerToOrigin(ServerPlayerEntity player) {
+        if (TELEPORTING_PLAYERS.contains(player.getUuid())) return;
+        TELEPORTING_PLAYERS.add(player.getUuid());
+
+        MinecraftServer server = player.getServer();
+        if (server == null) {
+            TELEPORTING_PLAYERS.remove(player.getUuid());
+            return;
+        }
+
+
+        FlowerInstanceManager manager = FlowerInstanceManager.getServerState(server);
+        FlowerInstanceManager.ReturnLocation returnLoc = manager.getReturnLocation(player.getUuid());
+
+        if (returnLoc != null) {
+            ServerWorld originWorld = server.getWorld(returnLoc.dimension());
+            if (originWorld != null) {
+                BlockPos pos = returnLoc.pos();
+
+                player.teleport(
+                        originWorld,
+                        pos.getX() + 1.5,
+                        pos.getY() + 1.0,
+                        pos.getZ() + 0.5,
+                        player.getYaw(),
+                        player.getPitch()
+                );
+                player.setVelocity(0, 0, 0);
+                player.fallDistance = 0.0f;
+
+                new Timer().schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        TELEPORTING_PLAYERS.remove(player.getUuid());
+                    }
+                }, 1000);
+            }
+        }
     }
 
     public static void teleportFromHat(ServerPlayerEntity player, RegistryKey<World> targetDim, BlockPos targetPos) {

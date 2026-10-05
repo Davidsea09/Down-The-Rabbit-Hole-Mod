@@ -1,0 +1,29 @@
+{
+  "parent": "dtrhmod:exterior_complete",
+  "criteria": {
+    "cheshire_cat_snitch": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.dtrhmod.cheshire_cat_snitch.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "dtrhmod:cat_fur"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.dtrhmod.cheshire_cat_snitch.title"
+    }
+  },
+  "requirements": [
+    [
+      "cheshire_cat_snitch"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

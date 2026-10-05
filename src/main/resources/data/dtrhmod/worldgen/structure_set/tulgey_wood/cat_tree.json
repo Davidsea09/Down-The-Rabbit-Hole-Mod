@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "dtrhmod:tulgey_wood/cat_tree",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 32,
+    "separation": 8,
+    "salt": 62495962,
+    "spread_type": "triangular"
+  }
+}

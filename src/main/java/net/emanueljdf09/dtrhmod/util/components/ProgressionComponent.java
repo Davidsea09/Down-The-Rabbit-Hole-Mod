@@ -40,5 +40,8 @@ public interface ProgressionComponent extends Component {
     boolean hasKilledMadHatter();
     void setKilledMadHatter(boolean killed);
 
+    boolean hasKilledSingingFlowers();
+    void setKilledSingingFlowers(boolean killed);
+
     void reset();
 }
