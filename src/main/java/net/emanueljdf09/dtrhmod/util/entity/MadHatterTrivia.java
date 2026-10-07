@@ -9,6 +9,7 @@ import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
+import java.lang.ref.WeakReference;
 import java.util.*;
 
 public class MadHatterTrivia {
@@ -39,7 +40,24 @@ public class MadHatterTrivia {
                     new Option("riddle.dtrhmod.hand.opt2", false),
                     new Option("riddle.dtrhmod.hand.opt3", true)
             )
+
     };
+
+   private static final int REQUIRED_CORRECT = Math.min(3, ALL_QUESTIONS.length);
+
+
+    public static void clearSession(UUID playerId) {
+        ACTIVE_SESSIONS.remove(playerId);
+    }
+
+    public static void clearAll() {
+        ACTIVE_SESSIONS.clear();
+    }
+
+    public static void clearSessionsFor(MadHatterEntity hatter) {
+        ACTIVE_SESSIONS.values().removeIf(session -> session.hatterId.equals(hatter.getUuid()));
+    }
+
 
     public static void startTrivia(PlayerEntity player, MadHatterEntity hatter) {
         UUID playerId = player.getUuid();
@@ -55,14 +73,17 @@ public class MadHatterTrivia {
 
         if (session == null) return;
 
-        if (session.getCurrentStep() >= 3) {
+        MadHatterEntity hatter = session.getHatter();
+        if (hatter == null) {
+            ACTIVE_SESSIONS.remove(playerId);
+            return;
+        }
+
+        if (session.getCurrentStep() >= REQUIRED_CORRECT) {
             player.sendMessage(Text.translatable("entity.dtrhmod.mad_hatter.trivia_pass").formatted(Formatting.GREEN), false);
 
             if (player instanceof ServerPlayerEntity serverPlayer) {
-                MadHatterEntity hatter = session.getHatter();
-                if (hatter != null) {
-                    hatter.rewardTriviaWin(serverPlayer);
-                }
+                hatter.rewardTriviaWin(serverPlayer);
             }
 
             ACTIVE_SESSIONS.remove(playerId);
@@ -77,13 +98,18 @@ public class MadHatterTrivia {
         session.markQuestionUsed(question);
         session.setCurrentQuestion(question);
 
+        List<Integer> order = new ArrayList<>();
+        for (int i = 0; i < question.getOptions().length; i++) order.add(i);
+        Collections.shuffle(order, new Random(player.getWorld().random.nextLong()));
+        session.setCurrentOrder(order);
+
         player.sendMessage(Text.translatable("entity.dtrhmod.mad_hatter.riddle_header", (session.getCurrentStep() + 1), Text.translatable(question.getPromptKey())).formatted(Formatting.YELLOW), false);
 
-        for (int i = 0; i < question.getOptions().length; i++) {
-            Option opt = question.getOptions()[i];
+        for (int shown = 0; shown < order.size(); shown++) {
+            Option opt = question.getOptions()[order.get(shown)];
             MutableText optionButton = Text.literal(" > ").append(Text.translatable(opt.getLangKey())).formatted(Formatting.AQUA);
 
-            String commandPayload = "/madhatter_answer " + session.getHatter().getUuid() + " " + i;
+            String commandPayload = "/madhatter_answer " + hatter.getUuid() + " " + shown;
             optionButton.setStyle(Style.EMPTY
                     .withClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, commandPayload))
             );
@@ -101,8 +127,19 @@ public class MadHatterTrivia {
             return;
         }
 
+        if (!session.hatterId.equals(hatter.getUuid()) || hatter.isBossMode()) {
+            ACTIVE_SESSIONS.remove(playerId);
+            player.sendMessage(Text.translatable("entity.dtrhmod.mad_hatter.not_playing").formatted(Formatting.RED), false);
+            return;
+        }
+
         TriviaQuestion currentQuestion = session.getCurrentQuestion();
-        Option selectedOption = currentQuestion.getOptions()[optionIndex];
+        List<Integer> order = session.getCurrentOrder();
+        if (currentQuestion == null || order == null || optionIndex < 0 || optionIndex >= order.size()) {
+            return;
+        }
+
+        Option selectedOption = currentQuestion.getOptions()[order.get(optionIndex)];
 
         if (selectedOption.isCorrect()) {
             player.sendMessage(Text.translatable("entity.dtrhmod.mad_hatter.feedback_prefix").append(Text.translatable(currentQuestion.getSuccessDialogueKey())).formatted(Formatting.GREEN), false);
@@ -110,26 +147,35 @@ public class MadHatterTrivia {
             sendNextQuestion(player);
         } else {
             player.sendMessage(Text.translatable("entity.dtrhmod.mad_hatter.feedback_prefix").append(Text.translatable(currentQuestion.getFailureDialogueKey())).formatted(Formatting.RED), false);
-            hatter.registerTriviaFailure();
             ACTIVE_SESSIONS.remove(playerId);
+            hatter.registerTriviaFailure();
         }
     }
 
     private static class TriviaSession {
-        private final MadHatterEntity hatter;
+        private final WeakReference<MadHatterEntity> hatterRef;
+        private final UUID hatterId;
         private int currentStep = 0;
         private TriviaQuestion currentQuestion;
+        private List<Integer> currentOrder;
         private final Set<TriviaQuestion> usedQuestions = new HashSet<>();
 
         public TriviaSession(MadHatterEntity hatter) {
-            this.hatter = hatter;
+            this.hatterRef = new WeakReference<>(hatter);
+            this.hatterId = hatter.getUuid();
         }
 
-        public MadHatterEntity getHatter() { return hatter; }
+        public MadHatterEntity getHatter() {
+            MadHatterEntity hatter = hatterRef.get();
+            return hatter == null || hatter.isRemoved() ? null : hatter;
+        }
+
         public int getCurrentStep() { return currentStep; }
         public void incrementStep() { this.currentStep++; }
         public TriviaQuestion getCurrentQuestion() { return currentQuestion; }
         public void setCurrentQuestion(TriviaQuestion question) { this.currentQuestion = question; }
+        public List<Integer> getCurrentOrder() { return currentOrder; }
+        public void setCurrentOrder(List<Integer> order) { this.currentOrder = order; }
         public Set<TriviaQuestion> getUsedQuestions() { return usedQuestions; }
         public void markQuestionUsed(TriviaQuestion q) { usedQuestions.add(q); }
     }

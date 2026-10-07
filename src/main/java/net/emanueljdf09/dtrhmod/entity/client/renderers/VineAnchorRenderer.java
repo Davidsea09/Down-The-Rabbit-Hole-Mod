@@ -16,18 +16,12 @@ import net.minecraft.util.math.Vec3d;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 
-/**
- * Draws the vine as a ribbon (two crossed strips) from the flower's "mouth" to the victim's waist,
- * sagging a little in the middle. The entity itself (the thing you hit) has no model.
- * Move this next to your other renderers (the package here is a guess).
- */
 public class VineAnchorRenderer extends EntityRenderer<VineAnchorEntity> {
     private static final Identifier TEXTURE = new Identifier(DownTheRabbitHole.MOD_ID, "textures/entity/vine_lead.png");
     private static final int SEGMENTS = 14;
     private static final double HALF_WIDTH = 0.08;
     private static final double SAG = 0.35;
-    // How many blocks of vine one copy of the texture covers (1.0 = the texture repeats every block).
-    // Lower it (e.g. 0.5) if the texture looks stretched along the vine.
+
     private static final double TILE_LENGTH = 1.0;
 
     public VineAnchorRenderer(EntityRendererFactory.Context ctx) {
@@ -39,7 +33,6 @@ public class VineAnchorRenderer extends EntityRenderer<VineAnchorEntity> {
         return TEXTURE;
     }
 
-    // the beam can be longer than the anchor's tiny hitbox, so don't cull it by the hitbox
     @Override
     public boolean shouldRender(VineAnchorEntity entity, Frustum frustum, double x, double y, double z) {
         return true;
@@ -50,11 +43,10 @@ public class VineAnchorRenderer extends EntityRenderer<VineAnchorEntity> {
                        VertexConsumerProvider vertexConsumers, int light) {
         super.render(vine, yaw, tickDelta, matrices, vertexConsumers, light);
 
-        Entity flower = vine.getWorld().getEntityById(vine.getFlowerId());
+        Entity flower = vine.getWorld().getEntityById(vine.getOwnerId());
         Entity victim = vine.getWorld().getEntityById(vine.getVictimId());
         if (flower == null || victim == null) return;
 
-        // matrices are already translated to the vine's position, so work relative to it
         Vec3d origin = vine.getLerpedPos(tickDelta);
         Vec3d from = flower.getLerpedPos(tickDelta).add(0, flower.getHeight() * 0.7, 0).subtract(origin);
         Vec3d to = victim.getLerpedPos(tickDelta).add(0, victim.getHeight() * 0.5, 0).subtract(origin);

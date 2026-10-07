@@ -1,27 +1,40 @@
 package net.emanueljdf09.dtrhmod.block.entity.spawn;
 
+import net.emanueljdf09.dtrhmod.DownTheRabbitHole;
 import net.emanueljdf09.dtrhmod.block.ModBlockEntities;
 import net.emanueljdf09.dtrhmod.entity.ModEntities;
 import net.emanueljdf09.dtrhmod.entity.custom.SingingFlowerEntity;
+import net.emanueljdf09.dtrhmod.entity.custom.SingingFlowerEntity.AttackType;
+import net.emanueljdf09.dtrhmod.item.ModItems;
+import net.emanueljdf09.dtrhmod.util.AdvancementUtil;
 import net.emanueljdf09.dtrhmod.util.ModComponents;
 import net.emanueljdf09.dtrhmod.util.components.ProgressionComponent;
+import net.minecraft.advancement.Advancement;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.ExperienceOrbEntity;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.boss.BossBar;
 import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtHelper;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -34,6 +47,14 @@ public class SingingFlowersSpawnerBlockEntity extends BlockEntity {
     private static final int EMPTY_RESET_TICKS = 200;
     private static final double RING_RADIUS = 5.0;
 
+    private static final int FIRST_ROUND_DELAY = 80;
+    private static final int WINDUP_TICKS = 12;
+    private static final int CHOMP_STAGGER = 10;
+    private static final int VINE_STAGGER = 14;
+    private static final int MAX_VINES_PER_ROUND = 2;
+    private static final float VINE_CHANCE = 0.4f;
+
+
     private boolean active = false;
     private int kills = 0;
     private final List<UUID> flowerIds = new ArrayList<>();
@@ -41,18 +62,25 @@ public class SingingFlowersSpawnerBlockEntity extends BlockEntity {
 
     private int scanCooldown = 0;
     private int emptyTicks = 0;
+    private int roundCooldown = FIRST_ROUND_DELAY;
 
-    private final ServerBossBar bossBar = new ServerBossBar(
+    private final ServerBossBar bossBar = (ServerBossBar) new ServerBossBar(
             Text.translatable("entity.dtrhmod.singing_flowers"),
-            BossBar.Color.PINK,
-            BossBar.Style.PROGRESS);
+            BossBar.Color.GREEN,
+            BossBar.Style.PROGRESS).setDarkenSky(true);
 
     public SingingFlowersSpawnerBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.SINGING_FLOWERS_SPAWNER_BE, pos, state);
     }
 
+    public void forceReset(ServerWorld world) {
+        resetFight(world);
+    }
+
     public static void tick(World world, BlockPos pos, BlockState state, SingingFlowersSpawnerBlockEntity be) {
         if (!(world instanceof ServerWorld serverWorld)) return;
+
+
         if (be.active) {
             be.tickActive(serverWorld);
         } else {
@@ -90,7 +118,63 @@ public class SingingFlowersSpawnerBlockEntity extends BlockEntity {
             if (++emptyTicks >= EMPTY_RESET_TICKS) resetFight(world);
         } else {
             emptyTicks = 0;
+            conduct(world, players);
         }
+    }
+
+    private void conduct(ServerWorld world, List<ServerPlayerEntity> players) {
+        if (roundCooldown > 0) {
+            roundCooldown--;
+            return;
+        }
+
+        List<SingingFlowerEntity> ready = new ArrayList<>();
+        for (UUID id : flowerIds) {
+            if (!(world.getEntity(id) instanceof SingingFlowerEntity f) || !f.isAlive()) continue;
+
+            if (f.hasPendingAttack() || f.hasActiveVine()) return;
+            if (f.isReadyToAttack()) ready.add(f);
+        }
+        if (ready.isEmpty()) return;
+
+        ServerPlayerEntity target = players.get(world.getRandom().nextInt(players.size()));
+
+        AttackType type = AttackType.CHOMP;
+        List<SingingFlowerEntity> group = ready;
+        if (getPhase() >= 2 && world.getRandom().nextFloat() < VINE_CHANCE) {
+            List<SingingFlowerEntity> inRange = new ArrayList<>();
+            for (SingingFlowerEntity f : ready) {
+                if (f.canVineTarget(target)) inRange.add(f);
+            }
+            if (!inRange.isEmpty()) {
+                type = AttackType.VINE;
+                group = inRange;
+            }
+        }
+
+        final int sweep = world.getRandom().nextBoolean() ? 1 : -1;
+        final Vec3d right = SingingFlowerEntity.rightOf(target);
+        final ServerPlayerEntity t = target;
+        group.sort(Comparator.comparingDouble((SingingFlowerEntity f) ->
+                sweep * ((f.getX() - t.getX()) * right.x + (f.getZ() - t.getZ()) * right.z)));
+
+        if (type == AttackType.VINE && group.size() > MAX_VINES_PER_ROUND) {
+            group = new ArrayList<>(group.subList(0, MAX_VINES_PER_ROUND));
+        }
+
+        int stagger = type == AttackType.VINE ? VINE_STAGGER : CHOMP_STAGGER;
+        int delay = WINDUP_TICKS;
+        for (SingingFlowerEntity f : group) {
+            f.queueAttack(type, delay, sweep, target);
+            delay += stagger;
+        }
+
+        int gap = switch (getPhase()) {
+            case 1 -> 70;
+            case 2 -> 55;
+            default -> 45;
+        };
+        roundCooldown = delay + gap + world.getRandom().nextInt(20);
     }
 
     private void syncBossBar(ServerWorld world, List<ServerPlayerEntity> players) {
@@ -115,6 +199,7 @@ public class SingingFlowersSpawnerBlockEntity extends BlockEntity {
         participants.clear();
         kills = 0;
         emptyTicks = 0;
+        roundCooldown = FIRST_ROUND_DELAY;
 
         double cx = pos.getX() + 0.5;
         double cz = pos.getZ() + 0.5;
@@ -137,6 +222,8 @@ public class SingingFlowersSpawnerBlockEntity extends BlockEntity {
             world.spawnEntity(flower);
             flowerIds.add(flower.getUuid());
         }
+
+        world.playSound(null, pos, SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON, SoundCategory.HOSTILE, 2.0F, 0.8F);
 
         active = true;
         markDirty();
@@ -163,6 +250,7 @@ public class SingingFlowersSpawnerBlockEntity extends BlockEntity {
         if (source.getAttacker() instanceof ServerPlayerEntity player) {
             participants.add(player.getUuid());
         }
+        int phaseBefore = getPhase();
         kills++;
 
         if (kills >= FLOWER_COUNT) {
@@ -177,6 +265,10 @@ public class SingingFlowersSpawnerBlockEntity extends BlockEntity {
                 if (phase == 3) alive.beginFinalForm();
             }
         }
+
+        if (phase != phaseBefore) {
+            world.playSound(null, pos, SoundEvents.ENTITY_EVOKER_CELEBRATE, SoundCategory.HOSTILE, 2.0F, 0.7F);
+        }
         markDirty();
     }
 
@@ -188,9 +280,32 @@ public class SingingFlowersSpawnerBlockEntity extends BlockEntity {
             ProgressionComponent component = ModComponents.PROGRESSION_COMPONENT.get(player);
             if (!component.hasKilledSingingFlowers()) {
                 component.setKilledSingingFlowers(true);
-                // TODO: grant advancement (AdvancementUtil.grant), WonderlandProgressionUtil.triggerMilestone, loot
+                component.setWonderlandMirrorUnlocked(true);
+                grantAdvancement(player);
+
+                ItemEntity lassoDrop = new ItemEntity(
+                        world,
+                        pos.getX() + 0.5,
+                        pos.getY() + 1.0,
+                        pos.getZ() + 0.5,
+                        new ItemStack(ModItems.VINE_LASSO_ITEM)
+                );
+                world.spawnEntity(lassoDrop);
             }
         }
+
+        ItemEntity lassoDrop = new ItemEntity(
+                world,
+                pos.getX() + 0.5,
+                pos.getY() + 1.0,
+                pos.getZ() + 0.5,
+                new ItemStack(ModItems.EAT_ME)
+        );
+        world.spawnEntity(lassoDrop);
+
+        ExperienceOrbEntity.spawn(world, Vec3d.ofCenter(pos), 30);
+
+        world.playSound(null, pos, SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, SoundCategory.HOSTILE, 1.0F, 1.0F);
 
         bossBar.clearPlayers();
         active = false;
@@ -199,6 +314,11 @@ public class SingingFlowersSpawnerBlockEntity extends BlockEntity {
         kills = 0;
         scanCooldown = -400;
         markDirty();
+    }
+
+    private void grantAdvancement(ServerPlayerEntity player) {
+        AdvancementUtil.grant(player, new Identifier(DownTheRabbitHole.MOD_ID, "boss_root"));
+        AdvancementUtil.grant(player, new Identifier(DownTheRabbitHole.MOD_ID,"killed_flowers"));
     }
 
     private void resetFight(ServerWorld world) {

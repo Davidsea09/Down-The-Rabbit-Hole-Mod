@@ -35,6 +35,7 @@ public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> FOREST_ROCKS = registerKey("forest_rocks");
     public static final RegistryKey<ConfiguredFeature<?, ?>> FOREST_FLOWERBEDS = registerKey("forest_flowerbeds");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> FOREST_FLOWERS= registerKey("forest_flowers");
     public static final RegistryKey<ConfiguredFeature<?, ?>> FOREST_GROUND_MUSHROOMS = registerKey("forest_ground_mushrooms");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> DISK_CLAY = registerKey("disk_clay");
@@ -136,15 +137,34 @@ public class ModConfiguredFeatures {
                                 new SimpleBlockFeatureConfig(
                                         new WeightedBlockStateProvider(
                                                 DataPool.<BlockState>builder()
-                                                        .add(ModBlocks.YELLOW_MUSHROOM.getDefaultState(), 3) // Common
-                                                        .add(ModBlocks.BLUE_MUSHROOM.getDefaultState(), 2) // Uncommon
-                                                        .add(ModBlocks.MAGENTA_MUSHROOM.getDefaultState(), 1) // Rare
+                                                        .add(ModBlocks.YELLOW_MUSHROOM.getDefaultState(), 3)
+                                                        .add(ModBlocks.BLUE_MUSHROOM.getDefaultState(), 2)
+                                                        .add(ModBlocks.MAGENTA_MUSHROOM.getDefaultState(), 1)
                                                         .build()
                                         )
                                 )
                         )
                 )
         );
+
+        register(context, FOREST_FLOWERS, Feature.FLOWER,
+                new RandomPatchFeatureConfig(
+                16,
+                6,
+                2,
+                PlacedFeatures.createEntry(
+                        Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(
+                                new WeightedBlockStateProvider(
+                                        DataPool.<BlockState>builder()
+                                                .add(ModBlocks.FLOWER_PORTAL.getDefaultState(), 3)
+                                                .build()
+                                )
+                        )
+                )
+                )
+        );
+
 
 
         register(context, DISK_CLAY, Feature.DISK, new DiskFeatureConfig(PredicatedStateProvider.of(Blocks.CLAY), BlockPredicate.matchingBlocks(List.of(ModBlocks.WONDER_DIRT, Blocks.CLAY)), UniformIntProvider.create(2, 3), 1));

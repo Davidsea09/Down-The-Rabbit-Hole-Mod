@@ -1,8 +1,11 @@
 package net.emanueljdf09.dtrhmod.entity.custom;
 
+import net.emanueljdf09.dtrhmod.block.ModBlocks;
 import net.emanueljdf09.dtrhmod.block.entity.spawn.SingingFlowersSpawnerBlockEntity;
 import net.emanueljdf09.dtrhmod.entity.ModEntities;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -20,6 +23,9 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
@@ -30,6 +36,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.UUID;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -43,8 +50,8 @@ import virtuoel.pehkui.api.ScaleTypes;
 public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    // ---- Animation names: make these match your Blockbench animation names ----
     private static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle");
+    private static final RawAnimation STARTLED_ANIM = RawAnimation.begin().thenLoop("startled");
     private static final RawAnimation BURY = RawAnimation.begin().thenPlayAndHold("bury");
     private static final RawAnimation BURIED_ANIM = RawAnimation.begin().thenLoop("buried");
     private static final RawAnimation EMERGE = RawAnimation.begin().thenPlayAndHold("emerge");
@@ -52,20 +59,36 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
     private static final RawAnimation VINE_CAST = RawAnimation.begin().thenPlay("cast_vine");
     private static final RawAnimation SKY_CAST = RawAnimation.begin().thenPlay("cast_sky");
 
-    // ---- Tuning ----
     public static final float MAX_HEALTH = 40.0f;
-    public static final int BURY_TICKS = 20;     // length of the "bury" animation
-    public static final int EMERGE_TICKS = 20;   // length of the "emerge" animation
-    private static final double TOO_CLOSE = 4.0;           // player closer than this -> flower buries
-    private static final double MIN_EMERGE_DIST = 6.0;     // emerge at least this far from the player
-    private static final double MAX_EMERGE_DIST = 14.0;    // ...and at most this far (the 14 block radius)
-    private static final double ARENA_RADIUS = 24.0;       // never emerge further than this from the spawner
+    public static final int BURY_TICKS = 20;
+    public static final int EMERGE_TICKS = 20;
+    private static final double TOO_CLOSE = 4.0;
+    private static final double MIN_EMERGE_DIST = 6.0;
+    private static final double MAX_EMERGE_DIST = 14.0;
+    private static final double ARENA_RADIUS = 24.0;
     private static final float FINAL_SCALE = 3.0f;
+
+    private static final double ARC_SPAN = Math.toRadians(150.0);
+    private static final double ARC_RADIUS_MIN = 8.0;
+    private static final double ARC_RADIUS_MAX = 10.0;
+
+    public static final int STARTLE_CHOMP_TICKS = 60;
+    public static final int STARTLE_VINE_CUT_TICKS = 80;
+    public static final int STARTLE_VINE_EXPIRE_TICKS = 40;
+    private static final float STARTLED_DAMAGE_MULTIPLIER = 1.5f;
+
+    private static final int CAST_LEAD_TICKS = 8;
+    private static final int FAN_LINE_STEP = 4;
+    private static final double VINE_MIN_DIST = 7.0;
+    private static final double VINE_MAX_DIST = 18.0;
+
+    private static final float[] PENTATONIC = {1.0f, 1.122f, 1.26f, 1.498f, 1.682f};
 
     private static final TrackedData<Integer> VARIANT = DataTracker.registerData(SingingFlowerEntity.class, TrackedDataHandlerRegistry.INTEGER);
     private static final TrackedData<Integer> PHASE = DataTracker.registerData(SingingFlowerEntity.class, TrackedDataHandlerRegistry.INTEGER);
     private static final TrackedData<Integer> BURROW_STATE = DataTracker.registerData(SingingFlowerEntity.class, TrackedDataHandlerRegistry.INTEGER);
     private static final TrackedData<Boolean> FINAL_FORM = DataTracker.registerData(SingingFlowerEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    private static final TrackedData<Boolean> STARTLED = DataTracker.registerData(SingingFlowerEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
     public enum BurrowState {
         SURFACED, BURYING, BURIED, EMERGING;
@@ -76,6 +99,10 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
         }
     }
 
+    public enum AttackType {
+        CHOMP, VINE
+    }
+
     @Nullable
     private BlockPos homePos = null;
     private boolean goingHome = false;
@@ -83,19 +110,27 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
     private int stateTicks = 0;
     private int surfaceTicks = 120;
     private int buriedTicks = 30;
-    private int attackTicks = 0;
-    private int fangCooldown = 40;
-    private int vineCooldown = 80;
+    private int skyCooldown = 100;
+
     @Nullable
     private VineAnchorEntity activeVine = null;
-    private int skyCooldown = 100;
-    private final List<PendingStrike> strikes = new ArrayList<>();
+
     @Nullable
-    private Vec3d destination = null;
+    private AttackType pendingAttack = null;
+    private int pendingDelay = 0;
+    private int pendingSweep = 1;
+    @Nullable
+    private UUID pendingTarget = null;
+    private boolean castAnimPlayed = false;
+
+    private int startledTicks = 0;
+    private int standaloneCooldown = 60;
+
+    private final List<PendingStrike> strikes = new ArrayList<>();
 
     public SingingFlowerEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
-        this.setPersistent(); // bosses must never despawn
+        this.setPersistent();
     }
 
     @Override
@@ -105,6 +140,7 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
         this.dataTracker.startTracking(PHASE, 1);
         this.dataTracker.startTracking(BURROW_STATE, BurrowState.SURFACED.ordinal());
         this.dataTracker.startTracking(FINAL_FORM, false);
+        this.dataTracker.startTracking(STARTLED, false);
     }
 
     public static DefaultAttributeContainer.Builder setAttributes() {
@@ -116,10 +152,6 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 6.0)
                 .add(EntityAttributes.GENERIC_ARMOR, 4.0);
     }
-
-    // ------------------------------------------------------------------
-    // Accessors
-    // ------------------------------------------------------------------
 
     public int getVariant() { return this.dataTracker.get(VARIANT); }
     public void setVariant(int variant) { this.dataTracker.set(VARIANT, Math.floorMod(variant, 5)); }
@@ -134,14 +166,11 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
     }
 
     public boolean isFinalForm() { return this.dataTracker.get(FINAL_FORM); }
+    public boolean isStartled() { return this.dataTracker.get(STARTLED); }
 
     public void setHome(BlockPos pos) { this.homePos = pos; }
     @Nullable
     public BlockPos getHome() { return this.homePos; }
-
-    // ------------------------------------------------------------------
-    // Spawner link
-    // ------------------------------------------------------------------
 
     @Nullable
     private SingingFlowersSpawnerBlockEntity getSpawner() {
@@ -149,21 +178,64 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
         return this.getWorld().getBlockEntity(homePos) instanceof SingingFlowersSpawnerBlockEntity be ? be : null;
     }
 
-    /** True if the spawner no longer knows this flower (fight reset, block broken...). */
     private boolean isOrphaned() {
-        if (homePos == null) return false; // summoned by command for testing
+        if (homePos == null) return false;
         SingingFlowersSpawnerBlockEntity spawner = getSpawner();
         return spawner == null || !spawner.isTracking(this.getUuid());
     }
 
-    // ------------------------------------------------------------------
-    // Tick / burrow state machine
-    // ------------------------------------------------------------------
+    public boolean isReadyToAttack() {
+        return isAlive() && !isRemoved()
+                && getBurrowState() == BurrowState.SURFACED
+                && startledTicks == 0
+                && pendingAttack == null
+                && !hasActiveVine();
+    }
+
+    public boolean hasPendingAttack() {
+        return pendingAttack != null;
+    }
+
+    public boolean hasActiveVine() {
+        if (activeVine != null && activeVine.isRemoved()) activeVine = null;
+        return activeVine != null;
+    }
+
+    public boolean canVineTarget(PlayerEntity target) {
+        double distSq = this.squaredDistanceTo(target);
+        return distSq >= VINE_MIN_DIST * VINE_MIN_DIST && distSq <= VINE_MAX_DIST * VINE_MAX_DIST;
+    }
+
+    public void queueAttack(AttackType type, int delay, int sweep, PlayerEntity target) {
+        this.pendingAttack = type;
+        this.pendingDelay = Math.max(1, delay);
+        this.pendingSweep = sweep >= 0 ? 1 : -1;
+        this.pendingTarget = target.getUuid();
+        this.castAnimPlayed = false;
+    }
+
+    public static Vec3d rightOf(Entity viewer) {
+        double yaw = Math.toRadians(viewer.getYaw());
+        return new Vec3d(-Math.cos(yaw), 0.0, -Math.sin(yaw));
+    }
+
+    public void startle(int ticks) {
+        if (getBurrowState() != BurrowState.SURFACED || !isAlive()) return;
+        boolean wasStartled = startledTicks > 0;
+        startledTicks = Math.max(startledTicks, ticks);
+        pendingAttack = null;
+        if (!wasStartled) {
+            this.dataTracker.set(STARTLED, true);
+            sfx(SoundEvents.ENTITY_VILLAGER_NO, 1.0f, 1.6f);
+        }
+    }
 
     @Override
     public void tick() {
         super.tick();
         if (this.getWorld().isClient()) return;
+
+        if (!this.isAlive()) return;
 
         stateTicks++;
 
@@ -181,9 +253,9 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
         switch (getBurrowState()) {
             case SURFACED -> tickSurfaced(target);
             case BURYING -> {
-                if (stateTicks >= BURY_TICKS) enterBuried(target);
+                if (stateTicks >= BURY_TICKS) enterBuried();
             }
-            case BURIED -> tickBuried();
+            case BURIED -> tickBuried(target);
             case EMERGING -> {
                 if (stateTicks >= EMERGE_TICKS) finishEmerging();
             }
@@ -193,52 +265,153 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
     private void tickSurfaced(@Nullable PlayerEntity target) {
         if (target != null) {
             this.lookAtEntity(target, 30.0F, 30.0F);
+
+            double dX = target.getX() - this.getX();
+            double dZ = target.getZ() - this.getZ();
+            float targetYaw = (float) (MathHelper.atan2(dZ, dX) * (180D / Math.PI)) - 90.0F;
+
+            this.setYaw(targetYaw);
+            this.bodyYaw = targetYaw;
+            this.headYaw = targetYaw;
         }
 
-        // Final form: stays on the surface in the center and fights.
-        // A flower that is holding a player with a vine can't bury either.
-        if (!isFinalForm() && !hasActiveVine()) {
+        boolean busy = startledTicks > 0 || pendingAttack != null || hasActiveVine();
+
+        if (!isFinalForm() && !busy) {
             boolean tooClose = target != null && this.squaredDistanceTo(target) < TOO_CLOSE * TOO_CLOSE;
-            if (tooClose || stateTicks >= surfaceTicks) {
+            BlockState blockBelow = this.getWorld().getBlockState(this.getBlockPos().down());
+            if ((tooClose || stateTicks >= surfaceTicks) && canBurrowOn(blockBelow)) {
                 startBurying();
                 return;
             }
         }
 
-        attackTicks++;
-        performAttacks(target);
-    }
-
-    /** ATTACK HOOK: the fang line, vine and sky attacks get called from here. */
-    protected void performAttacks(@Nullable PlayerEntity target) {
-        if (target == null || !(this.getWorld() instanceof ServerWorld world)) return;
-        if (this.squaredDistanceTo(target) > 24.0 * 24.0) return;
-
-        // attack 1: chomper domino line (all phases)
-        if (fangCooldown > 0) {
-            fangCooldown--;
-        } else {
-            castFangLine(world, target);
-            int base = isFinalForm() ? 40 : (getPhase() >= 2 ? 50 : 70);
-            fangCooldown = base + this.random.nextInt(20);
+        if (startledTicks > 0) {
+            tickStartled();
+            return;
         }
 
-        // attack 2: vine lead (phase 2 and up, includes the final form)
-        if (getPhase() >= 2) {
-            tickVine(world, target);
+        if (!(this.getWorld() instanceof ServerWorld world)) return;
+
+        if (pendingAttack != null) {
+            tickPendingAttack(world);
+        } else if (this.random.nextInt(70) == 0) {
+            sing();
         }
 
-        // attack 3: seed bombs from the sky (final form only)
-        if (isFinalForm()) {
+        if (homePos == null && target != null && pendingAttack == null && isReadyToAttack()) {
+            if (--standaloneCooldown <= 0) {
+                queueAttack(AttackType.CHOMP, 12, this.random.nextBoolean() ? 1 : -1, target);
+                standaloneCooldown = 70 + this.random.nextInt(20);
+            }
+        }
+
+        if (isFinalForm() && target != null && this.squaredDistanceTo(target) <= 24.0 * 24.0) {
             tickSky(world, target);
         }
     }
 
-    // ------------------------------------------------------------------
-    // Attack 3: seed bombs from the sky (final form)
-    // ------------------------------------------------------------------
+    private void tickStartled() {
+        startledTicks--;
+        if (this.getWorld() instanceof ServerWorld world && this.age % 5 == 0) {
 
-    /** A spot on the ground that is marked with a warning ring and will be hit when the timer runs out. */
+            world.spawnParticles(ParticleTypes.CRIT, this.getX(), this.getY() + this.getHeight() + 0.2, this.getZ(),
+                    3, 0.3, 0.1, 0.3, 0.1);
+        }
+        if (startledTicks <= 0) {
+            startledTicks = 0;
+            this.dataTracker.set(STARTLED, false);
+        }
+    }
+
+    private void tickPendingAttack(ServerWorld world) {
+        AttackType type = pendingAttack;
+        PlayerEntity target = pendingTarget == null ? null : world.getPlayerByUuid(pendingTarget);
+        if (type == null || target == null || !target.isAlive() || target.isSpectator()) {
+            pendingAttack = null;
+            return;
+        }
+
+        if (pendingDelay > 0) {
+            pendingDelay--;
+
+            if (!castAnimPlayed && pendingDelay <= CAST_LEAD_TICKS) {
+                castAnimPlayed = true;
+                this.triggerAnim("attack_controller", type == AttackType.CHOMP ? "cast_chomp" : "cast_vine");
+                sfx(SoundEvents.ENTITY_EVOKER_PREPARE_ATTACK, 1.0f, type == AttackType.CHOMP ? 1.0f : 0.8f);
+            }
+            if (this.age % 3 == 0) {
+                world.spawnParticles(ParticleTypes.NOTE, this.getX(), this.getY() + this.getHeight() * 0.9, this.getZ(),
+                        1, 0.4, 0.2, 0.4, 0.0);
+            }
+            if (pendingDelay > 0) return;
+        }
+
+        pendingAttack = null;
+        switch (type) {
+            case CHOMP -> {
+                castChomp(world, target);
+                startle(STARTLE_CHOMP_TICKS);
+            }
+            case VINE -> castVine(world, target);
+        }
+    }
+
+    private void castChomp(ServerWorld world, PlayerEntity target) {
+        sfx(SoundEvents.ENTITY_EVOKER_CAST_SPELL, 1.0f, isFinalForm() ? 0.7f : 1.2f);
+
+        int lines = isFinalForm() ? 5 : 1;
+        Vec3d right = rightOf(target);
+        for (int k = 0; k < lines; k++) {
+            double lateral = (k - (lines - 1) / 2.0) * 2.0;
+            int order = pendingSweep > 0 ? k : (lines - 1 - k);
+            castFangLine(world,
+                    target.getX() + right.x * lateral,
+                    target.getZ() + right.z * lateral,
+                    order * FAN_LINE_STEP);
+        }
+    }
+
+    private void castFangLine(ServerWorld world, double tx, double tz, int extraDelay) {
+        double dx = tx - this.getX();
+        double dz = tz - this.getZ();
+        double len = Math.sqrt(dx * dx + dz * dz);
+        if (len < 0.001) return;
+        dx /= len;
+        dz /= len;
+
+        float yaw = (float) MathHelper.atan2(dz, dx);
+        double start = this.getWidth() / 2.0 + 1.0;
+        int count = MathHelper.clamp((int) (len / 1.25) + 3, 6, 16);
+
+        for (int i = 0; i < count; i++) {
+            double x = this.getX() + dx * (start + i * 1.25);
+            double z = this.getZ() + dz * (start + i * 1.25);
+
+            BlockPos ground = findStandable(BlockPos.ofFloored(x, this.getY(), z));
+            if (ground == null) continue;
+
+            world.spawnEntity(new EvokerFangsEntity(world, x, ground.getY(), z, yaw, extraDelay + i * 2, this));
+        }
+    }
+
+    private void castVine(ServerWorld world, PlayerEntity target) {
+        if (!(target instanceof ServerPlayerEntity victim)) return;
+        if (hasActiveVine() || !canVineTarget(victim)) return;
+
+        VineAnchorEntity vine = ModEntities.VINE_ANCHOR.create(world);
+        if (vine == null) return;
+
+        vine.bind(this, victim);
+        world.spawnEntity(vine);
+        activeVine = vine;
+    }
+
+    @Override
+    public boolean isTeammate(Entity other) {
+        return other instanceof SingingFlowerEntity || super.isTeammate(other);
+    }
+
     private static class PendingStrike {
         final Vec3d ground;
         int ticksLeft;
@@ -256,8 +429,8 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
         }
 
         this.triggerAnim("attack_controller", "cast_sky");
+        sfx(SoundEvents.ENTITY_EVOKER_PREPARE_SUMMON, 1.5f, 0.7f);
 
-        // one right on the player (they have to move), the rest scattered around them
         queueStrike(target.getX(), target.getY(), target.getZ());
         for (int i = 0; i < 5; i++) {
             double angle = this.random.nextDouble() * Math.PI * 2.0;
@@ -269,8 +442,7 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
 
     private void queueStrike(double x, double y, double z) {
         BlockPos ground = findStandable(BlockPos.ofFloored(x, y, z));
-        if (ground == null) return; // no floor there (void, wall...)
-        // 1.5 to 2.5 seconds of warning
+        if (ground == null) return;
         strikes.add(new PendingStrike(new Vec3d(x, ground.getY(), z), 30 + this.random.nextInt(20)));
     }
 
@@ -288,7 +460,6 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
         }
     }
 
-    /** A red ring on the ground, exactly as wide as the blast. */
     private void warningRing(ServerWorld world, Vec3d ground) {
         int points = 14;
         for (int i = 0; i < points; i++) {
@@ -301,7 +472,6 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
         }
     }
 
-    /** Drops a seed from up to 16 blocks above the spot, or from just under the ceiling if there is one. */
     private void dropSeed(ServerWorld world, Vec3d ground) {
         BlockPos g = BlockPos.ofFloored(ground);
         int height = 2;
@@ -315,130 +485,70 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
         seed.setPosition(ground.x, g.getY() + height - 0.5, ground.z);
         seed.setVelocity(0.0, -1.0, 0.0);
         world.spawnEntity(seed);
-    }
 
-    private boolean hasActiveVine() {
-        return activeVine != null && !activeVine.isRemoved();
-    }
-
-    /** Each flower owns at most one vine at a time, so 3 flowers left means up to 3 vines. */
-    private void tickVine(ServerWorld world, PlayerEntity target) {
-        if (activeVine != null && activeVine.isRemoved()) {
-            activeVine = null;
-            vineCooldown = 100 + this.random.nextInt(40); // pause after a vine breaks or ends
-        }
-        if (activeVine != null) return;
-
-        if (vineCooldown > 0) {
-            vineCooldown--;
-            return;
-        }
-
-        if (!(target instanceof ServerPlayerEntity victim)) return;
-
-        // Only cast from a distance: the leash radius (2.5) plus melee reach (~3) must stay
-        // short of the flower, so a held player can't just hit the flower and ignore the vine.
-        double distSq = this.squaredDistanceTo(victim);
-        if (distSq < 7.0 * 7.0 || distSq > 18.0 * 18.0) return;
-
-        VineAnchorEntity vine = ModEntities.VINE_ANCHOR.create(world);
-        if (vine == null) return;
-
-        vine.bind(this, victim);
-        world.spawnEntity(vine);
-        activeVine = vine;
-        this.triggerAnim("attack_controller", "cast_vine");
-    }
-
-    /** A line of evoker fangs toward the player, each one delayed a bit more: the domino effect. */
-    private void castFangLine(ServerWorld world, PlayerEntity target) {
-        double dx = target.getX() - this.getX();
-        double dz = target.getZ() - this.getZ();
-        double len = Math.sqrt(dx * dx + dz * dz);
-        if (len < 0.001) return;
-        dx /= len;
-        dz /= len;
-
-        float yaw = (float) MathHelper.atan2(dz, dx); // fangs take radians
-        double start = this.getWidth() / 2.0 + 1.0;   // start past the flower's body (bigger in final form)
-        int count = MathHelper.clamp((int) (len / 1.25) + 3, 6, 16); // reach a bit past the player
-
-        this.triggerAnim("attack_controller", "cast_chomp");
-
-        for (int i = 0; i < count; i++) {
-            double x = this.getX() + dx * (start + i * 1.25);
-            double z = this.getZ() + dz * (start + i * 1.25);
-
-            BlockPos ground = findStandable(BlockPos.ofFloored(x, this.getY(), z));
-            if (ground == null) continue; // skip gaps in the floor, keep the line going
-
-            world.spawnEntity(new EvokerFangsEntity(world, x, ground.getY(), z, yaw, i * 2, this));
-        }
-    }
-
-    /** Fangs skip "teammates" of their owner, so this stops flowers from chomping each other. */
-    @Override
-    public boolean isTeammate(net.minecraft.entity.Entity other) {
-        return other instanceof SingingFlowerEntity || super.isTeammate(other);
+        world.playSound(null, ground.x, ground.y + 3.0, ground.z,
+                SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.HOSTILE, 0.7f, 0.6f);
     }
 
     private void startBurying() {
         setBurrowState(BurrowState.BURYING);
+        sfx(SoundEvents.BLOCK_ROOTED_DIRT_PLACE, 1.2f, 0.9f);
         dirtBurst();
     }
 
-    private void enterBuried(@Nullable PlayerEntity target) {
+    private void enterBuried() {
         setBurrowState(BurrowState.BURIED);
         this.buriedTicks = 30 + this.random.nextInt(20);
-        this.destination = pickDestination(target);
         dirtBurst();
     }
 
-    private void tickBuried() {
+    private void tickBuried(@Nullable PlayerEntity target) {
         if (stateTicks < buriedTicks) return;
 
-        Vec3d dest = goingHome ? homeDestination() : destination;
+        Vec3d dest = pickDestination(target);
         if (dest != null) {
             this.requestTeleport(dest.x, dest.y, dest.z);
         }
-        destination = null;
         setBurrowState(BurrowState.EMERGING);
+        sfx(SoundEvents.BLOCK_ROOTED_DIRT_BREAK, 1.2f, 0.8f);
+        sfx(SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, 0.8f, PENTATONIC[getVariant() % PENTATONIC.length]);
         dirtBurst();
+    }
+
+    private boolean canBurrowOn(BlockState state) {
+        return state.isOf(Blocks.GRASS_BLOCK) || state.isOf(Blocks.DIRT) || state.isOf(Blocks.MUD) || state.isOf(ModBlocks.WONDER_GRASS) || state.isOf(ModBlocks.WONDER_DIRT_PATH) || state.isOf(ModBlocks.WONDER_DIRT);
     }
 
     private void finishEmerging() {
         setBurrowState(BurrowState.SURFACED);
         this.surfaceTicks = 100 + this.random.nextInt(60);
-        this.attackTicks = 0;
 
         if (goingHome && !isFinalForm()) {
             growUp();
         }
     }
 
-    /** Called by the spawner when only this flower is left. */
     public void beginFinalForm() {
+        startledTicks = 0; this.dataTracker.set(STARTLED, false);
         this.goingHome = true;
         if (getBurrowState() == BurrowState.SURFACED) {
+            pendingAttack = null;
             startBurying();
         }
     }
 
-    /** Called by the spawner right after spawning so flowers rise out of the ground. */
     public void startEmerging() {
         setBurrowState(BurrowState.EMERGING);
+        sfx(SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, 0.8f, PENTATONIC[getVariant() % PENTATONIC.length]);
     }
 
     private void growUp() {
         this.dataTracker.set(FINAL_FORM, true);
+        sfx(SoundEvents.ENTITY_EVOKER_CELEBRATE, 2.0f, 0.5f);
         ScaleData scale = ScaleTypes.BASE.getScaleData(this);
         scale.setTargetScale(FINAL_SCALE);
         scale.setScaleTickDelay(60);
     }
-
-    // ------------------------------------------------------------------
-    // Picking where to emerge
-    // ------------------------------------------------------------------
 
     @Nullable
     private Vec3d homeDestination() {
@@ -450,25 +560,40 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
         if (goingHome) return homeDestination();
         if (target == null) return null;
 
+        double yaw = Math.toRadians(target.getYaw());
+        double forward = Math.atan2(Math.cos(yaw), -Math.sin(yaw));
+        double slot = getVariant() / (double) (SingingFlowersSpawnerBlockEntity.FLOWER_COUNT - 1);
+        double slotOffset = (slot - 0.5) * ARC_SPAN;
+
         for (int attempt = 0; attempt < 16; attempt++) {
-            double angle = this.random.nextDouble() * Math.PI * 2.0;
-            double dist = MIN_EMERGE_DIST + this.random.nextDouble() * (MAX_EMERGE_DIST - MIN_EMERGE_DIST);
+            double angle;
+            double dist;
+            if (attempt < 8) {
+                angle = forward + slotOffset + (this.random.nextDouble() - 0.5) * 0.25;
+                dist = ARC_RADIUS_MIN + this.random.nextDouble() * (ARC_RADIUS_MAX - ARC_RADIUS_MIN);
+            } else {
+                angle = this.random.nextDouble() * Math.PI * 2.0;
+                dist = MIN_EMERGE_DIST + this.random.nextDouble() * (MAX_EMERGE_DIST - MIN_EMERGE_DIST);
+            }
             double x = target.getX() + Math.cos(angle) * dist;
             double z = target.getZ() + Math.sin(angle) * dist;
 
             BlockPos ground = findStandable(BlockPos.ofFloored(x, target.getY(), z));
             if (ground == null) continue;
+
+            BlockState groundState = this.getWorld().getBlockState(ground.down());
+            if (!canBurrowOn(groundState)) continue;
+
             if (homePos != null && ground.getSquaredDistance(homePos) > ARENA_RADIUS * ARENA_RADIUS) continue;
 
             Vec3d spot = Vec3d.ofBottomCenter(ground);
-            // don't emerge next to any player
+
             if (this.getWorld().getClosestPlayer(spot.x, spot.y, spot.z, TOO_CLOSE + 1.5, false) != null) continue;
             return spot;
         }
-        return null; // no valid spot: just re-emerge where it is
+        return null;
     }
 
-    /** Finds a floor with 2 blocks of headroom within a few blocks vertically of start. */
     @Nullable
     private BlockPos findStandable(BlockPos start) {
         World w = this.getWorld();
@@ -491,20 +616,34 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
         }
     }
 
-    // ------------------------------------------------------------------
-    // Damage / hit rules
-    // ------------------------------------------------------------------
+    private void sfx(SoundEvent sound, float volume, float pitch) {
+        this.getWorld().playSound(null, this.getX(), this.getY(), this.getZ(), sound, SoundCategory.HOSTILE, volume, pitch);
+    }
+
+    private void sing() {
+        int idx = (getVariant() + this.random.nextInt(2) * 2) % PENTATONIC.length;
+        float pitch = PENTATONIC[idx] * (isFinalForm() ? 0.5f : 1.0f);
+        sfx(SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, 0.9f, pitch);
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundEvents.BLOCK_AZALEA_LEAVES_HIT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.BLOCK_AZALEA_LEAVES_BREAK;
+    }
 
     @Override
     public boolean isInvulnerableTo(DamageSource source) {
-        // buried / burying / emerging flowers can't be damaged (except by /kill and the void)
         if (getBurrowState() != BurrowState.SURFACED && !source.isIn(DamageTypeTags.BYPASSES_INVULNERABILITY)) {
             return true;
         }
         return super.isInvulnerableTo(source);
     }
 
-    /** Lets the player's crosshair and arrows pass through a buried flower. */
     @Override
     public boolean canHit() {
         return getBurrowState() == BurrowState.SURFACED && super.canHit();
@@ -512,6 +651,9 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
 
     @Override
     public boolean damage(DamageSource source, float amount) {
+        if (!this.getWorld().isClient() && startledTicks > 0) {
+            amount *= STARTLED_DAMAGE_MULTIPLIER;
+        }
         boolean hurt = super.damage(source, amount);
         if (hurt && !this.getWorld().isClient() && source.getAttacker() instanceof ServerPlayerEntity player) {
             SingingFlowersSpawnerBlockEntity spawner = getSpawner();
@@ -531,21 +673,17 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
 
     @Override
     public void takeKnockback(double strength, double x, double z) {
-        // flowers are rooted
     }
 
     @Override
     public boolean isPushable() { return false; }
 
     @Override
-    protected void pushAway(net.minecraft.entity.Entity entity) { }
+    protected void pushAway(Entity entity) { }
 
     @Override
     public boolean canImmediatelyDespawn(double distanceSquared) { return false; }
 
-    // ------------------------------------------------------------------
-    // Saving
-    // ------------------------------------------------------------------
 
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
@@ -573,15 +711,9 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
             this.homePos = new BlockPos(nbt.getInt("HomeX"), nbt.getInt("HomeY"), nbt.getInt("HomeZ"));
         }
 
-        // The planned destination isn't saved, so a flower that was underground
-        // simply re-emerges where it is.
         BurrowState saved = BurrowState.byId(nbt.getInt("BurrowState"));
         setBurrowState(saved == BurrowState.SURFACED ? BurrowState.SURFACED : BurrowState.EMERGING);
     }
-
-    // ------------------------------------------------------------------
-    // GeckoLib
-    // ------------------------------------------------------------------
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
@@ -590,7 +722,7 @@ public class SingingFlowerEntity extends PathAwareEntity implements GeoEntity {
                     case BURYING -> BURY;
                     case BURIED -> BURIED_ANIM;
                     case EMERGING -> EMERGE;
-                    default -> IDLE;
+                    default -> isStartled() ? STARTLED_ANIM : IDLE;
                 })));
 
         controllers.add(new AnimationController<>(this, "attack_controller", 2, state -> PlayState.STOP)

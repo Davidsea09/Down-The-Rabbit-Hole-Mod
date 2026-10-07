@@ -3,6 +3,7 @@ package net.emanueljdf09.dtrhmod;
 import net.emanueljdf09.dtrhmod.block.ModBlockCollections;
 import net.emanueljdf09.dtrhmod.block.ModBlockEntities;
 import net.emanueljdf09.dtrhmod.block.ModBlocks;
+import net.emanueljdf09.dtrhmod.block.entity.spawn.SingingFlowersSpawnerBlockEntity;
 import net.emanueljdf09.dtrhmod.entity.ModBoats;
 import net.emanueljdf09.dtrhmod.entity.ModEntities;
 import net.emanueljdf09.dtrhmod.entity.ModSpawners;
@@ -27,6 +28,7 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
@@ -42,6 +44,7 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 
 import static net.emanueljdf09.dtrhmod.world.dimension.ModDimensions.EXTERIOR_LEVEL_KEY;
+import static net.emanueljdf09.dtrhmod.world.dimension.ModDimensions.LAND_OF_FLOWERS_LEVEL_KEY;
 
 public class DownTheRabbitHole implements ModInitializer {
 	public static final String MOD_ID = "dtrhmod";
@@ -161,25 +164,55 @@ public class DownTheRabbitHole implements ModInitializer {
 
 					world.setSpawnPos(new BlockPos(3, 70, 2), 0.0f);
 
-						world.getStructureTemplateManager().getTemplate(new Identifier(DownTheRabbitHole.MOD_ID, "exterior/exterior_room"))
-								.ifPresentOrElse(template -> {
-									StructurePlacementData data = new StructurePlacementData()
-											.setIgnoreEntities(false)
-											.setUpdateNeighbors(true);
-									template.place(world, spawnPos, spawnPos, data, world.getRandom(), 3);
+					world.getStructureTemplateManager().getTemplate(new Identifier(DownTheRabbitHole.MOD_ID, "exterior/exterior_room"))
+							.ifPresentOrElse(template -> {
+								StructurePlacementData data = new StructurePlacementData()
+										.setIgnoreEntities(false)
+										.setUpdateNeighbors(true);
+								template.place(world, spawnPos, spawnPos, data, world.getRandom(), 3);
 
-									world.updateNeighbors(spawnPos, ModBlocks.EXTERIOR_DOOR);
+								world.updateNeighbors(spawnPos, ModBlocks.EXTERIOR_DOOR);
 
-									System.out.println("[DTRH] Successfully placed exterior_room at 0, 62, 0");
-								}, () -> {
-									System.err.println("[DTRH] ERROR: Could not find NBT file at data/dtrhmod/structures/exterior_room.nbt");
-								});
+								System.out.println("[DTRH] Successfully placed exterior_room at 0, 62, 0");
+							}, () -> {
+								System.err.println("[DTRH] ERROR: Could not find NBT file at data/dtrhmod/structures/exterior_room.nbt");
+							});
 
-						ProgressionComponent component = ModComponents.PROGRESSION_COMPONENT.get(player);
+					ProgressionComponent component = ModComponents.PROGRESSION_COMPONENT.get(player);
 
-							if (!component.hasDoneExterior()) {
-								ModPackets.sendOpenBookPacket(player, "wonderland_intro");
-							}
+					if (!component.hasDoneExterior()) {
+						ModPackets.sendOpenBookPacket(player, "wonderland_intro");
+					}
+
+				}
+
+				if (world.getRegistryKey().equals(LAND_OF_FLOWERS_LEVEL_KEY)) {
+
+					BlockPos spawnPos = new BlockPos(0, 64, 0);
+
+					world.setSpawnPos(new BlockPos(24, 70, 45), 0.0f);
+
+					world.getStructureTemplateManager().getTemplate(new Identifier(DownTheRabbitHole.MOD_ID, "land_of_flowers/arena"))
+							.ifPresentOrElse(template -> {
+								StructurePlacementData data = new StructurePlacementData()
+										.setIgnoreEntities(false)
+										.setUpdateNeighbors(true);
+								template.place(world, spawnPos, spawnPos, data, world.getRandom(), 3);
+
+								BlockPos customBlockPos = new BlockPos(24, 64, 23);
+
+								world.setBlockState(customBlockPos, ModBlocks.SINGING_FLOWERS_SPAWNER_BLOCK.getDefaultState(), 3);
+								BlockEntity blockEntity = world.getBlockEntity(customBlockPos);
+								if (blockEntity instanceof SingingFlowersSpawnerBlockEntity spawnerBE) {
+									spawnerBE.forceReset(world);
+								}
+
+								System.out.println("[DTRH] Successfully placed arena structure and custom block at 24, 64, 23");
+							}, () -> {
+								System.err.println("[DTRH] ERROR: Could not find NBT file at data/dtrhmod/structures/land_of_flowers/arena.nbt");
+							});
+
+					ProgressionComponent component = ModComponents.PROGRESSION_COMPONENT.get(player);
 
 				}
 			}

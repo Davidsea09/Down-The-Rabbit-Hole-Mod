@@ -32,6 +32,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WONDER_DIRT_PATH, ModBlocks.WONDER_DIRT);
         addDrop(ModBlocks.TEAPOT_BLOCK);
 
+        addDrop(ModBlocks.FLOWER_PORTAL);
+
+
         addDrop(ModBlocks.MAD_HATTER_HEAD);
 
         addDrop(ModBlocks.MIRROR_BLOCK, doorDrops(ModBlocks.MIRROR_BLOCK));

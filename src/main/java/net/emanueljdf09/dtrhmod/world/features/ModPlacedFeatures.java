@@ -19,6 +19,7 @@ public class ModPlacedFeatures {
 
     public static final RegistryKey<PlacedFeature> FOREST_ROCKS_PLACED = registerKey("forest_rocks_placed");
     public static final RegistryKey<PlacedFeature> FOREST_FLOWERBEDS_PLACED = registerKey("forest_flowerbeds_placed");
+    public static final RegistryKey<PlacedFeature> FOREST_FLOWERS_PLACED = registerKey("forest_flowers_placed");
     public static final RegistryKey<PlacedFeature> FOREST_GROUND_MUSHROOMS_PLACED = registerKey("forest_ground_mushrooms_placed");
 
     public static final RegistryKey<PlacedFeature> DISK_CLAY_PLACED = registerKey("disk_clay_placed");
@@ -62,6 +63,16 @@ public class ModPlacedFeatures {
         );
 
         register(context, FOREST_GROUND_MUSHROOMS_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FOREST_GROUND_MUSHROOMS),
+                List.of(
+                        RarityFilterPlacementModifier.of(4),
+                        SquarePlacementModifier.of(),
+                        PlacedFeatures.OCEAN_FLOOR_WG_HEIGHTMAP,
+                        SurfaceWaterDepthFilterPlacementModifier.of(0),
+                        BiomePlacementModifier.of()
+                )
+        );
+
+ register(context, FOREST_FLOWERS_PLACED, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FOREST_FLOWERS),
                 List.of(
                         RarityFilterPlacementModifier.of(4),
                         SquarePlacementModifier.of(),

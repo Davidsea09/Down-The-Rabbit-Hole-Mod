@@ -15,6 +15,7 @@ import net.emanueljdf09.dtrhmod.item.block.ModHeadBlockItem;
 import net.emanueljdf09.dtrhmod.item.custom.CatScarfItem;
 import net.emanueljdf09.dtrhmod.item.custom.DynamicTeaCupItem;
 import net.emanueljdf09.dtrhmod.item.custom.StoryBook;
+import net.emanueljdf09.dtrhmod.item.custom.VineLassoItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -87,8 +88,12 @@ public class ModItems {
                     new FabricItemSettings()));
 
     public static final Item SINGING_FLOWER_SPAWN_EGG = registerItem("singing_flower_spawn_egg",
-            new SpawnEggItem(ModEntities.SINGING_FLOWER, 0x857b97, 0x375c76,
+            new SpawnEggItem(ModEntities.SINGING_FLOWER, 0xf76b8f, 0xffae34,
                     new FabricItemSettings()));
+
+
+    public static final Item VINE_LASSO_ITEM = registerItem("vine_lasso",
+            new VineLassoItem(new FabricItemSettings().maxCount(1)));
 
     public static final Item CAT_SCARF_ITEM = registerItem("cat_scarf",
             new CatScarfItem(new FabricItemSettings().maxCount(1)));

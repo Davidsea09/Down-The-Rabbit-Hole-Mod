@@ -2,6 +2,7 @@ package net.emanueljdf09.dtrhmod.entity.custom;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
@@ -16,6 +17,7 @@ import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -23,20 +25,24 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class VineAnchorEntity extends Entity {
-    private static final TrackedData<Integer> FLOWER_ID = DataTracker.registerData(VineAnchorEntity.class, TrackedDataHandlerRegistry.INTEGER);
+    private static final TrackedData<Integer> OWNER_ID = DataTracker.registerData(VineAnchorEntity.class, TrackedDataHandlerRegistry.INTEGER);
     private static final TrackedData<Integer> VICTIM_ID = DataTracker.registerData(VineAnchorEntity.class, TrackedDataHandlerRegistry.INTEGER);
 
     private static final float VINE_HEALTH = 4.0f;
     private static final int MAX_LIFETIME = 240;
+
+    private static final int PLAYER_MAX_LIFETIME = 200;
+    private static final int FLOWER_MAX_LIFETIME = 240;
+
     private static final int DRAIN_INTERVAL = 20;
     private static final float DRAIN_DAMAGE = 2.0f;
     private static final double LEASH_RADIUS = 2.5;
     private static final int SLOW_AMPLIFIER = 3;
 
     @Nullable
-    private SingingFlowerEntity flower;
+    private Entity owner;
     @Nullable
-    private ServerPlayerEntity victim;
+    private LivingEntity victim;
     private double holdX, holdZ;
     private float vineHealth = VINE_HEALTH;
     private int ticksAlive = 0;
@@ -48,21 +54,26 @@ public class VineAnchorEntity extends Entity {
 
     @Override
     protected void initDataTracker() {
-        this.dataTracker.startTracking(FLOWER_ID, -1);
+        this.dataTracker.startTracking(OWNER_ID, -1);
         this.dataTracker.startTracking(VICTIM_ID, -1);
     }
 
-    public int getFlowerId() { return this.dataTracker.get(FLOWER_ID); }
+    public int getOwnerId() { return this.dataTracker.get(OWNER_ID); }
     public int getVictimId() { return this.dataTracker.get(VICTIM_ID); }
 
-    public void bind(SingingFlowerEntity flower, ServerPlayerEntity victim) {
-        this.flower = flower;
+    public void bind(Entity owner, LivingEntity victim) {
+        this.owner = owner;
         this.victim = victim;
         this.holdX = victim.getX();
         this.holdZ = victim.getZ();
-        this.dataTracker.set(FLOWER_ID, flower.getId());
+        this.dataTracker.set(OWNER_ID, owner.getId());
         this.dataTracker.set(VICTIM_ID, victim.getId());
         updateAnchorPosition();
+
+        this.getWorld().playSound(null, victim.getX(), victim.getY(), victim.getZ(),
+                SoundEvents.BLOCK_GRASS_PLACE, SoundCategory.HOSTILE, 1.2F, 0.7F);
+        this.getWorld().playSound(null, victim.getX(), victim.getY(), victim.getZ(),
+                SoundEvents.ENTITY_LEASH_KNOT_PLACE, SoundCategory.HOSTILE, 1.0F, 0.8F);
     }
 
 
@@ -73,12 +84,28 @@ public class VineAnchorEntity extends Entity {
 
         ticksAlive++;
 
-        if (flower == null || victim == null
-                || flower.isRemoved() || !flower.isAlive()
-                || flower.getBurrowState() != SingingFlowerEntity.BurrowState.SURFACED // flower buried: lets go
-                || victim.isRemoved() || !victim.isAlive() || victim.isSpectator()
-                || victim.getWorld() != this.getWorld()
-                || ticksAlive > MAX_LIFETIME) {
+        if (owner == null || victim == null
+                || owner.isRemoved() || !owner.isAlive()
+                || victim.isRemoved() || !victim.isAlive()
+                || victim.getWorld() != this.getWorld()) {
+            release();
+            return;
+        }
+
+        if (owner instanceof SingingFlowerEntity flower) {
+            if (flower.getBurrowState() != SingingFlowerEntity.BurrowState.SURFACED) {
+                release();
+                return;
+            }
+        }
+
+
+        int maxLifetime = (owner instanceof PlayerEntity) ? PLAYER_MAX_LIFETIME : FLOWER_MAX_LIFETIME;
+
+        if (ticksAlive > maxLifetime) {
+            if (owner instanceof SingingFlowerEntity flower) {
+                flower.startle(SingingFlowerEntity.STARTLE_VINE_EXPIRE_TICKS);
+            }
             release();
             return;
         }
@@ -103,29 +130,40 @@ public class VineAnchorEntity extends Entity {
     }
 
     private void drain() {
-        if (flower == null || victim == null) return;
+        if (owner == null || victim == null) return;
 
         float before = victim.getHealth();
-        victim.damage(this.getWorld().getDamageSources().indirectMagic(this, flower), DRAIN_DAMAGE);
+        DamageSource source = owner instanceof PlayerEntity ? this.getWorld().getDamageSources().playerAttack((PlayerEntity) owner)
+                : this.getWorld().getDamageSources().indirectMagic(this, owner);
+
+        victim.damage(source, DRAIN_DAMAGE);
         float dealt = before - victim.getHealth();
 
         if (dealt > 0 && this.getWorld() instanceof ServerWorld world) {
-            flower.heal(dealt);
-            world.spawnParticles(ParticleTypes.HAPPY_VILLAGER,
-                    flower.getX(), flower.getBodyY(0.7), flower.getZ(), 4, 0.3, 0.3, 0.3, 0.0);
+
+            if (owner instanceof SingingFlowerEntity flower) {
+                flower.heal(dealt);
+            } else if (owner instanceof PlayerEntity player) {
+                player.heal(dealt);
+            }
+
+            world.spawnParticles(ParticleTypes.HEART,
+                    victim.getX(), victim.getBodyY(0.7), victim.getZ(), 2, 0.3, 0.3, 0.3, 0.0);
             world.spawnParticles(ParticleTypes.DAMAGE_INDICATOR,
                     victim.getX(), victim.getBodyY(0.5), victim.getZ(), 2, 0.2, 0.2, 0.2, 0.0);
+            world.playSound(null, victim.getX(), victim.getY(), victim.getZ(),
+                    SoundEvents.ENTITY_GENERIC_DRINK, SoundCategory.HOSTILE, 0.6F, 0.8F);
         }
     }
 
     private void updateAnchorPosition() {
-        if (flower == null || victim == null) return;
-        Vec3d toFlower = flower.getPos().subtract(victim.getPos()).multiply(1, 0, 1);
-        double len = toFlower.length();
+        if (owner == null || victim == null) return;
+        Vec3d toOwner = owner.getPos().subtract(victim.getPos()).multiply(1, 0, 1);
+        double len = toOwner.length();
         if (len < 0.01) return;
 
         double offset = MathHelper.clamp(len * 0.4, 1.5, 3.0);
-        Vec3d dir = toFlower.normalize();
+        Vec3d dir = toOwner.normalize();
         this.setPosition(victim.getX() + dir.x * offset, victim.getY() + 0.3, victim.getZ() + dir.z * offset);
     }
 
@@ -135,14 +173,18 @@ public class VineAnchorEntity extends Entity {
 
     @Override
     public boolean canHit() {
-        return true;
+        return !isPlayerOwned();
+    }
+
+    private boolean isPlayerOwned() {
+        return this.getWorld().getEntityById(getOwnerId()) instanceof PlayerEntity;
     }
 
     @Override
     public boolean damage(DamageSource source, float amount) {
+        if (isPlayerOwned()) return false;
+
         if (this.getWorld().isClient() || this.isRemoved()) return false;
-        // only players (melee or their arrows) can cut the vine
-        if (!(source.getAttacker() instanceof PlayerEntity)) return false;
 
         vineHealth -= amount;
         if (this.getWorld() instanceof ServerWorld world) {
@@ -151,6 +193,10 @@ public class VineAnchorEntity extends Entity {
         this.playSound(SoundEvents.BLOCK_GRASS_BREAK, 1.0F, 1.0F);
 
         if (vineHealth <= 0) {
+            if (owner instanceof SingingFlowerEntity flower && !flower.isRemoved()) {
+                flower.startle(SingingFlowerEntity.STARTLE_VINE_CUT_TICKS);
+            }
+            this.playSound(SoundEvents.BLOCK_WEEPING_VINES_BREAK, 1.2F, 0.8F);
             release();
         }
         return true;

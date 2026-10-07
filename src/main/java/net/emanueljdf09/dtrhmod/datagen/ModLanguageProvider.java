@@ -303,6 +303,14 @@ public class ModLanguageProvider extends FabricLanguageProvider {
 
 
         // Entities
+
+        // Random
+        builder.add(ModEntities.SKY_SEED, "Flower Bomb");
+        builder.add(ModEntities.VINE_ANCHOR, "Vine");
+        builder.add(ModEntities.VINE_LASSO_PROJECTILE, "Vine");
+        builder.add(ModEntities.TEAPOT_PROJECTILE, "Tea Cup");
+
+        // White Rabbit
         builder.add(ModItems.WHITE_RABBIT_SPAWN_EGG, "White Rabbit Spawn Egg (WIP)");
         builder.add(ModEntities.WHITE_RABBIT, "White Rabbit");
         builder.add("entity.dtrhmod.white_rabbit.greet_msg", "I'm late, I'm late, for a very important date! ");
@@ -310,9 +318,11 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         builder.add("entity.dtrhmod.white_rabbit.wonderland_remember_msg", "Oh hey, i know who you are; you followed me here.");
         builder.add("entity.dtrhmod.white_rabbit.wonderland_stranger_msg", "Who are you?");
 
+        // Weeping Players
         builder.add(ModItems.WEEPING_PLAYERS_SPAWN_EGG, "Weeping Player Spawn Egg (WIP)");
         builder.add(ModEntities.WEEPING_PLAYER, "Weeping Player");
 
+        // Mad Hatter
         builder.add(ModItems.MAD_HATTER_SPAWN_EGG, "Mad Hatter Spawn Egg (WIP)");
         builder.add(ModEntities.MAD_HATTER, "Mad Hatter");
         builder.add(ModBlocks.MAD_HATTER_HEAD, "Mad Hatter Head");
@@ -363,6 +373,13 @@ public class ModLanguageProvider extends FabricLanguageProvider {
 
         builder.add("entity.dtrhmod.cheshire_cat.tea_party_clue", "Oh, by the way, if you'd really like to know, The mad hatter is roughly %1$d blocks to the %2$s... Or maybe not. Who Knows?'");
 
+        // Singing FLowers
+        builder.add(ModItems.SINGING_FLOWER_SPAWN_EGG, "Singing Flower Spawn Egg");
+        builder.add(ModEntities.SINGING_FLOWER, "Singing Flower");
+        builder.add("entity.dtrhmod.singing_flowers", "The Flower Garden");
+        builder.add(ModBlocks.SINGING_FLOWERS_SPAWNER_BLOCK, "Singing Flower Spawner Block");
+        builder.add(ModItems.VINE_LASSO_ITEM, "Vine Lasso");
+
         // Items
         builder.add(ModItems.POCKETWATCH, "Pocketwatch");
         builder.add(ModItems.EXTERIOR_KEY, "Door Key");
@@ -378,6 +395,7 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         // Special Blocks
         builder.add(ModBlocks.RABBIT_HOLE, "Rabbit Hole");
         builder.add(ModBlocks.EXTERIOR_PORTAL, "Exterior Gateway");
+        builder.add(ModBlocks.FLOWER_PORTAL, "A Flower...?");
         builder.add(ModBlocks.MIRROR_BLOCK, "Mirror");
         builder.add(ModBlocks.MAD_HATTER_HAT, "Mad Hatter´s Hat (WIP)");
 
@@ -508,6 +526,9 @@ public class ModLanguageProvider extends FabricLanguageProvider {
 
         builder.add("advancement.dtrhmod.cheshire_cat_snitch.title", "I think we're all MAD");
         builder.add("advancement.dtrhmod.cheshire_cat_snitch.description", "Make the Cheshire Cat snitch.");
+
+        builder.add("advancement.dtrhmod.flowers_kill.title", "All in the Golden Afternoon");
+        builder.add("advancement.dtrhmod.flowers_kill.description", "Silence the garden that mistook you for a weed.");
 
         builder.add("advancement.dtrhmod.secret_root.title", "Secrets");
         builder.add("advancement.dtrhmod.secret_root.description", "I didn't know this was here...");

@@ -47,6 +47,8 @@ public class ModItemGroups {
                         entries.add(ModItems.CHESHIRE_CAT_SPAWN_EGG);
                         entries.add(ModItems.SINGING_FLOWER_SPAWN_EGG);
 
+                        entries.add(ModItems.VINE_LASSO_ITEM);
+
                         entries.add(ModItems.CAT_SCARF_ITEM);
                         entries.add(ModItems.CAT_FUR);
 
@@ -148,7 +150,6 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WONDER_DIRT_PATH.asItem());
                         entries.add(ModBlocks.RABBIT_HOLE.asItem());
                         entries.add(ModBlocks.FLOWER_PORTAL.asItem());
-                        entries.add(ModBlocks.SINGING_FLOWERS_SPAWNER_BLOCK.asItem());
                         entries.add(ModItems.MIRROR);
 
                         entries.add(ModItems.MAD_HATTER_HEAD_ITEM);

@@ -224,6 +224,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModItems.CAT_FUR), conditionsFromItem(ModItems.CAT_FUR))
                         .offerTo(consumer, new Identifier(getRecipeName(ModItems.CAT_SCARF_ITEM)));
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.LIGHT_GRAY_DYE, 1)
+                        .input(ModBlocks.LAWN_DAISY_PATCH.asItem())
+                        .criterion(hasItem(ModBlocks.LAWN_DAISY_PATCH.asItem()), conditionsFromItem(ModBlocks.LAWN_DAISY_PATCH.asItem()))
+                        .offerTo(consumer, new Identifier(getRecipeName(Items.LIGHT_GRAY_DYE)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.WHITE_DYE, 1)
+                .input(ModBlocks.FLOWER_PORTAL.asItem())
+                .criterion(hasItem(ModBlocks.FLOWER_PORTAL.asItem()), conditionsFromItem(ModBlocks.FLOWER_PORTAL.asItem()))
+                .offerTo(consumer, new Identifier(getRecipeName(Items.WHITE_DYE)));
+
+
         offerWoodRecipe(consumer, ModBlocks.TH_WOOD, ModBlocks.TH_LOG);
         offerWoodRecipe(consumer, ModBlocks.STRIPPED_TH_WOOD, ModBlocks.STRIPPED_TH_LOG);
         offerPlanksRecipe(consumer, ModBlocks.TH_PLANKS, ModTags.Items.TH_LOGS, 4);

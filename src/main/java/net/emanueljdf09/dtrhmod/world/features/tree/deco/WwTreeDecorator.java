@@ -21,19 +21,15 @@ public class WwTreeDecorator extends TreeDecorator {
     public void generate(Generator generator) {
         Random random = generator.getRandom();
 
-        // Loop through every single leaf block placed during tree generation
         for (BlockPos pos : generator.getLeavesPositions()) {
 
-            // Drop hanging leaf strands from outer or lower leaves (35% chance per leaf)
             if (random.nextFloat() < 0.35f) {
                 BlockPos currentPos = pos.down();
 
-                // Random length for this hanging strand (2 to 4 blocks long)
-                int strandLength = random.nextBetween(2, 4);
+               int strandLength = random.nextBetween(2, 4);
 
                 for (int i = 0; i < strandLength; i++) {
                     if (generator.isAir(currentPos)) {
-                        // Check if this is the very last block of the strand to apply the tip block
                         boolean isBottomTip = (i == strandLength - 1);
 
                         BlockState blockStateToPlace = isBottomTip
@@ -41,9 +37,9 @@ public class WwTreeDecorator extends TreeDecorator {
                                 : ModBlocks.WW_HANGING_LEAVES_PLANT.getDefaultState();
 
                         generator.replace(currentPos, blockStateToPlace);
-                        currentPos = currentPos.down(); // Move down to continue the chain
+                        currentPos = currentPos.down();
                     } else {
-                        break; // Stop if we hit a solid block or obstruction
+                        break;
                     }
                 }
             }

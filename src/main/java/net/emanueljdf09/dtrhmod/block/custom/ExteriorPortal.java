@@ -1,5 +1,6 @@
 package net.emanueljdf09.dtrhmod.block.custom;
 
+import net.emanueljdf09.dtrhmod.util.ModEffects;
 import net.emanueljdf09.dtrhmod.util.TeleportUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
@@ -23,6 +24,8 @@ public class ExteriorPortal extends Block {
 
         TeleportUtil.startBlockTrance(player, pos, (ServerWorld) world, () -> {
             TeleportUtil.teleportToWonderland(player);
+
+            player.removeStatusEffect(ModEffects.SHRINK);
         }, 40);
     }
 

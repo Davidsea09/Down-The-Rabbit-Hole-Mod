@@ -285,7 +285,7 @@ public class TeleportUtil {
         });
     }
 
-    public static void teleportToFlowerInstance(ServerPlayerEntity player, BlockPos flowerPos, ServerWorld originWorld) {
+    public static void teleportToArena(ServerPlayerEntity player, BlockPos flowerPos, ServerWorld originWorld) {
         if (TELEPORTING_PLAYERS.contains(player.getUuid())) return;
         TELEPORTING_PLAYERS.add(player.getUuid());
 
@@ -300,19 +300,15 @@ public class TeleportUtil {
             TELEPORTING_PLAYERS.remove(player.getUuid());
             return;
         }
-        FlowerInstanceManager manager = FlowerInstanceManager.getServerState(server);
 
-        BlockPos instancePos = manager.getOrCreateFlowerInstance(
-                server,
-                flowerPos,
-                ModDimensions.LAND_OF_FLOWERS_LEVEL_KEY,
-                new Identifier(DownTheRabbitHole.MOD_ID, "portal/mirror_room_complete"),
-                originWorld.getRegistryKey(),
-                flowerPos,
-                player.getUuid()
-        );
+        PlayerReturnManager manager = PlayerReturnManager.getServerState(server);
+        manager.registerReturn(player.getUuid(), originWorld.getRegistryKey(), flowerPos);
 
-        ChunkPos chunkPos = new ChunkPos(instancePos);
+        double targetX = 24.0 + 0.5;
+        double targetY = 70.0;
+        double targetZ = 45.0 + 0.5;
+
+        ChunkPos chunkPos = new ChunkPos(new BlockPos(24, 70, 45));
         targetWorld.getChunkManager().addTicket(
                 ChunkTicketType.START,
                 chunkPos,
@@ -322,14 +318,15 @@ public class TeleportUtil {
 
         player.teleport(
                 targetWorld,
-                instancePos.getX() + 0.5,
-                instancePos.getY() + 1.0,
-                instancePos.getZ() + 0.5,
+                targetX,
+                targetY,
+                targetZ,
                 player.getYaw(),
                 player.getPitch()
         );
         player.setVelocity(Vec3d.ZERO);
         player.fallDistance = 0.0f;
+        player.removeStatusEffect(ModEffects.SHRINK);
         player.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 200, 0, false, false, false));
 
         new Timer().schedule(new TimerTask() {
@@ -361,6 +358,7 @@ public class TeleportUtil {
             if (currentTicks >= 60) {
                 GROWTH_TIMER_MAP.remove(uuid);
                 returnPlayerToOrigin(player);
+                player.removeStatusEffect(ModEffects.GROW);
             }
         } else {
             GROWTH_TIMER_MAP.remove(uuid);
@@ -377,9 +375,8 @@ public class TeleportUtil {
             return;
         }
 
-
-        FlowerInstanceManager manager = FlowerInstanceManager.getServerState(server);
-        FlowerInstanceManager.ReturnLocation returnLoc = manager.getReturnLocation(player.getUuid());
+        PlayerReturnManager manager = PlayerReturnManager.getServerState(server);
+        PlayerReturnManager.ReturnLocation returnLoc = manager.getReturnLocation(player.getUuid());
 
         if (returnLoc != null) {
             ServerWorld originWorld = server.getWorld(returnLoc.dimension());
@@ -388,7 +385,7 @@ public class TeleportUtil {
 
                 player.teleport(
                         originWorld,
-                        pos.getX() + 1.5,
+                        pos.getX() + 0.5,
                         pos.getY() + 1.0,
                         pos.getZ() + 0.5,
                         player.getYaw(),

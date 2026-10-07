@@ -17,6 +17,7 @@ public class WonderBiomeFeatures {
         DefaultBiomeFeatures.addMossyRocks(builder);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.TULGEY_TREE_PLACED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.FOREST_FLOWERBEDS_PLACED);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.FOREST_FLOWERS_PLACED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.FOREST_GROUND_MUSHROOMS_PLACED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.FOREST_ROCKS_PLACED);
 

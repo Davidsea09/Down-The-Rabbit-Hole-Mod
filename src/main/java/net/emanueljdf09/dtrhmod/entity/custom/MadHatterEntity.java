@@ -13,6 +13,7 @@ import net.emanueljdf09.dtrhmod.util.entity.MadHatterTrivia;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.ActiveTargetGoal;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
@@ -31,7 +32,13 @@ import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
+import net.minecraft.nbt.NbtHelper;
+import net.minecraft.nbt.NbtList;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
@@ -39,6 +46,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -48,7 +56,10 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.UUID;
 
 public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
@@ -72,19 +83,30 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
     private static final TrackedData<Boolean> BOSS_MODE = DataTracker.registerData(MadHatterEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private static final TrackedData<Integer> BOSS_PHASE = DataTracker.registerData(MadHatterEntity.class, TrackedDataHandlerRegistry.INTEGER);
     private static final TrackedData<Boolean> IS_GREETING = DataTracker.registerData(MadHatterEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
-    private static final TrackedData<Boolean> IS_ATTACKING = DataTracker.registerData(MadHatterEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private static final TrackedData<Boolean> IS_CHARGING = DataTracker.registerData(MadHatterEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private static final TrackedData<Boolean> IS_RUNNING = DataTracker.registerData(MadHatterEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
-    private static final TrackedData<Boolean> IS_THROWING_HAT = DataTracker.registerData(MadHatterEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
-    private int attackAnimationTicks = 0;
+    private static final int RITUAL_HORDE_TICK = 220;
+    private static final int RITUAL_END_TICK = 460;
+    private static final int HORDE_SIZE = 8;
+    private static final int HEAL_INTERVAL_TICKS = 10;
+    private static final float HEAL_AMOUNT = 1.0f;
+    private static final int HEALER_GLOW_TICKS = 12000;
+
     private int chargeCooldownTicks = 0;
     private int triviaFailures = 0;
     private int greetingTicks = 0;
     private int hatThrowTicks = 0;
     private boolean isPerformingHatRitual = false;
-    private LivingEntity designatedHealer = null;
+    private boolean retriggerRitualAnim = false;
     private int healthThresholdTrigger = 75;
+
+    @Nullable
+    private LivingEntity designatedHealer = null;
+    @Nullable
+    private UUID healerId = null;
+    private final List<UUID> hordeIds = new ArrayList<>();
+    private final Set<UUID> participants = new HashSet<>();
 
     private final ServerBossBar bossBar = (ServerBossBar) new ServerBossBar(
             this.getDisplayName(),
@@ -94,6 +116,7 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
 
     public MadHatterEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
+        this.setPersistent();
     }
 
     @Override
@@ -103,10 +126,8 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
         this.dataTracker.startTracking(BOSS_MODE, false);
         this.dataTracker.startTracking(BOSS_PHASE, 0);
         this.dataTracker.startTracking(IS_GREETING, false);
-        this.dataTracker.startTracking(IS_ATTACKING, false);
         this.dataTracker.startTracking(IS_CHARGING, false);
         this.dataTracker.startTracking(IS_RUNNING, false);
-        this.dataTracker.startTracking(IS_THROWING_HAT, false);
     }
 
     public static DefaultAttributeContainer.Builder setAttributes() {
@@ -155,7 +176,7 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
         this.hatThrowTicks = 0;
         this.healthThresholdTrigger = regenCapPercent;
         this.designatedHealer = null;
-        this.dataTracker.set(IS_THROWING_HAT, true);
+        this.healerId = null;
 
         this.getNavigation().stop();
 
@@ -170,33 +191,79 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
         }
     }
 
-    private void spawnPhase3Horde() {
-        if (this.getWorld().isClient()) return;
+    private void discardHorde() {
+        if (this.getWorld() instanceof ServerWorld world) {
+            for (UUID id : hordeIds) {
+                Entity zombie = world.getEntity(id);
+                if (zombie != null) {
+                    world.spawnParticles(ParticleTypes.POOF, zombie.getX(), zombie.getY() + 1.0, zombie.getZ(), 8, 0.3, 0.5, 0.3, 0.02);
+                    zombie.discard();
+                }
+            }
+        }
+        hordeIds.clear();
+        designatedHealer = null;
+        healerId = null;
+    }
 
-        List<ZombieEntity> spawnedZombies = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
-            ZombieEntity zombie = EntityType.ZOMBIE.create(this.getWorld());
-            if (zombie != null) {
-                double offsetX = (this.random.nextDouble() - 0.5) * 6.0;
-                double offsetZ = (this.random.nextDouble() - 0.5) * 6.0;
-                zombie.refreshPositionAndAngles(this.getX() + offsetX, this.getY(), this.getZ() + offsetZ, this.random.nextFloat() * 360F, 0.0F);
-                this.getWorld().spawnEntity(zombie);
-                spawnedZombies.add(zombie);
+    private void spawnPhase3Horde() {
+        if (!(this.getWorld() instanceof ServerWorld world)) return;
+
+        discardHorde();
+
+        List<ZombieEntity> spawned = new ArrayList<>();
+        for (int i = 0; i < HORDE_SIZE; i++) {
+            ZombieEntity zombie = EntityType.ZOMBIE.create(world);
+            if (zombie == null) continue;
+
+            double offsetX = (this.random.nextDouble() - 0.5) * 6.0;
+            double offsetZ = (this.random.nextDouble() - 0.5) * 6.0;
+            zombie.refreshPositionAndAngles(this.getX() + offsetX, this.getY(), this.getZ() + offsetZ, this.random.nextFloat() * 360F, 0.0F);
+
+            zombie.setPersistent();
+            zombie.equipStack(EquipmentSlot.HEAD, new ItemStack(Items.LEATHER_HELMET));
+            zombie.setEquipmentDropChance(EquipmentSlot.HEAD, 0.0F);
+
+            world.spawnEntity(zombie);
+            spawned.add(zombie);
+            hordeIds.add(zombie.getUuid());
+        }
+
+        if (spawned.isEmpty()) return;
+
+        ZombieEntity healer = spawned.get(this.random.nextInt(spawned.size()));
+        healer.addCommandTag("mad_hatter_healer");
+        healer.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, HEALER_GLOW_TICKS, 0, false, false, true));
+        this.designatedHealer = healer;
+        this.healerId = healer.getUuid();
+    }
+
+    private void tickHealer() {
+        if (!(this.getWorld() instanceof ServerWorld world)) return;
+
+        if (designatedHealer == null && healerId != null && this.age % 20 == 0) {
+            Entity found = world.getEntity(healerId);
+            if (found instanceof LivingEntity living && living.isAlive()) {
+                designatedHealer = living;
+            } else if (found != null) {
+                healerId = null;
             }
         }
 
-        if (!spawnedZombies.isEmpty()) {
-            this.designatedHealer = spawnedZombies.get(this.random.nextInt(spawnedZombies.size()));
-            this.designatedHealer.getCommandTags().add("mad_hatter_healer");
-
-            this.designatedHealer.addStatusEffect(new StatusEffectInstance(
-                    StatusEffects.GLOWING, 200, 0, false, false, true));
+        if (designatedHealer != null
+                && (!designatedHealer.isAlive() || designatedHealer.getWorld() != this.getWorld())) {
+            designatedHealer = null;
+            healerId = null;
         }
+        if (designatedHealer == null) return;
 
-        this.designatedHealer.addStatusEffect(new StatusEffectInstance(
-                StatusEffects.GLOWING, 200, 0, false, false, true));
+        float maxAllowedHealth = this.getMaxHealth() * (this.healthThresholdTrigger / 100.0f);
+        if (this.age % HEAL_INTERVAL_TICKS == 0 && this.getHealth() < maxAllowedHealth) {
+            this.heal(HEAL_AMOUNT);
+            world.spawnParticles(ParticleTypes.HAPPY_VILLAGER,
+                    this.getX(), this.getY() + 1.0, this.getZ(), 3, 0.5, 0.5, 0.5, 0.0);
+        }
     }
-
 
     @Override
     public boolean canHaveStatusEffect(StatusEffectInstance effect) {
@@ -213,15 +280,19 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
         if (this.getWorld().isClient()) return;
 
         if (isPerformingHatRitual) {
+            if (retriggerRitualAnim) {
+                retriggerRitualAnim = false;
+                this.triggerAnim("attack_controller", "throw_hat_anim");
+            }
+
             hatThrowTicks++;
 
-            if (hatThrowTicks == 220) {
+            if (hatThrowTicks == RITUAL_HORDE_TICK) {
                 spawnPhase3Horde();
             }
 
-            if (hatThrowTicks >= 460) {
+            if (hatThrowTicks >= RITUAL_END_TICK) {
                 isPerformingHatRitual = false;
-                this.dataTracker.set(IS_THROWING_HAT, false);
                 hatThrowTicks = 0;
                 setBossPhase(3);
 
@@ -234,20 +305,7 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
         }
 
         if (getBossPhase() == 3) {
-            if (designatedHealer != null) {
-                if (!designatedHealer.isAlive() || designatedHealer.getWorld() != this.getWorld()) {
-                    designatedHealer = null;
-                } else {
-                    float maxAllowedHealth = this.getMaxHealth() * (this.healthThresholdTrigger / 100.0f);
-                    if (this.getHealth() < maxAllowedHealth) {
-                        this.heal(0.5f);
-                        if (this.getWorld() instanceof ServerWorld serverWorld) {
-                            serverWorld.spawnParticles(ParticleTypes.HAPPY_VILLAGER,
-                                    this.getX(), this.getY() + 1.0, this.getZ(), 3, 0.5, 0.5, 0.5, 0.0);
-                        }
-                    }
-                }
-            }
+            tickHealer();
         }
 
         if (chargeCooldownTicks > 0) chargeCooldownTicks--;
@@ -255,13 +313,6 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
         if (isBossMode() && this.getTarget() == null) {
             PlayerEntity nearestPlayer = this.getWorld().getClosestPlayer(this, 35.0D);
             if (nearestPlayer != null) this.setTarget(nearestPlayer);
-        }
-
-        if (this.dataTracker.get(IS_ATTACKING)) {
-            attackAnimationTicks--;
-            if (attackAnimationTicks <= 0) {
-                this.dataTracker.set(IS_ATTACKING, false);
-            }
         }
     }
 
@@ -287,34 +338,53 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
 
     @Override
     public boolean damage(DamageSource source, float amount) {
-        if (this.isPerformingHatRitual) return false;
+        if (this.isPerformingHatRitual && !source.isIn(DamageTypeTags.BYPASSES_INVULNERABILITY)) return false;
 
         if (!isBossMode()) {
             triggerBossFight();
         }
-        return super.damage(source, amount);
+
+        boolean hurt = super.damage(source, amount);
+        if (hurt && !this.getWorld().isClient() && source.getAttacker() instanceof ServerPlayerEntity player) {
+            participants.add(player.getUuid());
+        }
+        return hurt;
     }
 
     @Override
     public void onDeath(DamageSource source) {
         super.onDeath(source);
 
-        if (!this.getWorld().isClient()) {
-            LivingEntity attacker = this.getPrimeAdversary();
-            if (attacker instanceof ServerPlayerEntity serverPlayer) {
-                ProgressionComponent progression = ModComponents.PROGRESSION_COMPONENT.get(serverPlayer);
+        if (this.getWorld() instanceof ServerWorld world && !world.isClient()) {
+            Set<UUID> credited = new HashSet<>(participants);
+            if (this.getPrimeAdversary() instanceof ServerPlayerEntity killer) {
+                credited.add(killer.getUuid());
+            }
+
+            for (UUID id : credited) {
+                ServerPlayerEntity player = world.getServer().getPlayerManager().getPlayer(id);
+                if (player == null) continue;
+
+                ProgressionComponent progression = ModComponents.PROGRESSION_COMPONENT.get(player);
                 if (!progression.hasKilledMadHatter()) {
                     progression.setKilledMadHatter(true);
 
-                    AdvancementUtil.grant(serverPlayer, new Identifier(DownTheRabbitHole.MOD_ID, "killed_mad_hatter"));
+                    AdvancementUtil.grant(player, new Identifier(DownTheRabbitHole.MOD_ID, "killed_mad_hatter"));
+                    AdvancementUtil.grant(player, new Identifier(DownTheRabbitHole.MOD_ID, "boss_root"));
+
                     dropBossLoot();
-
-                    WonderlandProgressionUtil.triggerMilestone(serverPlayer, 3, null);
+                    WonderlandProgressionUtil.triggerMilestone(player, 1, null);
                 }
-
-
             }
+
+            discardHorde();
+            MadHatterTrivia.clearSessionsFor(this);
         }
+    }
+
+    private void dropBossLoot() {
+        this.dropItem(ModItems.MAD_HAT_ITEM);
+        this.dropItem(ModItems.MAD_HATTER_HEAD_ITEM);
     }
 
     @Override
@@ -368,14 +438,7 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
         if (!progression.hasWonMadHatterTrivia()) {
             progression.setWonMadHatterTrivia(true);
 
-            Advancement advancement = player.getServer().getAdvancementLoader()
-                    .get(new Identifier(DownTheRabbitHole.MOD_ID, "won_mad_hatter_trivia"));
-            if (advancement != null) {
-                player.getAdvancementTracker().grantCriterion(advancement, "won_trivia");
-            }
-
-            WonderlandProgressionUtil.triggerMilestone(player, 2, null);
-
+            AdvancementUtil.grant(player, new Identifier(DownTheRabbitHole.MOD_ID, "won_trivia"));
             player.giveItemStack(new ItemStack(ModBlocks.TEAPOT_BLOCK));
         }
     }
@@ -400,6 +463,12 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
     public void remove(RemovalReason reason) {
         super.remove(reason);
         this.bossBar.clearPlayers();
+        MadHatterTrivia.clearSessionsFor(this);
+    }
+
+    @Override
+    public boolean canImmediatelyDespawn(double distanceSquared) {
+        return false;
     }
 
     @Override
@@ -419,8 +488,8 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
         triviaFailures++;
         if (triviaFailures >= 3) {
             triggerBossFight();
-            if (!this.getWorld().isClient()) {
-                this.getWorld().getPlayers().forEach(player ->
+            if (this.getWorld() instanceof ServerWorld world) {
+                world.getPlayers(player -> player.squaredDistanceTo(this) <= 40.0D * 40.0D).forEach(player ->
                         player.sendMessage(Text.translatable("entity.dtrhmod.mad_hatter.trivia_fail"), false)
                 );
             }
@@ -431,19 +500,62 @@ public class MadHatterEntity extends PathAwareEntity implements GeoEntity {
     public int getBossPhase() { return this.dataTracker.get(BOSS_PHASE); }
     public void setBossPhase(int phase) { this.dataTracker.set(BOSS_PHASE, phase); }
 
-    private void dropBossLoot() {
-        if (!this.getWorld().isClient()) {
-            LivingEntity attacker = this.getPrimeAdversary();
-            if (attacker instanceof ServerPlayerEntity serverPlayer) {
-                    this.dropItem(ModItems.MAD_HAT_ITEM);
-                    this.dropItem(ModItems.MAD_HATTER_HEAD_ITEM);
-            }
-        }
-    }
-
     @Override
     public int getXpToDrop() {
         return 30;
+    }
+
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        nbt.putBoolean("Sitting", this.dataTracker.get(IS_SITTING));
+        nbt.putBoolean("BossMode", isBossMode());
+        nbt.putInt("BossPhase", getBossPhase());
+        nbt.putInt("TriviaFailures", triviaFailures);
+        nbt.putInt("RegenCap", healthThresholdTrigger);
+        nbt.putBoolean("RitualActive", isPerformingHatRitual);
+        nbt.putInt("RitualTicks", hatThrowTicks);
+        if (healerId != null) nbt.putUuid("HealerId", healerId);
+
+        NbtList horde = new NbtList();
+        for (UUID id : hordeIds) horde.add(NbtHelper.fromUuid(id));
+        nbt.put("Horde", horde);
+
+        NbtList players = new NbtList();
+        for (UUID id : participants) players.add(NbtHelper.fromUuid(id));
+        nbt.put("Participants", players);
+    }
+
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+
+        if (nbt.contains("Sitting")) this.dataTracker.set(IS_SITTING, nbt.getBoolean("Sitting"));
+        triviaFailures = nbt.getInt("TriviaFailures");
+        healthThresholdTrigger = nbt.contains("RegenCap") ? nbt.getInt("RegenCap") : 75;
+        isPerformingHatRitual = nbt.getBoolean("RitualActive");
+        hatThrowTicks = nbt.getInt("RitualTicks");
+        retriggerRitualAnim = isPerformingHatRitual;
+        healerId = nbt.containsUuid("HealerId") ? nbt.getUuid("HealerId") : null;
+        designatedHealer = null;
+
+        hordeIds.clear();
+        for (NbtElement e : nbt.getList("Horde", NbtElement.INT_ARRAY_TYPE)) {
+            hordeIds.add(NbtHelper.toUuid(e));
+        }
+
+        participants.clear();
+        for (NbtElement e : nbt.getList("Participants", NbtElement.INT_ARRAY_TYPE)) {
+            participants.add(NbtHelper.toUuid(e));
+        }
+
+        if (nbt.getBoolean("BossMode")) {
+            this.dataTracker.set(BOSS_MODE, true);
+            this.dataTracker.set(IS_SITTING, false);
+            this.dataTracker.set(BOSS_PHASE, Math.max(1, nbt.getInt("BossPhase")));
+            activateBossAI();
+        }
     }
 
     @Override

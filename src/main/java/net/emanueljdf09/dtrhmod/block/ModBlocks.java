@@ -24,6 +24,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -68,7 +69,11 @@ public class ModBlocks {
             new ExteriorPortal(FabricBlockSettings.copyOf(Blocks.MOSS_BLOCK).noCollision()));
 
     public static final Block FLOWER_PORTAL = registerBlockWithItem("flower_portal",
-            new FlowerPortal(FabricBlockSettings.copyOf(Blocks.MOSS_BLOCK).noCollision()));
+            new FlowerPortal(StatusEffects.HASTE, 30, FabricBlockSettings.copyOf(Blocks.ALLIUM)));
+
+    public static final Block POTTED_FLOWER_PORTAL = registerBlock("potted_flower_portal",
+            new FlowerPotBlock(FLOWER_PORTAL, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM)));
+
 
     public static final Block EXTERIOR_CHEST = registerBlock("exterior_chest",
             new ExteriorChest(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(-1.0f, 3600000.0f)));
@@ -318,7 +323,7 @@ public class ModBlocks {
             new CheshireCatSpawnerBlock(FabricBlockSettings.copyOf(Blocks.BLACK_WOOL).noCollision().dropsNothing()));
 
     public static final Block SINGING_FLOWERS_SPAWNER_BLOCK = registerBlockWithItem("singing_flowers_spawner_block",
-            new SingingFlowersSpawnerBlock(FabricBlockSettings.copyOf(Blocks.BLACK_WOOL).noCollision().dropsNothing()));
+            new SingingFlowersSpawnerBlock(FabricBlockSettings.copyOf(Blocks.BLACK_WOOL).dropsNothing()));
 
 
     public static BlockFamily TH_FAMILY = BlockFamilies.register(ModBlocks.TH_PLANKS)

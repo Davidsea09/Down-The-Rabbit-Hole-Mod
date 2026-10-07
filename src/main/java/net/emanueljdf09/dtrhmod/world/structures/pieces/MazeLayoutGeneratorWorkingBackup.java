@@ -31,30 +31,24 @@ public class MazeLayoutGeneratorWorkingBackup {
         int centerX = width / 2;
         int centerZ = height / 2;
 
-        // 1. Mark Center Room (3x3 grid cells)
         for (int cx = centerX - 1; cx <= centerX + 1; cx++) {
             for (int cz = centerZ - 1; cz <= centerZ + 1; cz++) {
                 grid[cx][cz].setType(MazeCell.Type.CENTER);
             }
         }
 
-        // 2. Mark Entrance
         int entranceX = centerX;
         int entranceZ = 0;
         grid[entranceX][entranceZ].setType(MazeCell.Type.ENTRANCE);
 
-        // 3. Connect Center to Maze (West side opening)
         MazeCell startCell = grid[centerX - 2][centerZ];
         connectCells(grid[centerX - 1][centerZ], startCell, -1, 0);
 
-        // 4. Connect Entrance to Maze (South side opening)
         connectCells(grid[entranceX][entranceZ], grid[entranceX][entranceZ + 1], 0, 1);
 
-        // 5. Carve Passages across the grid
         carvePassages(grid, centerX - 2, centerZ, random);
         DownTheRabbitHole.LOGGER.info("========== MAZE CARVING FINISHED ==========");
 
-        // 6. Determine piece types and rotations for all grid cells
         for (int x = 0; x < width; x++) {
             for (int z = 0; z < height; z++) {
                 MazeCell cell = grid[x][z];
@@ -64,7 +58,6 @@ public class MazeLayoutGeneratorWorkingBackup {
             }
         }
 
-        // 7. Count path cells
         int generatedCells = 0;
         for (int x = 0; x < width; x++) {
             for (int z = 0; z < height; z++) {
@@ -83,7 +76,6 @@ public class MazeLayoutGeneratorWorkingBackup {
                 width * height
         );
 
-        // 8. Place Special Pieces (Center & Entrance) using absolute grid offsets from originPos
         placeCenterPiece(collector, templateManager, originPos, centerX - 1, centerZ - 1, "maze/center/center_nw_corner");
         placeCenterPiece(collector, templateManager, originPos, centerX, centerZ - 1, "maze/center/center_north");
         placeCenterPiece(collector, templateManager, originPos, centerX + 1, centerZ - 1, "maze/center/center_ne_corner");
@@ -96,7 +88,6 @@ public class MazeLayoutGeneratorWorkingBackup {
         placeCenterPiece(collector, templateManager, originPos, centerX, centerZ + 1, "maze/center/center_south");
         placeCenterPiece(collector, templateManager, originPos, centerX + 1, centerZ + 1, "maze/center/center_se_corner");
 
-        // 9. Place Entrance Piece correctly aligned to the grid
         BlockPos entranceWorldPos = originPos.add(
                 entranceX * MODULE_SIZE,
                 0,
@@ -104,7 +95,6 @@ public class MazeLayoutGeneratorWorkingBackup {
         );
         collector.addPiece(new MazeStructurePiece(templateManager, new Identifier(DownTheRabbitHole.MOD_ID, "maze/entrance_nwe"), entranceWorldPos, BlockRotation.NONE));
 
-        // 10. Place Standard Path Pieces
         for (int x = 0; x < width; x++) {
             for (int z = 0; z < height; z++) {
                 MazeCell cell = grid[x][z];

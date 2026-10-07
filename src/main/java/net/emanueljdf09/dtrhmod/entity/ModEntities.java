@@ -4,6 +4,7 @@ import net.emanueljdf09.dtrhmod.DownTheRabbitHole;
 import net.emanueljdf09.dtrhmod.entity.custom.*;
 import net.emanueljdf09.dtrhmod.entity.projectile.SkySeedProjectile;
 import net.emanueljdf09.dtrhmod.entity.projectile.TeapotProjectile;
+import net.emanueljdf09.dtrhmod.entity.projectile.VineLassoProjectileEntity;
 import net.emanueljdf09.dtrhmod.world.dimension.ModDimensions;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -61,6 +62,13 @@ public class ModEntities {
     public static EntityType<SkySeedProjectile> SKY_SEED = Registry.register(
             Registries.ENTITY_TYPE, new Identifier(DownTheRabbitHole.MOD_ID, "sky_seed"),
             FabricEntityTypeBuilder.<SkySeedProjectile>create(SpawnGroup.MISC, SkySeedProjectile::new)
+                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f))
+                    .trackRangeBlocks(64).trackedUpdateRate(10)
+                    .forceTrackedVelocityUpdates(true).build());
+
+    public static EntityType<VineLassoProjectileEntity> VINE_LASSO_PROJECTILE = Registry.register(
+            Registries.ENTITY_TYPE, new Identifier(DownTheRabbitHole.MOD_ID, "vine_lasso_projectile"),
+            FabricEntityTypeBuilder.<VineLassoProjectileEntity>create(SpawnGroup.MISC, VineLassoProjectileEntity::new)
                     .dimensions(EntityDimensions.fixed(0.5f, 0.5f))
                     .trackRangeBlocks(64).trackedUpdateRate(10)
                     .forceTrackedVelocityUpdates(true).build());

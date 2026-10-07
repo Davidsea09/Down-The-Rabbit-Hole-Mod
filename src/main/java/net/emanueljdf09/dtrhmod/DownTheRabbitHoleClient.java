@@ -56,6 +56,7 @@ public class DownTheRabbitHoleClient implements ClientModInitializer {
         registerClientNetworkPackets();
 
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> GrassColors.getColor(0.5, 1.0), ModBlocks.WONDER_GRASS);
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> GrassColors.getColor(0.5, 1.0), ModBlocks.SINGING_FLOWERS_SPAWNER_BLOCK);
 
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
             if (tintIndex == 1) {
@@ -116,6 +117,7 @@ public class DownTheRabbitHoleClient implements ClientModInitializer {
             return darkSquare ? darken(baseColor, 0.7f) : baseColor;
 
         }, ModBlocks.WONDER_GRASS,
+                ModBlocks.SINGING_FLOWERS_SPAWNER_BLOCK,
                 Blocks.GRASS,
                 Blocks.TALL_GRASS,
                 Blocks.FERN,
@@ -132,6 +134,7 @@ public class DownTheRabbitHoleClient implements ClientModInitializer {
         }, ModBlocks.LAWN_DAISY_PATCH);
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WONDER_GRASS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SINGING_FLOWERS_SPAWNER_BLOCK, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LAWN_DAISY_PATCH, RenderLayer.getCutout());
 
@@ -160,6 +163,9 @@ public class DownTheRabbitHoleClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.YELLOW_MUSHROOM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BLUE_MUSHROOM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MAGENTA_MUSHROOM, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FLOWER_PORTAL, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_FLOWER_PORTAL, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TEAPOT_BLOCK, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MAD_HATTER_HEAD, RenderLayer.getCutout());
@@ -191,6 +197,7 @@ public class DownTheRabbitHoleClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.SINGING_FLOWER, SingingFlowerRenderer::new);
         EntityRendererRegistry.register(ModEntities.VINE_ANCHOR, VineAnchorRenderer::new);
         EntityRendererRegistry.register(ModEntities.SKY_SEED, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.VINE_LASSO_PROJECTILE, FlyingItemEntityRenderer::new);
 
         EntityRendererRegistry.register(ModEntities.TEAPOT_PROJECTILE, FlyingItemEntityRenderer::new);
 

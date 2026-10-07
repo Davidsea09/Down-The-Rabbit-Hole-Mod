@@ -24,6 +24,10 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MAD_HATTER_SPAWNER_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHESHIRE_CAT_SPAWNER_BLOCK);
 
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.FLOWER_PORTAL, ModBlocks.POTTED_FLOWER_PORTAL, BlockStateModelGenerator.TintType.NOT_TINTED);
+
+
+
         blockStateModelGenerator.registerMushroomBlock(ModBlocks.BLUE_MUSHROOM_BLOCK);
         blockStateModelGenerator.registerTintableCross(ModBlocks.BLUE_MUSHROOM, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerMushroomBlock(ModBlocks.YELLOW_MUSHROOM_BLOCK);
@@ -70,6 +74,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(ModItems.WEEPING_PLAYERS_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
         blockStateModelGenerator.registerParentedItemModel(ModItems.MAD_HATTER_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
         blockStateModelGenerator.registerParentedItemModel(ModItems.CHESHIRE_CAT_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
+        blockStateModelGenerator.registerParentedItemModel(ModItems.SINGING_FLOWER_SPAWN_EGG, ModelIds.getMinecraftNamespacedItem("template_spawn_egg"));
 
 
 
@@ -107,6 +112,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.EAT_ME, Models.GENERATED);
         itemModelGenerator.register(ModItems.EXTERIOR_KEY, Models.GENERATED);
         itemModelGenerator.register(ModItems.CAT_FUR, Models.GENERATED);
+        itemModelGenerator.register(ModItems.VINE_LASSO_ITEM, Models.GENERATED);
     }
 
 

@@ -76,7 +76,7 @@
         "if_true": {
           "type": "minecraft:biome",
           "biome_is": [
-            "dtrhmod:tulgey_forest"
+            "dtrhmod:tulgey_wood"
           ]
         },
         "then_run": {

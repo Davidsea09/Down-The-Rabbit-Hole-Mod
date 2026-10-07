@@ -10,6 +10,7 @@ import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.advancement.criterion.ChangedDimensionCriterion;
 import net.minecraft.advancement.criterion.ImpossibleCriterion;
+import net.minecraft.item.Items;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -71,7 +72,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                         Text.translatable("advancement.dtrhmod.secret_root.description"),
                         null,
                         AdvancementFrame.TASK,
-                        false, false, false
+                        false, false, true
                 )
                 .criterion("secret_root", new ImpossibleCriterion.Conditions())
                 .build(consumer, DownTheRabbitHole.MOD_ID + ":secret_root");
@@ -102,6 +103,19 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                 )
                 .criterion("killed_mad_hatter", new ImpossibleCriterion.Conditions())
                 .build(consumer, DownTheRabbitHole.MOD_ID + ":killed_mad_hatter");
+
+        Advancement flowersKill = Advancement.Builder.create()
+                .parent(boss_root)
+                .display(
+                        Items.ROSE_BUSH,
+                        Text.translatable("advancement.dtrhmod.flowers_kill.title"),
+                        Text.translatable("advancement.dtrhmod.flowers_kill.description"),
+                        null,
+                        AdvancementFrame.CHALLENGE,
+                        true, true, true
+                )
+                .criterion("killed_flowers", new ImpossibleCriterion.Conditions())
+                .build(consumer, DownTheRabbitHole.MOD_ID + ":killed_flowers");
 
         Advancement cheshireCatSnitch = Advancement.Builder.create()
                 .parent(portal)

@@ -211,6 +211,7 @@ public class ProgressionComponentImpl implements ProgressionComponent, AutoSynce
         this.metMadHatter = false;
         this.wonMadHatterTrivia = false;
         this.killedMadHatter = false;
+        this.killedSingingFlowers = false;
 
         if (player instanceof ServerPlayerEntity serverPlayer) {
             ModComponents.PROGRESSION_COMPONENT.sync(serverPlayer);
@@ -230,6 +231,7 @@ public class ProgressionComponentImpl implements ProgressionComponent, AutoSynce
         this.metMadHatter = nbtCompound.getBoolean("MetMadHatter");
         this.wonMadHatterTrivia = nbtCompound.getBoolean("WonMadHatterTrivia");
         this.killedMadHatter = nbtCompound.getBoolean("KilledMadHatter");
+        this.killedSingingFlowers = nbtCompound.getBoolean("KilledSingingFlowers");
 
         if (nbtCompound.contains("wonderlandSpawn", 10)) {
             this.wonderlandSpawn = NbtHelper.toBlockPos(nbtCompound.getCompound("wonderlandSpawn"));
@@ -251,6 +253,7 @@ public class ProgressionComponentImpl implements ProgressionComponent, AutoSynce
         nbtCompound.putBoolean("MetMadHatter", this.metMadHatter);
         nbtCompound.putBoolean("WonMadHatterTrivia", this.wonMadHatterTrivia);
         nbtCompound.putBoolean("KilledMadHatter", this.killedMadHatter);
+        nbtCompound.putBoolean("KilledSingingFlowers", this.killedSingingFlowers);
 
         if (this.wonderlandSpawn != null) {
             nbtCompound.put("wonderlandSpawn", NbtHelper.fromBlockPos(this.wonderlandSpawn));

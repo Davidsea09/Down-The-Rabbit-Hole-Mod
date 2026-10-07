@@ -54,10 +54,6 @@ public class WonderlandProgressionUtil {
         if (nextStage > story.getCompletedStages()) {
             story.setCompletedStages(nextStage);
 
-            if (nextStage >= 1) {
-                story.setWonderlandMirrorUnlocked(true);
-            }
-
             ModComponents.PROGRESSION_COMPONENT.sync(player);
 
             player.getServerWorld().playSound(
@@ -65,8 +61,6 @@ public class WonderlandProgressionUtil {
                     SoundEvents.UI_TOAST_CHALLENGE_COMPLETE,
                     SoundCategory.PLAYERS, 1.0f, 1.0f
             );
-
-            player.sendMessage(Text.literal("§d§kXX§r §l§5STORY MILESTONE UNLOCKED §r§d§kXX"), false);
 
             if (bookTriggerKey != null) {
                 ModPackets.sendOpenBookPacket(player, bookTriggerKey);
