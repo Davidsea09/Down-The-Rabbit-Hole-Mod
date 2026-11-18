@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_flower_portal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dtrhmod:flower_portal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dtrhmod:white_dye"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_flower_portal"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dtrhmod:white_dye"
+    ]
+  }
+}

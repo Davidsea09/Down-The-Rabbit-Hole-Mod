@@ -1,0 +1,17 @@
+/neoforge/.gradle/
+/neoforge/build/
+/neoforge/run/
+/fabric/.gradle/
+/fabric/build/
+/fabric/run/
+/common/build/
+/common/remappedSrc/
+/.gradle/
+/.gradle/9.5.1/
+/.gradle/9.9.0/
+/.gradle/architectury/
+/.gradle/buildOutputCleanup/
+/.gradle/loom-cache/
+/.gradle/vcs-1/
+/.idea/
+/build/

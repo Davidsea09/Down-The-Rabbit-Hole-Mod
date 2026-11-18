@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "dtrhmod:vale_of_tears/caterpillar",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 64,
+    "separation": 16,
+    "salt": 52392961,
+    "spread_type": "triangular"
+  }
+}

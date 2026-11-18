@@ -1,0 +1,32 @@
+/effect clear
+/advancement grant Player222 through dtrhmod:killed_flowers
+/scale reset
+/give Player222 dtrhmod:empty_cup
+/dtrh stage reset Player222
+/give Player721 dtrhmod:filled_tea_cup
+/damage 438be493-5571-47c1-9a7e-ca401bd9d5dc 100
+/dtrh stage query Player721
+/damage 3f23147c-0246-4be7-9fca-ee797f07d13f 100
+/dtrh stage query Player721
+/kill @e[type=dtrhmod:white_rabbit]
+/give Player721 dtrhmod:exterior_chest
+/give Player721 dtrhmod:exterior_door
+/effect clear
+/locate biome dtrhmod:vale_of_tears
+/tp @s -102 67 89
+/locate biome dtrhmod:chessboard_fields
+/tp @s 82 67 -107
+/locate structure dtrhmod:vale_of_tears/caterpillar
+/tp @s -832 ~ -1568
+/dtrh stage reset Player721
+/dtrh stage set Player721 2
+/kill @e[type=dtrhmod:caterpillar]
+/locate structure dtrhmod:tulgey_wood/cat_tree
+/tp @s -1200 ~ -2432
+/locate structure dtrhmod:maze/maze_large
+/tp @s -288 ~ -3520
+/locate structure dtrhmod:portal/wonderland_mirror_room
+/tp @s -688 ~ -3744
+/give Player721 dtrhmod:mirror
+/give Player721 dtrhmod:pocketwatch
+/give Player721 minecraft:debug_stick

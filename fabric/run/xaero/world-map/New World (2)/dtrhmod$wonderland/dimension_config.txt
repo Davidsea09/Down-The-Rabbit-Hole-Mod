@@ -1,0 +1,2 @@
+caveModeType:1
+dimensionTypeId:dtrhmod:wonderland_type

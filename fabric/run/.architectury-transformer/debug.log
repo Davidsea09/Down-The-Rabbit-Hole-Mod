@@ -1,0 +1,1159 @@
+[Architectury Transformer] Architectury Runtime 5.2.92
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\common\build\devlibs\dtrhmod-common-1.0.0-dev.jar
+[Architectury Transformer DEBUG] Preparing tiny remapper prepared transformer: dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Provided 115 classpath jar(s):
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.20.1\7c7f9831e9f27b303d5d08decb5f4258a9f03296\fabric-loader-0.20.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\26.0.2\c7ce3cdeda3d18909368dfe5977332dfad326c6d\annotations-26.0.2.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm\9.10.1\ada2141c0cc52ee8f5c48cd5fa4ce0e794f22236\asm-9.10.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-analysis\9.10.1\8d49f14d51f632cb1d87c88d1ceaf50db0d8af1b\asm-analysis-9.10.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-commons\9.10.1\4229e4c55fd8e01c23f9fe9884075cc628aacc50\asm-commons-9.10.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-tree\9.10.1\e244332a17564c1d1572449399a842de35881be2\asm-tree-9.10.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-util\9.10.1\7bb9d450e8d4cbf9f9e04096c44bbfe7fba80b15\asm-util-9.10.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\net.fabricmc\sponge-mixin\0.17.5+mixin.0.8.7\cef8519a91129d0c21fa03bb9378f0e8ca810e5\sponge-mixin-0.17.5+mixin.0.8.7.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\io.github.llamalad7\mixinextras-fabric\0.5.5\d1055b99c0ab08a8403fe2da3d79ca28e6340a76\mixinextras-fabric-0.5.5.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\com.github.oshi\oshi-core\6.4.10\b1d8ab82d11d92fd639b56d639f8f46f739dd5fa\oshi-core-6.4.10.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.10.1\b3add478d4382b78ea20b1671390a858002feb6c\gson-2.10.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\com.google.guava\failureaccess\1.0.1\1dcf1de382a0bf95a3d8b0849546c88bac1292c9\failureaccess-1.0.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\32.1.2-jre\5e64ec7e056456bef3a4bc4c6fdaef71e8ab6318\guava-32.1.2-jre.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\com.ibm.icu\icu4j\73.2\61ad4ef7f9131fcf6d25c34b817f90d6da06c9e9\icu4j-73.2.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\com.mojang\authlib\6.0.54\de8bc95660e1b2fe8793fd427a7a10dcec5b3ea7\authlib-6.0.54.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\com.mojang\blocklist\1.0.10\5c685c5ffa94c4cd39496c7184c1d122e515ecef\blocklist-1.0.10.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\com.mojang\brigadier\1.3.10\d15b53a14cf20fdcaa98f731af5dda654452c010\brigadier-1.3.10.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\com.mojang\datafixerupper\8.0.16\67d4de6d7f95d89bcf5862995fb854ebaec02a34\datafixerupper-8.0.16.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\com.mojang\logging\1.2.7\24cb95ffb0e3433fd6e844c04e68009e504ca1c0\logging-1.2.7.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\com.mojang\patchy\2.2.10\da05971b07cbb379d002cf7eaec6a2048211fefc\patchy-2.2.10.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\com.mojang\text2speech\1.17.9\3cad216e3a7f0c19b4b394388bc9ffc446f13b14\text2speech-1.17.9.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.16.0\4e3eb3d79888d76b54e28b350915b5dc3919c9de\commons-codec-1.16.0.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.15.1\f11560da189ab563a5c8e351941415430e9304ea\commons-io-2.15.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\commons-logging\commons-logging\1.2\4bfc12adfe4842bf07b657f0369c4cb522955686\commons-logging-1.2.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\io.netty\netty-buffer\4.1.97.Final\f8f3d8644afa5e6e1a40a3a6aeb9d9aa970ecb4f\netty-buffer-4.1.97.Final.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec\4.1.97.Final\384ba4d75670befbedb45c4d3b497a93639c206d\netty-codec-4.1.97.Final.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\io.netty\netty-common\4.1.97.Final\7cceacaf11df8dc63f23d0fb58e9d4640fc88404\netty-common-4.1.97.Final.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\io.netty\netty-handler\4.1.97.Final\abb86c6906bf512bf2b797a41cd7d2e8d3cd7c36\netty-handler-4.1.97.Final.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\io.netty\netty-resolver\4.1.97.Final\cec8348108dc76c47cf87c669d514be52c922144\netty-resolver-4.1.97.Final.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-classes-epoll\4.1.97.Final\795da37ded759e862457a82d9d92c4d39ce8ecee\netty-transport-classes-epoll-4.1.97.Final.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-unix-common\4.1.97.Final\d469d84265ab70095b01b40886cabdd433b6e664\netty-transport-native-unix-common-4.1.97.Final.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport\4.1.97.Final\f37380d23c9bb079bc702910833b2fd532c9abd0\netty-transport-4.1.97.Final.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\it.unimi.dsi\fastutil\8.5.12\c24946d46824bd528054bface3231d2ecb7e95e8\fastutil-8.5.12.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna-platform\5.14.0\28934d48aed814f11e4c584da55c49fa7032b31b\jna-platform-5.14.0.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna\5.14.0\67bf3eaea4f0718cb376a181a629e5f88fa1c9dd\jna-5.14.0.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\net.sf.jopt-simple\jopt-simple\5.0.4\4fdac2fbe92dfad86aa6e9301736f6b4342a3f5c\jopt-simple-5.0.4.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-compress\1.26.0\659feffdd12280201c8aacb8f7be94f9a883c824\commons-compress-1.26.0.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.14.0\1ed471194b02f2c6cb734a0cd6f6f107c673afae\commons-lang3-3.14.0.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient\4.5.13\e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada\httpclient-4.5.13.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpcore\4.4.16\51cf043c87253c9f58b539c9f7e44c8894223850\httpcore-4.4.16.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.22.1\bea6fede6328fabafd7e68363161a7ea6605abd1\log4j-api-2.22.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-core\2.22.1\7183a25510a02ad00cc6a95d3b3d2a7d3c5a8dc4\log4j-core-2.22.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-slf4j2-impl\2.22.1\d7e6693c2606cb7e7335047d7bb96dec52db5665\log4j-slf4j2-impl-2.22.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.jcraft\jorbis\0.0.17\8872d22b293e8f5d7d56ff92be966e6dc28ebdc6\jorbis-0.0.17.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.joml\joml\1.10.5\22566d58af70ad3d72308bab63b8339906deb649\joml-1.10.5.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-freetype\3.3.3\a0db6c84a8becc8ca05f9dbfa985edc348a824c7\lwjgl-freetype-3.3.3.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.3\efa1eb78c5ccd840e9f329717109b5e892d72f8e\lwjgl-glfw-3.3.3.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.3\b543467b7ff3c6920539a88ee602d34098628be5\lwjgl-jemalloc-3.3.3.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.3\daada81ceb5fc0c291fbfdd4433cb8d9423577f2\lwjgl-openal-3.3.3.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.3\2f6b0147078396a58979125a4c947664e98293a\lwjgl-opengl-3.3.3.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.3\25dd6161988d7e65f71d5065c99902402ee32746\lwjgl-stb-3.3.3.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.3\82d755ca94b102e9ca77283b9e2dc46d1b15fbe5\lwjgl-tinyfd-3.3.3.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.3\29589b5f87ed335a6c7e7ee6a5775f81f97ecb84\lwjgl-3.3.3.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.lz4\lz4-java\1.8.0\4b986a99445e49ea5fbf5d149c4b63f6ed6c6780\lz4-java-1.8.0.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\2.0.9\7cf2726fdcfbc8610f9a71fb3ed639871f315340\slf4j-api-2.0.9.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\minecraftMaven\net\minecraft\minecraft-merged-a1d9819663\1.21.1-loom.mappings.1_21_1.layered+hash.40545-v2\minecraft-merged-a1d9819663-1.21.1-loom.mappings.1_21_1.layered+hash.40545-v2.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.97.Final\54188f271e388e7f313aea995e82f58ce2cdb809\netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.97.Final\5514744c588190ffda076b35a9b8c9f24946a960\netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\dev\corgitaco\Oh-The-Trees-Youll-Grow-fabric-4c662d4c\1.21.1-5.3.6\Oh-The-Trees-Youll-Grow-fabric-4c662d4c-1.21.1-5.3.6.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-api-4c662d4c\0.116.18+1.21.1\fabric-api-4c662d4c-0.116.18+1.21.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\dev\architectury\architectury-fabric-4c662d4c\13.0.11\architectury-fabric-4c662d4c-13.0.11.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\software\bernie\geckolib\geckolib-fabric-1.21.1-4c662d4c\4.9.3\geckolib-fabric-1.21.1-4c662d4c-4.9.3.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-transfer-api-v1-4c662d4c\5.4.5+9eaf054019\fabric-transfer-api-v1-4c662d4c-5.4.5+9eaf054019.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-api-lookup-api-v1-4c662d4c\1.6.72+7b3d111d19\fabric-api-lookup-api-v1-4c662d4c-1.6.72+7b3d111d19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-blockrenderlayer-v1-4c662d4c\1.1.52+0af3f5a719\fabric-blockrenderlayer-v1-4c662d4c-1.1.52+0af3f5a719.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-client-tags-api-v1-4c662d4c\1.2.0+1eb36c0719\fabric-client-tags-api-v1-4c662d4c-1.2.0+1eb36c0719.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-command-api-v1-4c662d4c\1.2.49+f71b366f19\fabric-command-api-v1-4c662d4c-1.2.49+f71b366f19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-commands-v0-4c662d4c\0.2.66+df3654b319\fabric-commands-v0-4c662d4c-0.2.66+df3654b319.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-command-api-v2-4c662d4c\2.2.28+6ced4dd919\fabric-command-api-v2-4c662d4c-2.2.28+6ced4dd919.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-content-registries-v0-4c662d4c\8.0.19+b559734419\fabric-content-registries-v0-4c662d4c-8.0.19+b559734419.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-data-generation-api-v1-4c662d4c\20.3.1+7439032a19\fabric-data-generation-api-v1-4c662d4c-20.3.1+7439032a19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-convention-tags-v1-4c662d4c\2.1.7+7f945d5b19\fabric-convention-tags-v1-4c662d4c-2.1.7+7f945d5b19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-convention-tags-v2-4c662d4c\2.12.0+c3656daa19\fabric-convention-tags-v2-4c662d4c-2.12.0+c3656daa19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-data-attachment-api-v1-4c662d4c\1.4.7+5b36e0f719\fabric-data-attachment-api-v1-4c662d4c-1.4.7+5b36e0f719.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-entity-events-v1-4c662d4c\1.8.0+2b27e0a419\fabric-entity-events-v1-4c662d4c-1.8.0+2b27e0a419.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-events-interaction-v0-4c662d4c\0.7.14+ba9dae0619\fabric-events-interaction-v0-4c662d4c-0.7.14+ba9dae0619.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-gametest-api-v1-4c662d4c\2.0.5+6fc22b9919\fabric-gametest-api-v1-4c662d4c-2.0.5+6fc22b9919.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-item-api-v1-4c662d4c\11.3.0+467044f319\fabric-item-api-v1-4c662d4c-11.3.0+467044f319.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-item-group-api-v1-4c662d4c\4.1.7+def88e3a19\fabric-item-group-api-v1-4c662d4c-4.1.7+def88e3a19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-lifecycle-events-v1-4c662d4c\2.6.0+0865547519\fabric-lifecycle-events-v1-4c662d4c-2.6.0+0865547519.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-loot-api-v2-4c662d4c\3.0.15+3f89f5a519\fabric-loot-api-v2-4c662d4c-3.0.15+3f89f5a519.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-loot-api-v3-4c662d4c\1.0.3+3f89f5a519\fabric-loot-api-v3-4c662d4c-1.0.3+3f89f5a519.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-message-api-v1-4c662d4c\6.0.14+8aaf3aca19\fabric-message-api-v1-4c662d4c-6.0.14+8aaf3aca19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-model-loading-api-v1-4c662d4c\2.1.0+b4d813fc19\fabric-model-loading-api-v1-4c662d4c-2.1.0+b4d813fc19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-recipe-api-v1-4c662d4c\5.0.16+2475392c19\fabric-recipe-api-v1-4c662d4c-5.0.16+2475392c19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-screen-handler-api-v1-4c662d4c\1.3.91+b559734419\fabric-screen-handler-api-v1-4c662d4c-1.3.91+b559734419.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-registry-sync-v0-4c662d4c\5.3.2+e3eddc2119\fabric-registry-sync-v0-4c662d4c-5.3.2+e3eddc2119.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-networking-api-v1-4c662d4c\4.3.1+d30f6a7919\fabric-networking-api-v1-4c662d4c-4.3.1+d30f6a7919.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-object-builder-api-v1-4c662d4c\15.2.1+40875a9319\fabric-object-builder-api-v1-4c662d4c-15.2.1+40875a9319.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-particles-v1-4c662d4c\4.0.2+6573ed8c19\fabric-particles-v1-4c662d4c-4.0.2+6573ed8c19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-renderer-indigo-4c662d4c\1.7.1+c705a49c19\fabric-renderer-indigo-4c662d4c-1.7.1+c705a49c19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-renderer-api-v1-4c662d4c\3.4.1+b4d813fc19\fabric-renderer-api-v1-4c662d4c-3.4.1+b4d813fc19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-rendering-fluids-v1-4c662d4c\3.1.6+1daea21519\fabric-rendering-fluids-v1-4c662d4c-3.1.6+1daea21519.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-renderer-registries-v1-4c662d4c\3.2.71+df3654b319\fabric-renderer-registries-v1-4c662d4c-3.2.71+df3654b319.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-rendering-v0-4c662d4c\1.1.74+df3654b319\fabric-rendering-v0-4c662d4c-1.1.74+df3654b319.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-rendering-v1-4c662d4c\5.2.1+f44c2eea19\fabric-rendering-v1-4c662d4c-5.2.1+f44c2eea19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-screen-api-v1-4c662d4c\2.0.26+639b4c0719\fabric-screen-api-v1-4c662d4c-2.0.26+639b4c0719.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-tag-api-v1-4c662d4c\1.3.0+1eb36c0719\fabric-tag-api-v1-4c662d4c-1.3.0+1eb36c0719.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-api-base-4c662d4c\0.4.42+6573ed8c19\fabric-api-base-4c662d4c-0.4.42+6573ed8c19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-biome-api-v1-4c662d4c\13.0.31+d527f9fd19\fabric-biome-api-v1-4c662d4c-13.0.31+d527f9fd19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-block-api-v1-4c662d4c\1.1.0+0bc3503219\fabric-block-api-v1-4c662d4c-1.1.0+0bc3503219.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-rendering-data-attachment-v1-4c662d4c\0.3.49+73761d2e19\fabric-rendering-data-attachment-v1-4c662d4c-0.3.49+73761d2e19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-block-view-api-v2-4c662d4c\1.0.11+ebb2264e19\fabric-block-view-api-v2-4c662d4c-1.0.11+ebb2264e19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-crash-report-info-v1-4c662d4c\0.2.29+0af3f5a719\fabric-crash-report-info-v1-4c662d4c-0.2.29+0af3f5a719.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-dimensions-v1-4c662d4c\4.0.1+65213ef819\fabric-dimensions-v1-4c662d4c-4.0.1+65213ef819.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-game-rule-api-v1-4c662d4c\1.0.53+6ced4dd919\fabric-game-rule-api-v1-4c662d4c-1.0.53+6ced4dd919.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-keybindings-v0-4c662d4c\0.2.45+df3654b319\fabric-keybindings-v0-4c662d4c-0.2.45+df3654b319.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-key-binding-api-v1-4c662d4c\1.0.47+0af3f5a719\fabric-key-binding-api-v1-4c662d4c-1.0.47+0af3f5a719.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-resource-conditions-api-v1-4c662d4c\4.4.0+7439032a19\fabric-resource-conditions-api-v1-4c662d4c-4.4.0+7439032a19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-resource-loader-v0-4c662d4c\1.3.1+5b5275af19\fabric-resource-loader-v0-4c662d4c-1.3.1+5b5275af19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-sound-api-v1-4c662d4c\1.0.23+6573ed8c19\fabric-sound-api-v1-4c662d4c-1.0.23+6573ed8c19.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\net\fabricmc\fabric-api\fabric-transitive-access-wideners-v1-4c662d4c\6.2.0+45b9699719\fabric-transitive-access-wideners-v1-4c662d4c-6.2.0+45b9699719.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\com\github\Virtuoel\Pehkui-4c662d4c\3.8.3\Pehkui-4c662d4c-3.8.3.jar
+[Architectury Transformer DEBUG]  - C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\.gradle\loom-cache\remapped_mods\remapped\com\github\Virtuoel\KanosConfig-4c662d4c\0.4.1\KanosConfig-4c662d4c-0.4.1.jar
+[Architectury Transformer] Read classpath in 6.991 s
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\common\build\devlibs\dtrhmod-common-1.0.0-dev.jar
+[Architectury Transformer DEBUG] Transforming 5 transformer(s) from C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\common\build\devlibs\dtrhmod-common-1.0.0-dev.jar to C:\Users\Ejdf09\AppData\Local\Temp\11975377553326151102.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@76f10035
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeFabricMod@4f8caaf3
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@2b50150
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@15b986cd
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@6bb7cce7
+[Architectury Transformer DEBUG] Transforming from C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\common\build\devlibs\dtrhmod-common-1.0.0-dev.jar to C:\Users\Ejdf09\AppData\Local\Temp\11975377553326151102.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/DownTheRabbitHole with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/ModBlockCollections with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/ModBlockEntities with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/ModBlocks with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/ExteriorChest$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/ExteriorChest with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/ExteriorDoor with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/ExteriorPortal with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/FlowerPortal with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/MadHatterHatBlock$HatState with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/MadHatterHatBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/RabbitHoleBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/TeapotBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/WHangingLeavesBodyBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/WHangingLeavesHeadBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/WonderDirtPathBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/WonderGrassBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/head/ModHeadBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/head/ModHeadType with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/head/ModWallHeadBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorBlock$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorType with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/signs/ModCeilingHangingSignBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/signs/ModStandingSignBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/signs/ModWallHangingSignBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/signs/ModWallSignBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/spawn/CaterpillarSpawnerBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/spawn/CheshireCatSpawnerBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/spawn/MadHatterSpawnerBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/spawn/SingingFlowersSpawnerBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/ExteriorChestEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/ExteriorDoorEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity$AnimState with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/MirrorBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/ModHangingSignBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/ModHeadBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/ModSignBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/RabbitHoleBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/TeapotBlockEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/TeapotBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/spawn/CaterpillarSpawnerBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/spawn/CheshireCatSpawnerBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/spawn/MadHatterSpawnerBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/spawn/SingingFlowersSpawnerBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/ExteriorChestModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/ExteriorDoorModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/MadHatterHatModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/ModHeadBlockModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/renderers/ExteriorChestRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/renderers/ExteriorDoorRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/renderers/MadHatterHatBlockEntityRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/renderers/MirrorBlockEntityRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/renderers/ModHeadBlockEntityRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/client/DownTheRabbitHoleClient with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/compat/jei/DownTheRabbitHoleJEIClientPlugin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/compat/jei/TeapotCategory with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/compat/jei/TeapotRecipeVariant$LiquidType with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/compat/jei/TeapotRecipeVariant with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/ModEntities with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/ai/goals/RunToRabbitHoleGoal with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/ai/goals/StalkerGoal with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/ai/goals/WanderAroundHoleGoal with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/ai/goals/mad_hatter/MadHatterBossBehaviorGoal$Step with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/ai/goals/mad_hatter/MadHatterBossBehaviorGoal with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/CaterpillarModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/CheshireCatModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/HareModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/MadHatterModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/MockTurtleModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/PlantFangEntityModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/SingingFlowerModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/WeepingPlayerModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/WhiteRabbitModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/CaterpillarRenderer$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/CaterpillarRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/CheshireCatRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/HareRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/MadHatterRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/MockTurtleRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/PlantFangEntityRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/SingingFlowerRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/VineAnchorRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/WeepingPlayerRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/WhiteRabbitRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/CaterpillarEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/CaterpillarEntity$State with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/CaterpillarEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/CaterpillarLetters$Letter with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/CaterpillarLetters with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/CheshireCatEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/HareEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/MadHatterEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/MadHatterEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/MockTurtleEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/SingingFlowerEntity$AttackType with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/SingingFlowerEntity$BurrowState with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/SingingFlowerEntity$PendingStrike with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/SingingFlowerEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/VineAnchorEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/WeepingPlayerEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/WhiteRabbitEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/projectile/PlantFangEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/projectile/SkySeedProjectile with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/projectile/TeapotProjectile with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/projectile/VineLassoProjectileEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/ModFoodComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/ModItems with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ExteriorChestItem$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ExteriorChestItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ExteriorDoorItem$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ExteriorDoorItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/MadHatItem$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/MadHatItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem$1$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/client/renderer/CatScarfTrinketRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/client/renderer/MadHatterHatTrinketRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/CatScarfItem$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/CatScarfItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/DynamicTeaCupItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/PipeItem$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/PipeItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/StoryBook$StoryData with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/StoryBook with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/VineLassoItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/ModScreenHandlers with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$3 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/screen/BookCoverScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$Contents with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$WrittenBookContents with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/screen/TeapotScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/mixin/BackgroundRendererMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/mixin/ExampleMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/mixin/LivingEntityRendererMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/mixin/LivingEntityStatusEffectMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/mixin/MobEntityMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$RecipeMatcher with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$Serializer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$Type with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/HatRitualRecipeInput with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/HatRitualRecipeJsonBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/ModRecipes with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/TeapotRecipe$Serializer with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/TeapotRecipe$Type with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/TeapotRecipe with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/TeapotRecipeInput with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/TeapotRecipeJsonBuilder with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/AdvancementUtil with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ClientAnimationHelper with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/CustomTexturedButton with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ImplementedInventory with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModCommands with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModEffects with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModPackets$LockedBiomeToastPayload with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModPackets$OpenBookPayload with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModPackets with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModParticles$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModParticles$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModParticles$3 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModParticles$4 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModParticles with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModTags$Biomes with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModTags$Blocks with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModTags$Fluids with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModTags$Items with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModTags with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModUtils with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/PlayerReturnManager$ReturnLocation with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/PlayerReturnManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/StorybookInstanceManager$ReturnLocation with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/StorybookInstanceManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil$3 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil$4 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil$5 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil$BlockTranceData with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil$HatTranceData with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil$MirrorTranceData with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TextureProcessor with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/WonderlandProgressionUtil$LockedBiomeToast with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/WonderlandProgressionUtil with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/ClientProgression with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/ClientProgressionCache with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/PlayerProgressionManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/ProgressionComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/ProgressionComponentImpl with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/ProgressionSync$Payload with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/ProgressionSync with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/Mirror/MirrorComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/Mirror/MirrorComponentImpl with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/Mirror/MirrorSavedData with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/config/ModConfigData with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/effects/GrowStatusEffect with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/effects/RemovalAwareEffect with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/effects/ShrinkStatusEffect with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/entity/LetterPuffs$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/entity/LetterPuffs$Puff with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/entity/LetterPuffs with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/entity/MadHatterTrivia$Option with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/entity/MadHatterTrivia$TriviaQuestion with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/entity/MadHatterTrivia$TriviaSession with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/entity/MadHatterTrivia with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/particles/FallingBBLeafParticle$Factory with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/particles/FallingBBLeafParticle with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/particles/FallingTHLeafParticle$Factory with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/particles/FallingTHLeafParticle with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/particles/FallingWWLeafParticle$Factory with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/particles/FallingWWLeafParticle with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/particles/WonderlandLockParticle$Factory with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/particles/WonderlandLockParticle with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/biome/ModBiomes with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/dimension/ModDimensions with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/ModConfiguredFeatures with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/ModFeatures with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/ModPlacedFeatures with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/WonderBiomeFeatures with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/biome/TulgeyPathFeature with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/tree/deco/HangFromTreeDeco with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/tree/deco/HangingLeavesTreeDeco with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/tree/deco/ModTreeDeco with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/tree/deco/WwTreeDecorator with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/tree/sapling/ModSaplingsGenerators with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/ModStructurePieces with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/ModStructureProcessors with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/ModStructures with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/maze/MazeCell$Type with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/maze/MazeCell with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/maze/MazeLayoutGenerator$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/maze/MazeLayoutGenerator$MazeSize with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/maze/MazeLayoutGenerator with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/pieces/MazeLayoutGeneratorWorkingBackup$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/pieces/MazeLayoutGeneratorWorkingBackup with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/pieces/MazeStructurePiece with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/pieces/MirrorRoomStructurePiece with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/structure/LargeMazeStructure with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/structure/MediumMazeStructure with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/structure/MirrorRoomStructure with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/structure/SmallMazeStructure with maxs=true frames=true
+[Architectury Transformer DEBUG] Checking whether /dtrhmod.mixins.json is a mixin config.
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\Ejdf09\AppData\Local\Temp\11975377553326151102.jar
+[Architectury Transformer] Listening at C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\common\build\devlibs\dtrhmod-common-1.0.0-dev.jar
+[Architectury Transformer DEBUG] Temporary jar [C:\Users\Ejdf09\AppData\Local\Temp\11975377553326151102.jar] contains packages: net.emanueljdf09.dtrhmod.entity.ai.goals, net.emanueljdf09.dtrhmod.client, net.emanueljdf09.dtrhmod.item, net.emanueljdf09.dtrhmod.compat.jei, net.emanueljdf09.dtrhmod.world.dimension, net.emanueljdf09.dtrhmod.world.structures.pieces, net.emanueljdf09.dtrhmod.block.entity.spawn, net.emanueljdf09.dtrhmod.item.client.renderer, net.emanueljdf09.dtrhmod.block.custom.spawn, net.emanueljdf09.dtrhmod.block, net.emanueljdf09.dtrhmod.block.custom.signs, net.emanueljdf09.dtrhmod.world.features, net.emanueljdf09.dtrhmod.entity.client.models, net.emanueljdf09.dtrhmod.block.custom.head, net.emanueljdf09.dtrhmod.world.structures.structure, net.emanueljdf09.dtrhmod.menu.handler, net.emanueljdf09.dtrhmod.world.features.tree.sapling, net.emanueljdf09.dtrhmod.item.custom, net.emanueljdf09.dtrhmod.util.particles, net.emanueljdf09.dtrhmod.world.structures, net.emanueljdf09.dtrhmod.world.features.tree.deco, net.emanueljdf09.dtrhmod.util, net.emanueljdf09.dtrhmod.item.block, net.emanueljdf09.dtrhmod.block.models, net.emanueljdf09.dtrhmod.world.biome, net.emanueljdf09.dtrhmod.world.structures.maze, net.emanueljdf09.dtrhmod.entity.ai.goals.mad_hatter, net.emanueljdf09.dtrhmod.menu.screen, net.emanueljdf09.dtrhmod.entity.custom, net.emanueljdf09.dtrhmod.util.entity, net.emanueljdf09.dtrhmod.util.components, net.emanueljdf09.dtrhmod.util.config, net.emanueljdf09.dtrhmod.util.effects, net.emanueljdf09.dtrhmod.recipe, net.emanueljdf09.dtrhmod.entity.client.renderers, net.emanueljdf09.dtrhmod.entity, net.emanueljdf09.dtrhmod, net.emanueljdf09.dtrhmod.world.features.biome, net.emanueljdf09.dtrhmod.block.entity, net.emanueljdf09.dtrhmod.util.components.Mirror, net.emanueljdf09.dtrhmod.block.models.renderers, net.emanueljdf09.dtrhmod.mixin, net.emanueljdf09.dtrhmod.entity.projectile, net.emanueljdf09.dtrhmod.block.custom.mirror, net.emanueljdf09.dtrhmod.block.custom, net.emanueljdf09.dtrhmod.menu
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\common\build\devlibs\dtrhmod-common-1.0.0-dev.jar
+[Architectury Transformer DEBUG] Classpath entry [C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\fabric\build\classes\java\main] contains packages: net.emanueljdf09.dtrhmod.fabric
+[Architectury Transformer DEBUG] Classpath entry [C:\Users\Ejdf09\IdeaProjects\DTRHMOD-Architectury-1.21.1\fabric\build\resources\main] contains packages: 
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/DownTheRabbitHole.class to net/emanueljdf09/dtrhmod/DownTheRabbitHole.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/DownTheRabbitHole with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/DownTheRabbitHole in 55.71 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/ModBlocks.class to net/emanueljdf09/dtrhmod/block/ModBlocks.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/ModBlocks with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/ModBlocks in 26.75 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/signs/ModWallHangingSignBlock.class to net/emanueljdf09/dtrhmod/block/custom/signs/ModWallHangingSignBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/signs/ModWallHangingSignBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/signs/ModWallHangingSignBlock in 1.154 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/signs/ModWallSignBlock.class to net/emanueljdf09/dtrhmod/block/custom/signs/ModWallSignBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/signs/ModWallSignBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/signs/ModWallSignBlock in 1.132 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/signs/ModStandingSignBlock.class to net/emanueljdf09/dtrhmod/block/custom/signs/ModStandingSignBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/signs/ModStandingSignBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/signs/ModStandingSignBlock in 1.045 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/signs/ModCeilingHangingSignBlock.class to net/emanueljdf09/dtrhmod/block/custom/signs/ModCeilingHangingSignBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/signs/ModCeilingHangingSignBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/signs/ModCeilingHangingSignBlock in 4.283 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/WHangingLeavesHeadBlock.class to net/emanueljdf09/dtrhmod/block/custom/WHangingLeavesHeadBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/WHangingLeavesHeadBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/WHangingLeavesHeadBlock in 3.189 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/spawn/CaterpillarSpawnerBlock.class to net/emanueljdf09/dtrhmod/block/custom/spawn/CaterpillarSpawnerBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/spawn/CaterpillarSpawnerBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/spawn/CaterpillarSpawnerBlock in 5.994 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/spawn/SingingFlowersSpawnerBlock.class to net/emanueljdf09/dtrhmod/block/custom/spawn/SingingFlowersSpawnerBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/spawn/SingingFlowersSpawnerBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/spawn/SingingFlowersSpawnerBlock in 1.550 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/spawn/CheshireCatSpawnerBlock.class to net/emanueljdf09/dtrhmod/block/custom/spawn/CheshireCatSpawnerBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/spawn/CheshireCatSpawnerBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/spawn/CheshireCatSpawnerBlock in 1.401 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/spawn/MadHatterSpawnerBlock.class to net/emanueljdf09/dtrhmod/block/custom/spawn/MadHatterSpawnerBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/spawn/MadHatterSpawnerBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/spawn/MadHatterSpawnerBlock in 1.304 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/head/ModHeadBlock.class to net/emanueljdf09/dtrhmod/block/custom/head/ModHeadBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/head/ModHeadBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/head/ModHeadBlock in 2.694 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/head/ModWallHeadBlock.class to net/emanueljdf09/dtrhmod/block/custom/head/ModWallHeadBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/head/ModWallHeadBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/head/ModWallHeadBlock in 3.875 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/WHangingLeavesBodyBlock.class to net/emanueljdf09/dtrhmod/block/custom/WHangingLeavesBodyBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/WHangingLeavesBodyBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/WHangingLeavesBodyBlock in 1.253 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/ExteriorChest.class to net/emanueljdf09/dtrhmod/block/custom/ExteriorChest.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/ExteriorChest with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/ExteriorChest in 2.428 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/WonderDirtPathBlock.class to net/emanueljdf09/dtrhmod/block/custom/WonderDirtPathBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/WonderDirtPathBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/WonderDirtPathBlock in 1.114 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/FlowerPortal.class to net/emanueljdf09/dtrhmod/block/custom/FlowerPortal.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/FlowerPortal with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/FlowerPortal in 2.971 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/RabbitHoleBlock.class to net/emanueljdf09/dtrhmod/block/custom/RabbitHoleBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/RabbitHoleBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/RabbitHoleBlock in 1.676 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/ExteriorPortal.class to net/emanueljdf09/dtrhmod/block/custom/ExteriorPortal.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/ExteriorPortal with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/ExteriorPortal in 1.057 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/ExteriorDoor.class to net/emanueljdf09/dtrhmod/block/custom/ExteriorDoor.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/ExteriorDoor with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/ExteriorDoor in 2.269 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/TeapotBlock.class to net/emanueljdf09/dtrhmod/block/custom/TeapotBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/TeapotBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/TeapotBlock in 3.977 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/WonderGrassBlock.class to net/emanueljdf09/dtrhmod/block/custom/WonderGrassBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/WonderGrassBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/WonderGrassBlock in 2.942 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorBlock.class to net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorBlock in 13.74 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/MadHatterHatBlock.class to net/emanueljdf09/dtrhmod/block/custom/MadHatterHatBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/MadHatterHatBlock with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/MadHatterHatBlock in 3.680 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/features/ModConfiguredFeatures.class to net/emanueljdf09/dtrhmod/world/features/ModConfiguredFeatures.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/ModConfiguredFeatures with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/features/ModConfiguredFeatures in 10.51 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity.class to net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity in 8.013 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/MadHatterHatBlock$HatState.class to net/emanueljdf09/dtrhmod/block/custom/MadHatterHatBlock$HatState.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/MadHatterHatBlock$HatState with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/MadHatterHatBlock$HatState in 1.303 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/RabbitHoleBlockEntity.class to net/emanueljdf09/dtrhmod/block/entity/RabbitHoleBlockEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/RabbitHoleBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/RabbitHoleBlockEntity in 3.255 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/components/ProgressionComponent.class to net/emanueljdf09/dtrhmod/util/components/ProgressionComponent.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/ProgressionComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/components/ProgressionComponent in 726.1 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/ExteriorChestEntity.class to net/emanueljdf09/dtrhmod/block/entity/ExteriorChestEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/ExteriorChestEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/ExteriorChestEntity in 1.737 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/ExteriorDoorEntity.class to net/emanueljdf09/dtrhmod/block/entity/ExteriorDoorEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/ExteriorDoorEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/ExteriorDoorEntity in 4.422 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/TeapotBlockEntity.class to net/emanueljdf09/dtrhmod/block/entity/TeapotBlockEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/TeapotBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/TeapotBlockEntity in 6.327 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/ImplementedInventory.class to net/emanueljdf09/dtrhmod/util/ImplementedInventory.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ImplementedInventory with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/ImplementedInventory in 2.782 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/MirrorBlockEntity.class to net/emanueljdf09/dtrhmod/block/entity/MirrorBlockEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/MirrorBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/MirrorBlockEntity in 1.996 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorType.class to net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorType.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorType with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorType in 1.672 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/features/tree/sapling/ModSaplingsGenerators.class to net/emanueljdf09/dtrhmod/world/features/tree/sapling/ModSaplingsGenerators.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/tree/sapling/ModSaplingsGenerators with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/features/tree/sapling/ModSaplingsGenerators in 1.071 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/ModBlockCollections.class to net/emanueljdf09/dtrhmod/block/ModBlockCollections.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/ModBlockCollections with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/ModBlockCollections in 969.5 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/ModSignBlockEntity.class to net/emanueljdf09/dtrhmod/block/entity/ModSignBlockEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/ModSignBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/ModSignBlockEntity in 1.184 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/ModHangingSignBlockEntity.class to net/emanueljdf09/dtrhmod/block/entity/ModHangingSignBlockEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/ModHangingSignBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/ModHangingSignBlockEntity in 559.3 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/ModHeadBlockEntity.class to net/emanueljdf09/dtrhmod/block/entity/ModHeadBlockEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/ModHeadBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/ModHeadBlockEntity in 1.007 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/head/ModHeadType.class to net/emanueljdf09/dtrhmod/block/custom/head/ModHeadType.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/head/ModHeadType with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/head/ModHeadType in 1.861 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/spawn/MadHatterSpawnerBlockEntity.class to net/emanueljdf09/dtrhmod/block/entity/spawn/MadHatterSpawnerBlockEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/spawn/MadHatterSpawnerBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/spawn/MadHatterSpawnerBlockEntity in 3.093 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/spawn/CheshireCatSpawnerBlockEntity.class to net/emanueljdf09/dtrhmod/block/entity/spawn/CheshireCatSpawnerBlockEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/spawn/CheshireCatSpawnerBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/spawn/CheshireCatSpawnerBlockEntity in 3.137 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/spawn/SingingFlowersSpawnerBlockEntity.class to net/emanueljdf09/dtrhmod/block/entity/spawn/SingingFlowersSpawnerBlockEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/spawn/SingingFlowersSpawnerBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/spawn/SingingFlowersSpawnerBlockEntity in 6.907 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/spawn/CaterpillarSpawnerBlockEntity.class to net/emanueljdf09/dtrhmod/block/entity/spawn/CaterpillarSpawnerBlockEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/spawn/CaterpillarSpawnerBlockEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/spawn/CaterpillarSpawnerBlockEntity in 2.220 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/ModItems.class to net/emanueljdf09/dtrhmod/item/ModItems.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/ModItems with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/ModItems in 16.48 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem.class to net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem in 1.109 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/custom/StoryBook.class to net/emanueljdf09/dtrhmod/item/custom/StoryBook.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/StoryBook with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/custom/StoryBook in 8.142 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/block/MadHatItem.class to net/emanueljdf09/dtrhmod/item/block/MadHatItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/MadHatItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/block/MadHatItem in 956.8 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/custom/CatScarfItem.class to net/emanueljdf09/dtrhmod/item/custom/CatScarfItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/CatScarfItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/custom/CatScarfItem in 1.137 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/block/ExteriorChestItem.class to net/emanueljdf09/dtrhmod/item/block/ExteriorChestItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ExteriorChestItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/block/ExteriorChestItem in 882.4 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/custom/DynamicTeaCupItem.class to net/emanueljdf09/dtrhmod/item/custom/DynamicTeaCupItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/DynamicTeaCupItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/custom/DynamicTeaCupItem in 3.386 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/custom/PipeItem.class to net/emanueljdf09/dtrhmod/item/custom/PipeItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/PipeItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/custom/PipeItem in 2.088 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/block/ExteriorDoorItem.class to net/emanueljdf09/dtrhmod/item/block/ExteriorDoorItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ExteriorDoorItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/block/ExteriorDoorItem in 631.6 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/custom/VineLassoItem.class to net/emanueljdf09/dtrhmod/item/custom/VineLassoItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/VineLassoItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/custom/VineLassoItem in 841.2 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/ModEntities.class to net/emanueljdf09/dtrhmod/entity/ModEntities.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/ModEntities with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/ModEntities in 2.593 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/menu/screen/BookCoverScreen.class to net/emanueljdf09/dtrhmod/menu/screen/BookCoverScreen.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/screen/BookCoverScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/menu/screen/BookCoverScreen in 2.740 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/custom/StoryBook$StoryData.class to net/emanueljdf09/dtrhmod/item/custom/StoryBook$StoryData.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/StoryBook$StoryData with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/custom/StoryBook$StoryData in 1.214 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/ModFoodComponent.class to net/emanueljdf09/dtrhmod/item/ModFoodComponent.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/ModFoodComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/ModFoodComponent in 784.4 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/ModEffects.class to net/emanueljdf09/dtrhmod/util/ModEffects.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModEffects with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/ModEffects in 1.620 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/effects/GrowStatusEffect.class to net/emanueljdf09/dtrhmod/util/effects/GrowStatusEffect.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/effects/GrowStatusEffect with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/effects/GrowStatusEffect in 1.558 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/effects/RemovalAwareEffect.class to net/emanueljdf09/dtrhmod/util/effects/RemovalAwareEffect.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/effects/RemovalAwareEffect with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/effects/RemovalAwareEffect in 512.4 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/effects/ShrinkStatusEffect.class to net/emanueljdf09/dtrhmod/util/effects/ShrinkStatusEffect.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/effects/ShrinkStatusEffect with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/effects/ShrinkStatusEffect in 1.487 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/projectile/VineLassoProjectileEntity.class to net/emanueljdf09/dtrhmod/entity/projectile/VineLassoProjectileEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/projectile/VineLassoProjectileEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/projectile/VineLassoProjectileEntity in 2.088 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/menu/ModScreenHandlers.class to net/emanueljdf09/dtrhmod/menu/ModScreenHandlers.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/ModScreenHandlers with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/menu/ModScreenHandlers in 729.1 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler.class to net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler in 3.562 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$1.class to net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$1 in 2.086 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$2.class to net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$2.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$2 in 1.496 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$3.class to net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$3.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$3 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/menu/handler/TeapotScreenHandler$3 in 675.1 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/recipe/ModRecipes.class to net/emanueljdf09/dtrhmod/recipe/ModRecipes.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/ModRecipes with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/recipe/ModRecipes in 941.5 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/recipe/TeapotRecipe$Serializer.class to net/emanueljdf09/dtrhmod/recipe/TeapotRecipe$Serializer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/TeapotRecipe$Serializer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/recipe/TeapotRecipe$Serializer in 1.627 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/recipe/TeapotRecipe.class to net/emanueljdf09/dtrhmod/recipe/TeapotRecipe.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/TeapotRecipe with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/recipe/TeapotRecipe in 2.263 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$Serializer.class to net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$Serializer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$Serializer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$Serializer in 1.765 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe.class to net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe in 1.298 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/recipe/TeapotRecipe$Type.class to net/emanueljdf09/dtrhmod/recipe/TeapotRecipe$Type.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/TeapotRecipe$Type with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/recipe/TeapotRecipe$Type in 665.4 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$Type.class to net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$Type.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$Type with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$Type in 631.6 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/ModBlockEntities.class to net/emanueljdf09/dtrhmod/block/ModBlockEntities.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/ModBlockEntities with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/ModBlockEntities in 3.388 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/custom/WhiteRabbitEntity.class to net/emanueljdf09/dtrhmod/entity/custom/WhiteRabbitEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/WhiteRabbitEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/custom/WhiteRabbitEntity in 5.954 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/custom/MadHatterEntity.class to net/emanueljdf09/dtrhmod/entity/custom/MadHatterEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/MadHatterEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/custom/MadHatterEntity in 17.16 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/custom/CheshireCatEntity.class to net/emanueljdf09/dtrhmod/entity/custom/CheshireCatEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/CheshireCatEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/custom/CheshireCatEntity in 6.439 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/custom/SingingFlowerEntity.class to net/emanueljdf09/dtrhmod/entity/custom/SingingFlowerEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/SingingFlowerEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/custom/SingingFlowerEntity in 10.21 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/custom/CaterpillarEntity.class to net/emanueljdf09/dtrhmod/entity/custom/CaterpillarEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/CaterpillarEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/custom/CaterpillarEntity in 10.79 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/ModParticles.class to net/emanueljdf09/dtrhmod/util/ModParticles.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModParticles with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/ModParticles in 961.5 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/ModParticles$1.class to net/emanueljdf09/dtrhmod/util/ModParticles$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModParticles$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/ModParticles$1 in 355.2 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/ModParticles$2.class to net/emanueljdf09/dtrhmod/util/ModParticles$2.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModParticles$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/ModParticles$2 in 310.7 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/ModParticles$3.class to net/emanueljdf09/dtrhmod/util/ModParticles$3.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModParticles$3 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/ModParticles$3 in 334.2 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/ModParticles$4.class to net/emanueljdf09/dtrhmod/util/ModParticles$4.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModParticles$4 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/ModParticles$4 in 484.5 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/projectile/TeapotProjectile.class to net/emanueljdf09/dtrhmod/entity/projectile/TeapotProjectile.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/projectile/TeapotProjectile with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/projectile/TeapotProjectile in 1.967 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/ai/goals/RunToRabbitHoleGoal.class to net/emanueljdf09/dtrhmod/entity/ai/goals/RunToRabbitHoleGoal.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/ai/goals/RunToRabbitHoleGoal with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/ai/goals/RunToRabbitHoleGoal in 1.317 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/ai/goals/WanderAroundHoleGoal.class to net/emanueljdf09/dtrhmod/entity/ai/goals/WanderAroundHoleGoal.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/ai/goals/WanderAroundHoleGoal with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/ai/goals/WanderAroundHoleGoal in 1.527 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/custom/WeepingPlayerEntity.class to net/emanueljdf09/dtrhmod/entity/custom/WeepingPlayerEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/WeepingPlayerEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/custom/WeepingPlayerEntity in 5.309 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/ai/goals/StalkerGoal.class to net/emanueljdf09/dtrhmod/entity/ai/goals/StalkerGoal.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/ai/goals/StalkerGoal with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/ai/goals/StalkerGoal in 2.350 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/ai/goals/mad_hatter/MadHatterBossBehaviorGoal.class to net/emanueljdf09/dtrhmod/entity/ai/goals/mad_hatter/MadHatterBossBehaviorGoal.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/ai/goals/mad_hatter/MadHatterBossBehaviorGoal with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/ai/goals/mad_hatter/MadHatterBossBehaviorGoal in 6.855 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/custom/MadHatterEntity$1.class to net/emanueljdf09/dtrhmod/entity/custom/MadHatterEntity$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/MadHatterEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/custom/MadHatterEntity$1 in 725.4 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/custom/HareEntity.class to net/emanueljdf09/dtrhmod/entity/custom/HareEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/HareEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/custom/HareEntity in 2.438 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/projectile/PlantFangEntity.class to net/emanueljdf09/dtrhmod/entity/projectile/PlantFangEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/projectile/PlantFangEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/projectile/PlantFangEntity in 3.347 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/custom/VineAnchorEntity.class to net/emanueljdf09/dtrhmod/entity/custom/VineAnchorEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/VineAnchorEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/custom/VineAnchorEntity in 10.79 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/projectile/SkySeedProjectile.class to net/emanueljdf09/dtrhmod/entity/projectile/SkySeedProjectile.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/projectile/SkySeedProjectile with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/projectile/SkySeedProjectile in 1.735 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/custom/MockTurtleEntity.class to net/emanueljdf09/dtrhmod/entity/custom/MockTurtleEntity.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/MockTurtleEntity with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/custom/MockTurtleEntity in 4.020 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/custom/CaterpillarEntity$1.class to net/emanueljdf09/dtrhmod/entity/custom/CaterpillarEntity$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/CaterpillarEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/custom/CaterpillarEntity$1 in 704.9 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/features/ModFeatures.class to net/emanueljdf09/dtrhmod/world/features/ModFeatures.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/ModFeatures with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/features/ModFeatures in 591.2 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/structures/ModStructures.class to net/emanueljdf09/dtrhmod/world/structures/ModStructures.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/ModStructures with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/structures/ModStructures in 2.903 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/features/tree/deco/ModTreeDeco.class to net/emanueljdf09/dtrhmod/world/features/tree/deco/ModTreeDeco.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/tree/deco/ModTreeDeco with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/features/tree/deco/ModTreeDeco in 744.1 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/features/tree/deco/WwTreeDecorator.class to net/emanueljdf09/dtrhmod/world/features/tree/deco/WwTreeDecorator.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/tree/deco/WwTreeDecorator with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/features/tree/deco/WwTreeDecorator in 1.198 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/features/tree/deco/HangingLeavesTreeDeco.class to net/emanueljdf09/dtrhmod/world/features/tree/deco/HangingLeavesTreeDeco.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/tree/deco/HangingLeavesTreeDeco with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/features/tree/deco/HangingLeavesTreeDeco in 1.534 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/features/tree/deco/HangFromTreeDeco.class to net/emanueljdf09/dtrhmod/world/features/tree/deco/HangFromTreeDeco.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/features/tree/deco/HangFromTreeDeco with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/features/tree/deco/HangFromTreeDeco in 2.214 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/structures/ModStructureProcessors.class to net/emanueljdf09/dtrhmod/world/structures/ModStructureProcessors.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/ModStructureProcessors with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/structures/ModStructureProcessors in 1.159 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/structures/ModStructurePieces.class to net/emanueljdf09/dtrhmod/world/structures/ModStructurePieces.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/ModStructurePieces with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/structures/ModStructurePieces in 855.3 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/structures/pieces/MirrorRoomStructurePiece.class to net/emanueljdf09/dtrhmod/world/structures/pieces/MirrorRoomStructurePiece.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/pieces/MirrorRoomStructurePiece with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/structures/pieces/MirrorRoomStructurePiece in 1.230 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/structures/pieces/MazeStructurePiece.class to net/emanueljdf09/dtrhmod/world/structures/pieces/MazeStructurePiece.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/pieces/MazeStructurePiece with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/structures/pieces/MazeStructurePiece in 1.452 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/WonderlandProgressionUtil.class to net/emanueljdf09/dtrhmod/util/WonderlandProgressionUtil.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/WonderlandProgressionUtil with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/WonderlandProgressionUtil in 2.239 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/ModCommands.class to net/emanueljdf09/dtrhmod/util/ModCommands.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModCommands with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/ModCommands in 3.267 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/entity/LetterPuffs.class to net/emanueljdf09/dtrhmod/util/entity/LetterPuffs.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/entity/LetterPuffs with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/entity/LetterPuffs in 4.480 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/compat/jei/DownTheRabbitHoleJEIClientPlugin.class to net/emanueljdf09/dtrhmod/compat/jei/DownTheRabbitHoleJEIClientPlugin.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/compat/jei/DownTheRabbitHoleJEIClientPlugin with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/compat/jei/DownTheRabbitHoleJEIClientPlugin in 4.226 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/client/DownTheRabbitHoleClient.class to net/emanueljdf09/dtrhmod/client/DownTheRabbitHoleClient.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/client/DownTheRabbitHoleClient with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/client/DownTheRabbitHoleClient in 17.25 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/components/ProgressionSync.class to net/emanueljdf09/dtrhmod/util/components/ProgressionSync.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/ProgressionSync with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/components/ProgressionSync in 1.696 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/components/ProgressionSync$Payload.class to net/emanueljdf09/dtrhmod/util/components/ProgressionSync$Payload.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/ProgressionSync$Payload with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/components/ProgressionSync$Payload in 1.934 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/ModPackets$OpenBookPayload.class to net/emanueljdf09/dtrhmod/util/ModPackets$OpenBookPayload.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModPackets$OpenBookPayload with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/ModPackets$OpenBookPayload in 1.976 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/ModPackets.class to net/emanueljdf09/dtrhmod/util/ModPackets.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModPackets with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/ModPackets in 780.5 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/ModPackets$LockedBiomeToastPayload.class to net/emanueljdf09/dtrhmod/util/ModPackets$LockedBiomeToastPayload.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModPackets$LockedBiomeToastPayload with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/ModPackets$LockedBiomeToastPayload in 853.2 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/models/renderers/MirrorBlockEntityRenderer.class to net/emanueljdf09/dtrhmod/block/models/renderers/MirrorBlockEntityRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/renderers/MirrorBlockEntityRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/models/renderers/MirrorBlockEntityRenderer in 1.822 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/models/renderers/ExteriorDoorRenderer.class to net/emanueljdf09/dtrhmod/block/models/renderers/ExteriorDoorRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/renderers/ExteriorDoorRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/models/renderers/ExteriorDoorRenderer in 717.6 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/models/ExteriorDoorModel.class to net/emanueljdf09/dtrhmod/block/models/ExteriorDoorModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/ExteriorDoorModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/models/ExteriorDoorModel in 1.510 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/models/renderers/ExteriorChestRenderer.class to net/emanueljdf09/dtrhmod/block/models/renderers/ExteriorChestRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/renderers/ExteriorChestRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/models/renderers/ExteriorChestRenderer in 605.7 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/models/ExteriorChestModel.class to net/emanueljdf09/dtrhmod/block/models/ExteriorChestModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/ExteriorChestModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/models/ExteriorChestModel in 795.2 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/models/renderers/ModHeadBlockEntityRenderer.class to net/emanueljdf09/dtrhmod/block/models/renderers/ModHeadBlockEntityRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/renderers/ModHeadBlockEntityRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/models/renderers/ModHeadBlockEntityRenderer in 1.797 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/models/ModHeadBlockModel.class to net/emanueljdf09/dtrhmod/block/models/ModHeadBlockModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/ModHeadBlockModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/models/ModHeadBlockModel in 1.180 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/models/renderers/MadHatterHatBlockEntityRenderer.class to net/emanueljdf09/dtrhmod/block/models/renderers/MadHatterHatBlockEntityRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/renderers/MadHatterHatBlockEntityRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/models/renderers/MadHatterHatBlockEntityRenderer in 1.482 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/models/MadHatterHatModel.class to net/emanueljdf09/dtrhmod/block/models/MadHatterHatModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/models/MadHatterHatModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/models/MadHatterHatModel in 2.356 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/renderers/WhiteRabbitRenderer.class to net/emanueljdf09/dtrhmod/entity/client/renderers/WhiteRabbitRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/WhiteRabbitRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/renderers/WhiteRabbitRenderer in 841.7 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/models/WhiteRabbitModel.class to net/emanueljdf09/dtrhmod/entity/client/models/WhiteRabbitModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/WhiteRabbitModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/models/WhiteRabbitModel in 1.080 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/renderers/WeepingPlayerRenderer.class to net/emanueljdf09/dtrhmod/entity/client/renderers/WeepingPlayerRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/WeepingPlayerRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/renderers/WeepingPlayerRenderer in 1.124 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/models/WeepingPlayerModel.class to net/emanueljdf09/dtrhmod/entity/client/models/WeepingPlayerModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/WeepingPlayerModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/models/WeepingPlayerModel in 2.501 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/renderers/MadHatterRenderer.class to net/emanueljdf09/dtrhmod/entity/client/renderers/MadHatterRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/MadHatterRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/renderers/MadHatterRenderer in 824.7 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/models/MadHatterModel.class to net/emanueljdf09/dtrhmod/entity/client/models/MadHatterModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/MadHatterModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/models/MadHatterModel in 1.819 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/renderers/CheshireCatRenderer.class to net/emanueljdf09/dtrhmod/entity/client/renderers/CheshireCatRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/CheshireCatRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/renderers/CheshireCatRenderer in 1.035 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/models/CheshireCatModel.class to net/emanueljdf09/dtrhmod/entity/client/models/CheshireCatModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/CheshireCatModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/models/CheshireCatModel in 909.6 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/renderers/SingingFlowerRenderer.class to net/emanueljdf09/dtrhmod/entity/client/renderers/SingingFlowerRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/SingingFlowerRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/renderers/SingingFlowerRenderer in 912.1 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/models/SingingFlowerModel.class to net/emanueljdf09/dtrhmod/entity/client/models/SingingFlowerModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/SingingFlowerModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/models/SingingFlowerModel in 938.5 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/renderers/MockTurtleRenderer.class to net/emanueljdf09/dtrhmod/entity/client/renderers/MockTurtleRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/MockTurtleRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/renderers/MockTurtleRenderer in 670.0 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/models/MockTurtleModel.class to net/emanueljdf09/dtrhmod/entity/client/models/MockTurtleModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/MockTurtleModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/models/MockTurtleModel in 2.662 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/renderers/CaterpillarRenderer.class to net/emanueljdf09/dtrhmod/entity/client/renderers/CaterpillarRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/CaterpillarRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/renderers/CaterpillarRenderer in 2.665 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/models/CaterpillarModel.class to net/emanueljdf09/dtrhmod/entity/client/models/CaterpillarModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/CaterpillarModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/models/CaterpillarModel in 1.457 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/renderers/VineAnchorRenderer.class to net/emanueljdf09/dtrhmod/entity/client/renderers/VineAnchorRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/VineAnchorRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/renderers/VineAnchorRenderer in 1.600 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/renderers/PlantFangEntityRenderer.class to net/emanueljdf09/dtrhmod/entity/client/renderers/PlantFangEntityRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/PlantFangEntityRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/renderers/PlantFangEntityRenderer in 2.432 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/renderers/HareRenderer.class to net/emanueljdf09/dtrhmod/entity/client/renderers/HareRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/renderers/HareRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/renderers/HareRenderer in 920.5 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/models/HareModel.class to net/emanueljdf09/dtrhmod/entity/client/models/HareModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/HareModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/models/HareModel in 1.200 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/menu/screen/TeapotScreen.class to net/emanueljdf09/dtrhmod/menu/screen/TeapotScreen.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/screen/TeapotScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/menu/screen/TeapotScreen in 1.067 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/client/renderer/CatScarfTrinketRenderer.class to net/emanueljdf09/dtrhmod/item/client/renderer/CatScarfTrinketRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/client/renderer/CatScarfTrinketRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/client/renderer/CatScarfTrinketRenderer in 6.714 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/client/renderer/MadHatterHatTrinketRenderer.class to net/emanueljdf09/dtrhmod/item/client/renderer/MadHatterHatTrinketRenderer.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/client/renderer/MadHatterHatTrinketRenderer with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/client/renderer/MadHatterHatTrinketRenderer in 846.8 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/client/models/PlantFangEntityModel.class to net/emanueljdf09/dtrhmod/entity/client/models/PlantFangEntityModel.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/client/models/PlantFangEntityModel with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/client/models/PlantFangEntityModel in 16.90 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/structures/structure/LargeMazeStructure.class to net/emanueljdf09/dtrhmod/world/structures/structure/LargeMazeStructure.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/structure/LargeMazeStructure with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/structures/structure/LargeMazeStructure in 16.40 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/structures/structure/MediumMazeStructure.class to net/emanueljdf09/dtrhmod/world/structures/structure/MediumMazeStructure.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/structure/MediumMazeStructure with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/structures/structure/MediumMazeStructure in 2.406 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/structures/structure/SmallMazeStructure.class to net/emanueljdf09/dtrhmod/world/structures/structure/SmallMazeStructure.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/structure/SmallMazeStructure with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/structures/structure/SmallMazeStructure in 2.437 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/world/structures/structure/MirrorRoomStructure.class to net/emanueljdf09/dtrhmod/world/structures/structure/MirrorRoomStructure.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/world/structures/structure/MirrorRoomStructure with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/world/structures/structure/MirrorRoomStructure in 4.511 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/ExteriorChest$1.class to net/emanueljdf09/dtrhmod/block/custom/ExteriorChest$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/ExteriorChest$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/ExteriorChest$1 in 10.68 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorBlock$1.class to net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorBlock$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorBlock$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/custom/mirror/MirrorBlock$1 in 831.4 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/TeleportUtil.class to net/emanueljdf09/dtrhmod/util/TeleportUtil.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/TeleportUtil in 35.57 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/TeleportUtil$2.class to net/emanueljdf09/dtrhmod/util/TeleportUtil$2.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil$2 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/TeleportUtil$2 in 838.2 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/TeleportUtil$3.class to net/emanueljdf09/dtrhmod/util/TeleportUtil$3.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil$3 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/TeleportUtil$3 in 919.3 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/components/Mirror/MirrorComponent.class to net/emanueljdf09/dtrhmod/util/components/Mirror/MirrorComponent.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/Mirror/MirrorComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/components/Mirror/MirrorComponent in 657.7 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/TeleportUtil$4.class to net/emanueljdf09/dtrhmod/util/TeleportUtil$4.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil$4 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/TeleportUtil$4 in 1.512 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/TeleportUtil$1.class to net/emanueljdf09/dtrhmod/util/TeleportUtil$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/TeleportUtil$1 in 955.7 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/compat/jei/TeapotCategory.class to net/emanueljdf09/dtrhmod/compat/jei/TeapotCategory.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/compat/jei/TeapotCategory with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/compat/jei/TeapotCategory in 3.722 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/compat/jei/TeapotRecipeVariant.class to net/emanueljdf09/dtrhmod/compat/jei/TeapotRecipeVariant.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/compat/jei/TeapotRecipeVariant with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/compat/jei/TeapotRecipeVariant in 1.290 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/compat/jei/TeapotRecipeVariant$LiquidType.class to net/emanueljdf09/dtrhmod/compat/jei/TeapotRecipeVariant$LiquidType.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/compat/jei/TeapotRecipeVariant$LiquidType with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/compat/jei/TeapotRecipeVariant$LiquidType in 1.097 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/ModUtils.class to net/emanueljdf09/dtrhmod/util/ModUtils.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModUtils with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/ModUtils in 1.576 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/entity/custom/CaterpillarLetters$Letter.class to net/emanueljdf09/dtrhmod/entity/custom/CaterpillarLetters$Letter.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/entity/custom/CaterpillarLetters$Letter with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/entity/custom/CaterpillarLetters$Letter in 724.1 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/ModTags$Biomes.class to net/emanueljdf09/dtrhmod/util/ModTags$Biomes.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/ModTags$Biomes with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/ModTags$Biomes in 3.250 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem$1.class to net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem$1 in 5.775 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem$1$1.class to net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem$1$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem$1$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/block/ModHeadBlockItem$1$1 in 1.028 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/block/MadHatItem$1.class to net/emanueljdf09/dtrhmod/item/block/MadHatItem$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/MadHatItem$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/block/MadHatItem$1 in 860.7 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/block/ExteriorDoorItem$1.class to net/emanueljdf09/dtrhmod/item/block/ExteriorDoorItem$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ExteriorDoorItem$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/block/ExteriorDoorItem$1 in 1.285 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/block/ExteriorChestItem$1.class to net/emanueljdf09/dtrhmod/item/block/ExteriorChestItem$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/block/ExteriorChestItem$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/block/ExteriorChestItem$1 in 802.3 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/item/custom/CatScarfItem$1.class to net/emanueljdf09/dtrhmod/item/custom/CatScarfItem$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/item/custom/CatScarfItem$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/item/custom/CatScarfItem$1 in 870.1 μs
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/TeapotBlockEntity$1.class to net/emanueljdf09/dtrhmod/block/entity/TeapotBlockEntity$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/TeapotBlockEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/TeapotBlockEntity$1 in 3.357 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/recipe/TeapotRecipeInput.class to net/emanueljdf09/dtrhmod/recipe/TeapotRecipeInput.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/TeapotRecipeInput with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/recipe/TeapotRecipeInput in 32.74 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/AdvancementUtil.class to net/emanueljdf09/dtrhmod/util/AdvancementUtil.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/AdvancementUtil with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/AdvancementUtil in 8.863 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity$AnimState.class to net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity$AnimState.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity$AnimState with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity$AnimState in 25.55 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity$1.class to net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/block/entity/MadHatterHatBlockEntity$1 in 8.751 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/recipe/HatRitualRecipeInput.class to net/emanueljdf09/dtrhmod/recipe/HatRitualRecipeInput.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/HatRitualRecipeInput with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/recipe/HatRitualRecipeInput in 3.848 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen.class to net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen in 41.17 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$Contents.class to net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$Contents.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$Contents with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$Contents in 1.391 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/CustomTexturedButton.class to net/emanueljdf09/dtrhmod/util/CustomTexturedButton.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/CustomTexturedButton with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/CustomTexturedButton in 2.092 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$1.class to net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$1 in 39.78 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$WrittenBookContents.class to net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$WrittenBookContents.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$WrittenBookContents with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/menu/screen/StoryBookScreen$WrittenBookContents in 44.76 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$RecipeMatcher.class to net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$RecipeMatcher.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$RecipeMatcher with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/recipe/HatRitualRecipe$RecipeMatcher in 7.948 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/TeleportUtil$HatTranceData.class to net/emanueljdf09/dtrhmod/util/TeleportUtil$HatTranceData.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/TeleportUtil$HatTranceData with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/TeleportUtil$HatTranceData in 4.738 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/StorybookInstanceManager.class to net/emanueljdf09/dtrhmod/util/StorybookInstanceManager.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/StorybookInstanceManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/StorybookInstanceManager in 22.45 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/StorybookInstanceManager$ReturnLocation.class to net/emanueljdf09/dtrhmod/util/StorybookInstanceManager$ReturnLocation.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/StorybookInstanceManager$ReturnLocation with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/StorybookInstanceManager$ReturnLocation in 2.243 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/components/ClientProgression.class to net/emanueljdf09/dtrhmod/util/components/ClientProgression.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/ClientProgression with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/components/ClientProgression in 4.641 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/components/ProgressionComponentImpl.class to net/emanueljdf09/dtrhmod/util/components/ProgressionComponentImpl.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/components/ProgressionComponentImpl with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/components/ProgressionComponentImpl in 323.7 ms
+[Architectury Transformer DEBUG] Transforming from net/emanueljdf09/dtrhmod/util/config/ModConfigData.class to net/emanueljdf09/dtrhmod/util/config/ModConfigData.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/emanueljdf09/dtrhmod/util/config/ModConfigData with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/emanueljdf09/dtrhmod/util/config/ModConfigData in 1.503 ms

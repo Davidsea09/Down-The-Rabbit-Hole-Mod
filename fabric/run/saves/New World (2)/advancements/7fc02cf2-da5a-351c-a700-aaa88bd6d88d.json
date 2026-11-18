@@ -1,0 +1,261 @@
+{
+  "dtrhmod:recipes/filled_tea_cup/blue_mushroom_tea": {
+    "criteria": {
+      "has_blue_mushroom": "2026-11-17 22:10:26 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/calibrated_sculk_sensor": {
+    "criteria": {
+      "has_amethyst_shard": "2026-11-17 22:31:26 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/tinted_glass": {
+    "criteria": {
+      "has_amethyst_shard": "2026-11-17 22:31:26 -0400"
+    },
+    "done": true
+  },
+  "dtrhmod:root": {
+    "criteria": {
+      "entered_exterior": "2026-11-17 22:18:07 -0400"
+    },
+    "done": true
+  },
+  "dtrhmod:recipes/filled_tea_cup/berry_tea": {
+    "criteria": {
+      "has_sweet_berries": "2026-11-17 22:09:48 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/golden_axe": {
+    "criteria": {
+      "has_gold_ingot": "2026-11-17 22:31:48 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/golden_pickaxe": {
+    "criteria": {
+      "has_gold_ingot": "2026-11-17 22:31:48 -0400"
+    },
+    "done": true
+  },
+  "dtrhmod:boss_root": {
+    "criteria": {
+      "boss_root": "2026-11-17 22:14:30 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_nugget": {
+    "criteria": {
+      "has_gold_ingot": "2026-11-17 22:31:48 -0400"
+    },
+    "done": true
+  },
+  "dtrhmod:recipes/building_blocks/bb_wood": {
+    "criteria": {
+      "has_bb_log": "2026-11-17 22:34:08 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/golden_shovel": {
+    "criteria": {
+      "has_gold_ingot": "2026-11-17 22:31:48 -0400"
+    },
+    "done": true
+  },
+  "dtrhmod:recipes/filled_tea_cup/cherry_tea": {
+    "criteria": {
+      "has_cherry_leaves": "2026-11-17 22:09:40 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/charcoal": {
+    "criteria": {
+      "has_log": "2026-11-17 22:34:08 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone_torch": {
+    "criteria": {
+      "has_redstone": "2026-11-17 22:34:12 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/golden_apple": {
+    "criteria": {
+      "has_gold_ingot": "2026-11-17 22:31:48 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/clock": {
+    "criteria": {
+      "has_redstone": "2026-11-17 22:34:12 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/golden_boots": {
+    "criteria": {
+      "has_gold_ingot": "2026-11-17 22:31:48 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/golden_helmet": {
+    "criteria": {
+      "has_gold_ingot": "2026-11-17 22:31:48 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dropper": {
+    "criteria": {
+      "has_redstone": "2026-11-17 22:34:12 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2026-11-17 22:05:45 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/golden_sword": {
+    "criteria": {
+      "has_gold_ingot": "2026-11-17 22:31:48 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2026-11-17 22:16:15 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/spyglass": {
+    "criteria": {
+      "has_amethyst_shard": "2026-11-17 22:31:26 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/gold_block": {
+    "criteria": {
+      "has_gold_ingot": "2026-11-17 22:31:48 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/cauldron": {
+    "criteria": {
+      "has_water_bucket": "2026-11-17 22:09:37 -0400"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2026-11-17 22:27:03 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone_block": {
+    "criteria": {
+      "has_redstone": "2026-11-17 22:34:12 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/golden_chestplate": {
+    "criteria": {
+      "has_gold_ingot": "2026-11-17 22:31:48 -0400"
+    },
+    "done": true
+  },
+  "dtrhmod:recipes/building_blocks/bb_planks": {
+    "criteria": {
+      "has_logs": "2026-11-17 22:34:08 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/red_dye_from_poppy": {
+    "criteria": {
+      "has_poppy": "2026-11-17 22:13:34 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/amethyst_block": {
+    "criteria": {
+      "has_amethyst_shard": "2026-11-17 22:31:26 -0400"
+    },
+    "done": true
+  },
+  "dtrhmod:exterior_complete": {
+    "criteria": {
+      "entered_exterior": "2026-11-17 22:18:07 -0400"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:plains": "2026-11-17 22:05:46 -0400"
+    },
+    "done": false
+  },
+  "minecraft:recipes/tools/golden_hoe": {
+    "criteria": {
+      "has_gold_ingot": "2026-11-17 22:31:48 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/note_block": {
+    "criteria": {
+      "has_redstone": "2026-11-17 22:34:12 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/target": {
+    "criteria": {
+      "has_redstone": "2026-11-17 22:34:12 -0400"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2026-11-17 22:20:50 -0400"
+    },
+    "done": true
+  },
+  "dtrhmod:killed_caterpillar": {
+    "criteria": {
+      "killed_caterpillar": "2026-11-17 22:14:30 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/light_weighted_pressure_plate": {
+    "criteria": {
+      "has_gold_ingot": "2026-11-17 22:31:48 -0400"
+    },
+    "done": true
+  },
+  "dtrhmod:killed_mad_hatter": {
+    "criteria": {
+      "killed_mad_hatter": "2026-11-17 22:16:06 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/compass": {
+    "criteria": {
+      "has_redstone": "2026-11-17 22:34:12 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/golden_leggings": {
+    "criteria": {
+      "has_gold_ingot": "2026-11-17 22:31:48 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/piston": {
+    "criteria": {
+      "has_redstone": "2026-11-17 22:34:12 -0400"
+    },
+    "done": true
+  },
+  "DataVersion": 3955
+}

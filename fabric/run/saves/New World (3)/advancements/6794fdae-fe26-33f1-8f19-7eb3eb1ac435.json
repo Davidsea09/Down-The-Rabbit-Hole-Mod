@@ -1,0 +1,129 @@
+{
+  "dtrhmod:recipes/filled_tea_cup/berry_tea": {
+    "criteria": {
+      "has_sweet_berries": "2026-11-17 23:27:41 -0400"
+    },
+    "done": true
+  },
+  "dtrhmod:recipes/building_blocks/bb_wood": {
+    "criteria": {
+      "has_bb_log": "2026-11-17 23:31:20 -0400"
+    },
+    "done": true
+  },
+  "dtrhmod:recipes/filled_tea_cup/cherry_tea": {
+    "criteria": {
+      "has_cherry_leaves": "2026-11-17 23:27:34 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/charcoal": {
+    "criteria": {
+      "has_log": "2026-11-17 23:31:20 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone_torch": {
+    "criteria": {
+      "has_redstone": "2026-11-17 23:31:28 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/bowl": {
+    "criteria": {
+      "has_brown_mushroom": "2026-11-17 23:29:29 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/clock": {
+    "criteria": {
+      "has_redstone": "2026-11-17 23:31:28 -0400"
+    },
+    "done": true
+  },
+  "dtrhmod:recipes/filled_tea_cup/brown_mushroom_tea": {
+    "criteria": {
+      "has_brown_mushroom": "2026-11-17 23:29:29 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dropper": {
+    "criteria": {
+      "has_redstone": "2026-11-17 23:31:28 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2026-11-17 23:26:30 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2026-11-17 23:30:54 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/cauldron": {
+    "criteria": {
+      "has_water_bucket": "2026-11-17 23:27:45 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone_block": {
+    "criteria": {
+      "has_redstone": "2026-11-17 23:31:28 -0400"
+    },
+    "done": true
+  },
+  "dtrhmod:recipes/building_blocks/bb_planks": {
+    "criteria": {
+      "has_logs": "2026-11-17 23:31:20 -0400"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:plains": "2026-11-17 23:26:31 -0400"
+    },
+    "done": false
+  },
+  "dtrhmod:teapot_craft_adv": {
+    "criteria": {
+      "teapot_craft_adv": "2026-11-17 23:28:24 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/mushroom_stew": {
+    "criteria": {
+      "has_brown_mushroom": "2026-11-17 23:29:29 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/note_block": {
+    "criteria": {
+      "has_redstone": "2026-11-17 23:31:28 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/target": {
+    "criteria": {
+      "has_redstone": "2026-11-17 23:31:28 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/compass": {
+    "criteria": {
+      "has_redstone": "2026-11-17 23:31:28 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/piston": {
+    "criteria": {
+      "has_redstone": "2026-11-17 23:31:28 -0400"
+    },
+    "done": true
+  },
+  "DataVersion": 3955
+}

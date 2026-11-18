@@ -1,0 +1,20 @@
+{
+  "type": "dtrhmod:teapot",
+  "cup_count": 1,
+  "effects": [
+    {
+      "duration": 200,
+      "id": "minecraft:slowness",
+      "show_icon": true
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "minecraft:sweet_berries"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "dtrhmod:filled_tea_cup"
+  }
+}

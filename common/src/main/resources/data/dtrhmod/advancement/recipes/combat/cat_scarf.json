@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cat_fur": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dtrhmod:cat_fur"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dtrhmod:cat_scarf"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cat_fur"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dtrhmod:cat_scarf"
+    ]
+  }
+}

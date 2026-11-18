@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "dtrhmod:tulgey_wood/tea_party",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 64,
+    "separation": 16,
+    "salt": 52392961,
+    "spread_type": "triangular"
+  }
+}

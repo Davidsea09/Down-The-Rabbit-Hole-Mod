@@ -1,0 +1,260 @@
+package net.emanueljdf09.dtrhmod.world.structures.maze;
+
+import net.emanueljdf09.dtrhmod.fabric.DownTheRabbitHole;
+import net.emanueljdf09.dtrhmod.fabric.world.structures.maze.MazeCell;
+import net.emanueljdf09.dtrhmod.fabric.world.structures.pieces.MazeStructurePiece;
+import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.levelgen.WorldgenRandom;
+import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilder;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
+public class MazeLayoutGenerator {
+    public static final int MODULE_SIZE = 7;
+
+    public enum MazeSize {
+        SMALL(7),
+        MEDIUM(15),
+        LARGE(21);
+
+        private final int dimension;
+        MazeSize(int dimension) {
+            this.dimension = dimension;
+        }
+        public int getDimension() { return dimension; }
+    }
+
+    public static void generateAndPlaceMaze(StructurePiecesBuilder collector, StructureTemplateManager templateManager, BlockPos originPos, WorldgenRandom random, MazeSize chosenSize) {
+        DownTheRabbitHole.LOGGER.info("========== GENERATING MAZE ==========", chosenSize.name());
+        int width = chosenSize.getDimension();
+        int height = chosenSize.getDimension();
+
+        DownTheRabbitHole.LOGGER.info("Chosen Maze Size: {} ({}x{} grid)", chosenSize.name(), width, height);
+
+        net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell[][] grid = new net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell[width][height];
+        for (int x = 0; x < width; x++) {
+            for (int z = 0; z < height; z++) {
+                grid[x][z] = new net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell(x, z);
+            }
+        }
+
+        int centerX = width / 2;
+        int centerZ = height / 2;
+
+        if (chosenSize == MazeSize.LARGE) {
+            for (int cx = centerX - 1; cx <= centerX + 1; cx++) {
+                for (int cz = centerZ - 1; cz <= centerZ + 1; cz++) {
+                    grid[cx][cz].setType(net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.CENTER);
+                }
+            }
+        } else {
+            grid[centerX][centerZ].setType(net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.CENTER);
+        }
+
+        int entranceX = centerX;
+        int entranceZ = 0;
+        grid[entranceX][entranceZ].setType(net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.ENTRANCE);
+
+        if (chosenSize == MazeSize.LARGE) {
+            net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell startCell = grid[centerX - 2][centerZ];
+            connectCells(grid[centerX - 1][centerZ], startCell, -1, 0);
+        } else {
+            net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell startCell = grid[centerX][centerZ - 1];
+            connectCells(grid[centerX][centerZ], startCell, 0, -1);
+        }
+
+        connectCells(grid[entranceX][entranceZ], grid[entranceX][entranceZ + 1], 0, 1);
+
+        int carveStartX = (chosenSize == MazeSize.LARGE) ? centerX - 2 : centerX;
+        int carveStartZ = centerZ;
+        carvePassages(grid, carveStartX, carveStartZ, random);
+        DownTheRabbitHole.LOGGER.info("========== MAZE CARVING FINISHED ==========");
+
+        for (int x = 0; x < width; x++) {
+            for (int z = 0; z < height; z++) {
+                net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell cell = grid[x][z];
+                if (cell.getType() != net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.CENTER && cell.getType() != net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.ENTRANCE) {
+                    cell.determinePieceTypeAndRotation();
+                }
+            }
+        }
+
+        int generatedCells = 0;
+        for (int x = 0; x < width; x++) {
+            for (int z = 0; z < height; z++) {
+                net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell cell = grid[x][z];
+                if (cell.getType() != net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.EMPTY &&
+                        cell.getType() != net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.CENTER &&
+                        cell.getType() != net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.ENTRANCE) {
+                    generatedCells++;
+                }
+            }
+        }
+
+        DownTheRabbitHole.LOGGER.info(
+                "Maze generated {} path cells out of {}",
+                generatedCells,
+                width * height
+        );
+
+        if (chosenSize == MazeSize.LARGE) {
+            placeCenterPiece(collector, templateManager, originPos, centerX - 1, centerZ - 1, "maze/center/center_nw_corner");
+            placeCenterPiece(collector, templateManager, originPos, centerX, centerZ - 1, "maze/center/center_north");
+            placeCenterPiece(collector, templateManager, originPos, centerX + 1, centerZ - 1, "maze/center/center_ne_corner");
+
+            placeCenterPiece(collector, templateManager, originPos, centerX - 1, centerZ, "maze/center/center_west");
+            placeCenterPiece(collector, templateManager, originPos, centerX, centerZ, "maze/center/center_middle");
+            placeCenterPiece(collector, templateManager, originPos, centerX + 1, centerZ, "maze/center/center_east");
+
+            placeCenterPiece(collector, templateManager, originPos, centerX - 1, centerZ + 1, "maze/center/center_sw_corner");
+            placeCenterPiece(collector, templateManager, originPos, centerX, centerZ + 1, "maze/center/center_south");
+            placeCenterPiece(collector, templateManager, originPos, centerX + 1, centerZ + 1, "maze/center/center_se_corner");
+        } else {
+            placeCenterPiece(collector, templateManager, originPos, centerX, centerZ, "maze/center/center_middle");
+        }
+
+        BlockPos entranceWorldPos = originPos.offset(
+                entranceX * MODULE_SIZE,
+                -1,
+                entranceZ * MODULE_SIZE
+        );
+        collector.addPiece(new MazeStructurePiece(templateManager, ResourceLocation.fromNamespaceAndPath(DownTheRabbitHole.MOD_ID, "maze/entrance_nwe"), entranceWorldPos, Rotation.NONE));
+
+        for (int x = 0; x < width; x++) {
+            for (int z = 0; z < height; z++) {
+                net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell cell = grid[x][z];
+                if (cell.getType() == net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.CENTER || cell.getType() == net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.ENTRANCE || cell.getType() == net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.EMPTY) {
+                    continue;
+                }
+
+                String pathName = getPathTemplateName(cell, width);
+                if (pathName == null) continue;
+
+                BlockPos cellWorldPos = originPos.offset(
+                        x * MODULE_SIZE,
+                        -1,
+                        z * MODULE_SIZE
+                );
+
+                ResourceLocation templateId = ResourceLocation.fromNamespaceAndPath(DownTheRabbitHole.MOD_ID, "maze/paths/" + pathName);
+                collector.addPiece(new MazeStructurePiece(templateManager, templateId, cellWorldPos, Rotation.NONE));
+            }
+        }
+    }
+
+    private static void placeCenterPiece(StructurePiecesBuilder collector, StructureTemplateManager templateManager, BlockPos originPos, int absX, int absZ, String fullTemplatePath) {
+        BlockPos pos = originPos.offset(
+                absX * MODULE_SIZE,
+                -1,
+                absZ * MODULE_SIZE
+        );
+        collector.addPiece(new MazeStructurePiece(templateManager, ResourceLocation.fromNamespaceAndPath(DownTheRabbitHole.MOD_ID, fullTemplatePath), pos, Rotation.NONE));
+    }
+
+    private static boolean isFarFromCenter(net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell cell, int gridWidth) {
+        int centerX = gridWidth / 2;
+        int centerZ = gridWidth / 2;
+
+        int distX = Math.abs(cell.getGridX() - centerX);
+        int distZ = Math.abs(cell.getGridZ() - centerZ);
+
+        return (distX >= (gridWidth / 3) || distZ >= (gridWidth / 3));
+    }
+
+    private static String getPathTemplateName(net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell cell, int gridWidth) {
+        Random random = new Random();
+        switch (cell.getType()) {
+            case STRAIGHT:
+                if (cell.isNorthOpen() && cell.isSouthOpen()) return "straight_ns";
+                return "straight_ew";
+
+            case CORNER:
+                if (cell.isNorthOpen() && cell.isEastOpen()) return "corner_ne";
+                if (cell.isEastOpen() && cell.isSouthOpen()) return "corner_se";
+                if (cell.isSouthOpen() && cell.isWestOpen()) return "corner_sw";
+                return "corner_nw";
+
+            case T_JUNCTION:
+                if (!cell.isEastOpen()) return "t_nsw";
+                if (!cell.isNorthOpen()) return "t_sew";
+                if (!cell.isSouthOpen()) return "t_new";
+                return "t_nse";
+
+            case CROSSROAD:
+                return "cross_nsew";
+
+            case DEAD_END:
+                if (isFarFromCenter(cell, gridWidth) && random.nextFloat() < 0.3f) {
+                    if (cell.isNorthOpen()) return "deadend_treasure_n";
+                    if (cell.isSouthOpen()) return "deadend_treasure_s";
+                    if (cell.isEastOpen()) return "deadend_treasure_e";
+                    return "deadend_treasure_w";
+                }
+
+                if (cell.isNorthOpen()) return "deadend_n";
+                if (cell.isSouthOpen()) return "deadend_s";
+                if (cell.isEastOpen()) return "deadend_e";
+                return "deadend_w";
+
+            default:
+                return null;
+        }
+    }
+
+    private static void carvePassages(net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell[][] grid, int startX, int startZ, WorldgenRandom random) {
+        boolean[][] visited = new boolean[grid.length][grid[0].length];
+ for (int x = 0; x < grid.length; x++) {
+            for (int z = 0; z < grid[0].length; z++) {
+                if (grid[x][z].getType() == net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.CENTER || grid[x][z].getType() == net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.ENTRANCE) {
+                    visited[x][z] = true;
+                }
+            }
+        }
+
+        dfsCarve(grid, startX, startZ, visited, random);
+    }
+
+    private static void dfsCarve(net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell[][] grid, int x, int z, boolean[][] visited, WorldgenRandom random) {
+        visited[x][z] = true;
+
+        int[][] directions = { {0, -1}, {1, 0}, {0, 1}, {-1, 0} };
+        List<int[]> dirList = new ArrayList<>();
+        for (int[] d : directions) {
+            dirList.add(d);
+        }
+        Collections.shuffle(dirList, new Random(random.nextLong()));
+
+        for (int[] d : dirList) {
+            int nx = x + d[0];
+            int nz = z + d[1];
+
+            if (nx >= 0 && nx < grid.length && nz >= 0 && nz < grid[0].length && !visited[nx][nz]) {
+                if (grid[nx][nz].getType() == net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell.Type.CENTER) continue;
+
+                connectCells(grid[x][z], grid[nx][nz], d[0], d[1]);
+                dfsCarve(grid, nx, nz, visited, random);
+            }
+        }
+    }
+
+    private static void connectCells(net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell c1, net.emanueljdf09.dtrhmod.world.structures.maze.MazeCell c2, int dx, int dz) {
+        if (dx == 0 && dz == -1) {
+            c1.north = true;
+            c2.south = true;
+        } else if (dx == 1 && dz == 0) {
+            c1.east = true;
+            c2.west = true;
+        } else if (dx == 0 && dz == 1) {
+            c1.south = true;
+            c2.north = true;
+        } else if (dx == -1 && dz == 0) {
+            c1.west = true;
+            c2.east = true;
+        }
+    }
+}

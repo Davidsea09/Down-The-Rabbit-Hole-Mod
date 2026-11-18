@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lawn_daisy_patch": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dtrhmod:lawn_daisy_patch"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dtrhmod:light_gray_dye"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lawn_daisy_patch"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dtrhmod:light_gray_dye"
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.flower_singing",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "stem",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-1, 0, -1], "size": [2, 18, 2], "uv": [0, 27]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "stem",
+					"pivot": [0, 18, 0],
+					"cubes": [
+						{"origin": [-5, 18, -2.9], "size": [10, 8, 4], "uv": [24, 23]},
+						{"origin": [-7, 16, -2.9], "size": [14, 10, 0], "uv": [32, 0]},
+						{"origin": [-5, 18, -3], "size": [10, 8, 4], "inflate": -0.25, "uv": [0, 15]}
+					]
+				},
+				{
+					"name": "back_head",
+					"parent": "head",
+					"pivot": [0, 22, 1],
+					"cubes": [
+						{"origin": [-8, 17, 1.11], "size": [16, 15, 0], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "leaf",
+					"parent": "stem",
+					"pivot": [0.5, 3, 0],
+					"rotation": [0, 0, 12.5],
+					"cubes": [
+						{"origin": [0.5, 1, 0], "size": [5, 3, 0], "uv": [28, 35]}
+					]
+				},
+				{
+					"name": "leaf5",
+					"parent": "stem",
+					"pivot": [0.5, 15, 0],
+					"rotation": [0, 0, 15],
+					"cubes": [
+						{"origin": [0.5, 14, 0], "size": [5, 3, 0], "uv": [18, 35]}
+					]
+				},
+				{
+					"name": "leaf6",
+					"parent": "stem",
+					"pivot": [-0.5, 15, 0],
+					"rotation": [0, 0, -15],
+					"cubes": [
+						{"origin": [-5.5, 14, 0], "size": [5, 3, 0], "uv": [8, 35]}
+					]
+				},
+				{
+					"name": "leaf4",
+					"parent": "stem",
+					"pivot": [-0.5, 3, 0],
+					"rotation": [0, 0, -12.5],
+					"cubes": [
+						{"origin": [-5.5, 1, 0], "size": [5, 3, 0], "uv": [32, 10]},
+						{"origin": [-5.5, 1, 0], "size": [5, 3, 0], "uv": [32, 10]}
+					]
+				},
+				{
+					"name": "leaf2",
+					"parent": "stem",
+					"pivot": [0.5, 5.5, 0],
+					"rotation": [0, 0, -17.5],
+					"cubes": [
+						{"origin": [0.5, 3.5, 0], "size": [7, 4, 0], "uv": [8, 31]}
+					]
+				},
+				{
+					"name": "sub_leaf",
+					"parent": "leaf2",
+					"pivot": [7.5, 5.5, 0],
+					"rotation": [0, 45, 0],
+					"cubes": [
+						{"origin": [7.5, 3.5, -6], "size": [0, 4, 6], "uv": [24, 9]}
+					]
+				},
+				{
+					"name": "leaf3",
+					"parent": "stem",
+					"pivot": [-0.5, 5.5, 0],
+					"rotation": [0, 0, 17.5],
+					"cubes": [
+						{"origin": [-7.5, 3.5, 0], "size": [7, 4, 0], "uv": [28, 19]}
+					]
+				},
+				{
+					"name": "sub_leaf2",
+					"parent": "leaf3",
+					"pivot": [-7.5, 5.5, 0],
+					"rotation": [0, -45, 0],
+					"cubes": [
+						{"origin": [-7.5, 3.5, -6], "size": [0, 4, 6], "uv": [8, 21]}
+					]
+				}
+			]
+		}
+	]
+}

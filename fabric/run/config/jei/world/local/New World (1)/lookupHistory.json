@@ -1,0 +1,6 @@
+[
+  {"version":1},
+  {"ingredient":{"id":"dtrhmod:cat_fur"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"dtrhmod:teapot_block"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"dtrhmod:yellow_mushroom"},"type":"item_stack","bookmarkType":"INGREDIENT"}
+]

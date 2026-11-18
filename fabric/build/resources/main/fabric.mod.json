@@ -1,0 +1,49 @@
+{
+	"schemaVersion": 1,
+	"id": "dtrhmod",
+	"version": "1.0.0",
+	"name": "Down The Rabbit Hole",
+	"description": "A Very Fairy Tale focused mod!",
+	"authors": [
+		"Emanueljdf09"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/project/down-the-rabbit-hole",
+		"sources": "https://github.com/Davidsea09/DTRHMod-Fabric-1.20.1"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/dtrhmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.emanueljdf09.dtrhmod.fabric.DownTheRabbitFabricHole"
+		],
+		"client": [
+			"net.emanueljdf09.dtrhmod.fabric.DownTheRabbitHoleFabricClient"
+		],
+		"jei_mod_plugin": [
+			"net.emanueljdf09.dtrhmod.compat.jei.DownTheRabbitHoleJEIClientPlugin"
+		]
+	},
+	"custom": {
+		"cardinal-components": [
+			"dtrhmod:progression_component",
+			"dtrhmod:mirror_component"
+
+		]
+	},
+	"mixins": [
+		"dtrhmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"architectury": ">=13.0.11",
+		"fabric-api": "*",
+		"pehkui": "*",
+		"geckolib": "*",
+		"ohthetreesyoullgrow": "*"
+
+	}
+}

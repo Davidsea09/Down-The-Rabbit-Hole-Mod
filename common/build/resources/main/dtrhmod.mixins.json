@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "net.emanueljdf09.dtrhmod.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "BackgroundRendererMixin",
+    "LivingEntityRendererMixin",
+    "MobEntityMixin"
+  ],
+  "mixins": [
+    "ExampleMixin",
+    "LivingEntityStatusEffectMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

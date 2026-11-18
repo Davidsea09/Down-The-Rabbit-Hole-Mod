@@ -1,0 +1,27 @@
+{
+  "parent": "dtrhmod:exterior_complete",
+  "criteria": {
+    "won_trivia": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.dtrhmod.mad_hatter_trivia.description"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "dtrhmod:mad_hat"
+    },
+    "title": {
+      "translate": "advancement.dtrhmod.mad_hatter_trivia.title"
+    }
+  },
+  "requirements": [
+    [
+      "won_trivia"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

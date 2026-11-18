@@ -1,0 +1,14 @@
+{
+  "type": "dtrhmod:exterior_type",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "layers": [
+        { "block": "minecraft:air", "height": 61 },
+        { "block": "minecraft:barrier", "height": 3 }
+
+      ],
+      "biome": "dtrhmod:the_exterior"
+    }
+  }
+}

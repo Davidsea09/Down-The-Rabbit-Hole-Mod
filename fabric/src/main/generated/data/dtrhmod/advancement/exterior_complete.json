@@ -1,0 +1,29 @@
+{
+  "parent": "dtrhmod:root",
+  "criteria": {
+    "entered_exterior": {
+      "conditions": {
+        "to": "dtrhmod:exterior"
+      },
+      "trigger": "minecraft:changed_dimension"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.dtrhmod.portal.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "dtrhmod:rabbit_hole"
+    },
+    "title": {
+      "translate": "advancement.dtrhmod.portal.title"
+    }
+  },
+  "requirements": [
+    [
+      "entered_exterior"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,24 @@
+// 1.21.1	2026-11-16T21:31:16.2728668	Down The Rabbit Hole/Tags for minecraft:block
+18b4e4fcf1b2854e702e2f9be9551188e856d625 data\minecraft\tags\block\planks.json
+68d4ed740fd92bd92bd282780b5544642aaa42e8 data\minecraft\tags\block\wooden_doors.json
+3ee9ded2f67c8d96e501d6af9696f0147c281f07 data\minecraft\tags\block\wooden_slabs.json
+8ab9bcc9793c5801ec4afac1c49e58644ee543c9 data\minecraft\tags\block\wooden_pressure_plates.json
+fe2aa622325e354f12d5e53f653c541092b6349d data\minecraft\tags\block\leaves.json
+269d6e4b1989bfac9b55a910f3cb01912a95600b data\dtrhmod\tags\block\bb_logs.json
+611a4641bc39ad98915bfac5cce7f59303c80f0c data\minecraft\tags\block\saplings.json
+f81c5a9325d1e80146d85967b4f7a661551d07c5 data\dtrhmod\tags\block\th_logs.json
+ae278308f33d98e41f30d8627d9492eb6b567c80 data\dtrhmod\tags\block\hh_logs.json
+776f29e742c32ec722dcbb50056488bf925055b6 data\minecraft\tags\block\mineable\shovel.json
+428a812f70daf04ddaf8e5e3e969da012a92111f data\minecraft\tags\block\wooden_fences.json
+59e63a82f0de6cea5b871d9fffa7d41aaa70991d data\minecraft\tags\block\mushroom_grow_block.json
+6dd3a9a30e10b81a8ebea2eb36e6a8fd88c505d2 data\minecraft\tags\block\wooden_stairs.json
+25b53e6febdaab9dbcfae0cfdfffdcedee31bcde data\minecraft\tags\block\logs_that_burn.json
+25b53e6febdaab9dbcfae0cfdfffdcedee31bcde data\dtrhmod\tags\block\wonderland_logs.json
+d8ad59c5a9e1eb1974a408b4a51e497498af362f data\minecraft\tags\block\mineable\axe.json
+fe2aa622325e354f12d5e53f653c541092b6349d data\minecraft\tags\block\mineable\hoe.json
+71bc1bd248f5cf2bfc52a68f842512276d0a22f5 data\minecraft\tags\block\wooden_buttons.json
+f37363f9c52bf6396704b9e67aaaa8009a764992 data\minecraft\tags\block\mineable\pickaxe.json
+144376f044af2d1d8efd63290630c49f50bd80c2 data\minecraft\tags\block\fence_gates.json
+f8f331454a769421d8e98b4105d2b153cd37831a data\dtrhmod\tags\block\ww_logs.json
+59e63a82f0de6cea5b871d9fffa7d41aaa70991d data\minecraft\tags\block\dirt.json
+ccadcc7d71461d85b9ef7b2b7c15e39897d43866 data\minecraft\tags\block\wooden_trapdoors.json

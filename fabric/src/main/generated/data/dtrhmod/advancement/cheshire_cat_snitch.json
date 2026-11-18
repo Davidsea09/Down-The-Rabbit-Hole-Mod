@@ -1,0 +1,26 @@
+{
+  "parent": "dtrhmod:exterior_complete",
+  "criteria": {
+    "cheshire_cat_snitch": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.dtrhmod.cheshire_cat_snitch.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "dtrhmod:cat_grin"
+    },
+    "title": {
+      "translate": "advancement.dtrhmod.cheshire_cat_snitch.title"
+    }
+  },
+  "requirements": [
+    [
+      "cheshire_cat_snitch"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,27 @@
+{
+  "parent": "dtrhmod:boss_root",
+  "criteria": {
+    "killed_caterpillar": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.dtrhmod.caterpillar_kill.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "dtrhmod:caterpillar_head"
+    },
+    "title": {
+      "translate": "advancement.dtrhmod.caterpillar_kill.title"
+    }
+  },
+  "requirements": [
+    [
+      "killed_caterpillar"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
